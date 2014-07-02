@@ -1,0 +1,29 @@
+{
+	"name": "phpbb/googleanalytics",
+	"type": "phpbb-extension",
+	"description": "An extension which allows you to create a set of rules for your phpBB forum",
+	"homepage": "https://phpbb.com",
+	"version": "1.0.0-b1",
+	"keywords": ["phpbb", "extension", "rules"],
+	"license": "GPL-2.0",
+	"authors": [
+		{
+			"name": "Nathan Guse",
+			"username": "EXreaction",
+			"email": "nathaniel.guse@gmail.com",
+			"role": "Extensions Development Team Lead"
+		}
+	],
+	"require": {
+		"php": ">=5.3.3",
+		"phpbb/phpbb": "3.1.*@dev"
+	},
+	"extra": {
+		"display-name": "Google Analytics",
+		"version-check": {
+			"host": "version.phpbb.com",
+			"directory": "/phpbb-extensions",
+			"filename": "googleanalytics_versions.json"
+		}
+	}
+}

@@ -1,0 +1,37 @@
+<!-- INCLUDE overall_header.html -->
+
+	<h1>{L_ACP_GOOGLEANALYTICS_MANAGE}</h1>
+
+	<p>{L_ACP_GOOGLEANALYTICS_MANAGE_EXPLAIN}</p>
+
+	<!-- IF .options -->
+	<form id="language" method="post" action="{U_ACTION}">
+		<fieldset>
+			<dl>
+				<dt>
+					<label for="language">{L_ACP_GOOGLEANALYTICS_SELECT_LANGUAGE}{L_COLON}</label>
+				</dt>
+				<dd>
+					<select name="language">
+						<!-- BEGIN options -->
+							<option value="{options.LANG_ID}"<!-- IF options.S_LANG_DEFAULT --> selected="selected"<!-- ENDIF -->>{options.LANG_LOCAL_NAME}</option>
+						<!-- END options -->
+					</select>
+					<input type="submit" value="{L_GO}" class="button2">
+					{S_FORM_TOKEN}
+				</dd>
+			</dl>
+		</fieldset>
+	</form>
+	<!-- ELSE -->
+
+		<form id="googleanalytics" method="post" action="{U_ACTION}">
+
+		<fieldset class="quick">
+			{S_FORM_TOKEN}
+		</fieldset>
+		</form>
+
+	<!-- ENDIF -->
+
+<!-- INCLUDE overall_footer.html -->
