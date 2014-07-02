@@ -1,10 +1,10 @@
 {
 	"name": "phpbb/googleanalytics",
 	"type": "phpbb-extension",
-	"description": "An extension which allows you to create a set of rules for your phpBB forum",
+	"description": "An extension which adds Google Analytics to your phpBB forum",
 	"homepage": "https://phpbb.com",
-	"version": "1.0.0-b1",
-	"keywords": ["phpbb", "extension", "rules"],
+	"version": "1.0.0-dev",
+	"keywords": ["phpbb", "extension", "google", "analytics"],
 	"license": "GPL-2.0",
 	"authors": [
 		{
@@ -12,6 +12,25 @@
 			"username": "EXreaction",
 			"email": "nathaniel.guse@gmail.com",
 			"role": "Extensions Development Team Lead"
+		},
+		{
+			"name": "Michael Cullum",
+			"homepage": "http://michaelcullum.com",
+			"email": "michael@phpbb.com",
+			"role": "Extensions Team Consultant"
+		},
+		{
+			"name": "Marc Alexander",
+			"username": "Marc",
+			"email": "admin@m-a-styles.de",
+			"homepage": "http://www.m-a-styles.de",
+			"role": "Extensions Team Consultant"
+		},
+		{
+			"name": "Matt Friedman",
+			"username": "VSE",
+			"homepage": "http://mattfriedman.me",
+			"role": "Extensions Development Team"
 		}
 	],
 	"require": {

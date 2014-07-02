@@ -1,3 +1,0 @@
-googleanalytics_main_controller:
-    pattern: /rules
-    defaults: { _controller: phpbb.googleanalytics.controller:display }

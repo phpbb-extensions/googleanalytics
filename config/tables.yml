@@ -1,2 +1,0 @@
-parameters:
-    tables.googleanalytics: %core.table_prefix%googleanalytics
