@@ -1,0 +1,48 @@
+{
+	"name": "phpbb/googleanalytics",
+	"type": "phpbb-extension",
+	"description": "An extension which adds Google Analytics to your phpBB forum",
+	"homepage": "https://phpbb.com",
+	"version": "1.0.0-dev",
+	"keywords": ["phpbb", "extension", "google", "analytics"],
+	"license": "GPL-2.0",
+	"authors": [
+		{
+			"name": "Nathan Guse",
+			"username": "EXreaction",
+			"email": "nathaniel.guse@gmail.com",
+			"role": "Extensions Development Team Lead"
+		},
+		{
+			"name": "Michael Cullum",
+			"homepage": "http://michaelcullum.com",
+			"email": "michael@phpbb.com",
+			"role": "Extensions Team Consultant"
+		},
+		{
+			"name": "Marc Alexander",
+			"username": "Marc",
+			"email": "admin@m-a-styles.de",
+			"homepage": "http://www.m-a-styles.de",
+			"role": "Extensions Team Consultant"
+		},
+		{
+			"name": "Matt Friedman",
+			"username": "VSE",
+			"homepage": "http://mattfriedman.me",
+			"role": "Extensions Development Team"
+		}
+	],
+	"require": {
+		"php": ">=5.3.3",
+		"phpbb/phpbb": "3.1.*@dev"
+	},
+	"extra": {
+		"display-name": "Google Analytics",
+		"version-check": {
+			"host": "version.phpbb.com",
+			"directory": "/phpbb-extensions",
+			"filename": "googleanalytics_versions.json"
+		}
+	}
+}
