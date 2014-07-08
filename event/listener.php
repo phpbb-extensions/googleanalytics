@@ -101,7 +101,7 @@ class listener implements EventSubscriberInterface
 			// setup search
 			$insert_after = 'warnings_expire_days';
 
-			// find position starting
+			// find $insert_ater position
 			$position = array_search($insert_after, array_keys($display_vars['vars']))- 1;
 
 			// rebuild new config var array
