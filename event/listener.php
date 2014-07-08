@@ -83,7 +83,7 @@ class listener implements EventSubscriberInterface
 	}
 
 	/**
-	* Add administrative permissions to manage Googlean Alytics
+	* Add administrative permissions to manage Google Alytics
 	*
 	* @param object $event The event object
 	* @return null
@@ -105,21 +105,23 @@ class listener implements EventSubscriberInterface
 			// Store display_vars event in a local variable
 			$display_vars = $event['display_vars'];
 
+			// fill ga array
 			$ga_display_vars = array(
 				'googleanalytics' => array('lang' => 'ACP_GOOGLEANALYTICS_SETTINGS', 'validate' => 'string', 'type' => 'text:20:255', 'explain' => false)
 		    );
 
-			// Insert config vars after...
+			// setup search
 			$insert_after = 'warnings_expire_days';
 
-			// Rebuild new config var array
+			// find position starting
 			$position = array_search($insert_after, array_keys($display_vars['vars']))- 1;
 
+			// rebuild new config var array
 			$display_vars['vars'] = array_merge(
 				array_slice($display_vars['vars'], 0, $position), $ga_display_vars, array_slice($display_vars['vars'], $position)
 			);
 
-			// Update the display_vars event with the new array
+			// update the display_vars event with the new array
 			$event['display_vars'] = array('title' => $display_vars['title'], 'vars' => $display_vars['vars']);
 		}
 	}
