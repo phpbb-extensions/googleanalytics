@@ -3,7 +3,7 @@
 *
 * Google Analytics extension for the phpBB Forum Software package.
 *
-* @copyright (c) 2013 phpBB Limited <https://www.phpbb.com>
+* @copyright (c) 2014 phpBB Limited <https://www.phpbb.com>
 * @license GNU General Public License, version 2 (GPL-2.0)
 *
 */
@@ -43,13 +43,10 @@ class listener implements EventSubscriberInterface
 	* @return \phpbb\googleanalytics\event\listener
 	* @access public
 	*/
-	public function __construct(\phpbb\config\config $config, \phpbb\controller\helper $controller_helper, \phpbb\template\template $template, \phpbb\user $user, $php_ext)
+	public function __construct(\phpbb\config\config $config, \phpbb\controller\helper $controller_helper)
 	{
 		$this->config = $config;
 		$this->controller_helper = $controller_helper;
-		$this->template = $template;
-		$this->user = $user;
-		$this->php_ext = $php_ext;
 	}
 
 	/**
