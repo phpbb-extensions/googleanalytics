@@ -24,7 +24,6 @@ class listener implements EventSubscriberInterface
 	* Constructor
 	*
 	* @param \phpbb\config\config        $config             Config object
-	* @param \phpbb\controller\helper    $controller_helper  Controller helper object
 	* @return \phpbb\googleanalytics\event\listener
 	* @access public
 	*/
