@@ -20,9 +20,6 @@ class listener implements EventSubscriberInterface
 	/** @var \phpbb\config\config */
 	protected $config;
 
-	/** @var \phpbb\controller\helper */
-	protected $controller_helper;
-
 	/**
 	* Constructor
 	*
@@ -31,10 +28,9 @@ class listener implements EventSubscriberInterface
 	* @return \phpbb\googleanalytics\event\listener
 	* @access public
 	*/
-	public function __construct(\phpbb\config\config $config, \phpbb\controller\helper $controller_helper)
+	public function __construct(\phpbb\config\config $config)
 	{
 		$this->config = $config;
-		$this->controller_helper = $controller_helper;
 	}
 
 	/**
@@ -68,20 +64,6 @@ class listener implements EventSubscriberInterface
 			'lang_set' => 'googleanalytics_common',
 		);
 		$event['lang_set_ext'] = $lang_set_ext;
-	}
-
-	/**
-	* Add administrative permissions to manage Google Alytics
-	*
-	* @param object $event The event object
-	* @return null
-	* @access public
-	*/
-	public function add_permission($event)
-	{
-		$permissions = $event['permissions'];
-		$permissions['a_googleanalytics'] = array('lang' => 'ACL_A_GOOGLEANALYTICS', 'cat' => 'settings');
-		$event['permissions'] = $permissions;
 	}
 
 	/**
