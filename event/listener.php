@@ -82,7 +82,8 @@ class listener implements EventSubscriberInterface
 			// rebuild new config var array
 			$display_vars['vars'] = array_merge(
 				array_slice($display_vars['vars'], 0, $position),
-					$ga_display_vars, array_slice($display_vars['vars'], $position)
+				$ga_display_vars,
+				array_slice($display_vars['vars'], $position)
 			);
 
 			// update the display_vars event with the new array
