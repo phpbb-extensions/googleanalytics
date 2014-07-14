@@ -49,23 +49,6 @@ class listener implements EventSubscriberInterface
 	}
 
 	/**
-	* Load common board rules language files during user setup
-	*
-	* @param object $event The event object
-	* @return null
-	* @access public
-	*/
-	public function load_language_on_setup($event)
-	{
-		$lang_set_ext = $event['lang_set_ext'];
-		$lang_set_ext[] = array(
-			'ext_name' => 'phpbb/googleanalytics',
-			'lang_set' => 'googleanalytics_common',
-		);
-		$event['lang_set_ext'] = $lang_set_ext;
-	}
-
-	/**
 	* Add config vars to ACP Board Settings
 	*
 	* @param object $event The event object
