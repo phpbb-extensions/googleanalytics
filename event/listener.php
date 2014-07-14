@@ -60,9 +60,6 @@ class listener implements EventSubscriberInterface
 	*/
 	public function load_google_analytics($event)
 	{
-		$this->template->assign_vars(array(
-			'S_GOOGLE_ANALYTICS_ENABLE'	=> (!empty($this->config['googleanalytics'])) ? true : false,
-			'GOOGLE_ANALYTICS_ID'		=> $this->config['googleanalytics'],
-		));
+		$this->template->assign_var('GOOGLEANALYTICS_ID', $this->config['googleanalytics_id']);
 	}
 }
