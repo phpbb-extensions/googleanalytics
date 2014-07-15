@@ -47,7 +47,7 @@ class listener implements EventSubscriberInterface
 	static public function getSubscribedEvents()
 	{
 		return array(
-			'core.common'	=> 'load_google_analytics',
+			'core.page_header'	=> 'load_google_analytics',
 		);
 	}
 
