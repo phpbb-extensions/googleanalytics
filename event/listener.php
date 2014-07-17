@@ -80,7 +80,7 @@ class listener implements EventSubscriberInterface
 	public function add_googleanalytics_configs($event)
 	{
 		// Add a config to the settings mode, after override_user_style
-		if ($event['mode'] == 'settings' && isset($event['display_vars']['vars']['override_user_style'])) 
+		if ($event['mode'] == 'settings' && isset($event['display_vars']['vars']['override_user_style']))
 		{
 			// Store display_vars event in a local variable
 			$display_vars = $event['display_vars'];
