@@ -39,5 +39,6 @@ if (empty($lang) || !is_array($lang))
 
 $lang = array_merge($lang, array(
 	'ACP_GOOGLEANALYTICS_ID'			=> 'Google Analytics ID',
-	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Google Analytics tracking ID.',
+	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Enter your Google Analytics ID code, e.g.: UA-XXXXXXX-XX',
+	'GOOGLEANALYTICS_ID_INVALID'		=> '%s is not a valid Google Analytics tracking code',
 ));
