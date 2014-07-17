@@ -126,7 +126,7 @@ class listener implements EventSubscriberInterface
 	}
 
 	/**
-	* Insert Google Analytics ID into the template
+	* Load Google Analytics js code
 	*
 	* @param object $event The event object
 	* @return null
