@@ -23,18 +23,23 @@ class listener implements EventSubscriberInterface
 	/** @var \phpbb\template\template */
 	protected $template;
 
+	/** @var \phpbb\user */
+	protected $user;
+
 	/**
 	* Constructor
 	*
 	* @param \phpbb\config\config        $config             Config object
 	* @param \phpbb\template\template    $template           Template object
+	* @param \phpbb\user                 $user               User object
 	* @return \phpbb\boardrules\event\listener
 	* @access public
 	*/
-	public function __construct(\phpbb\config\config $config, \phpbb\template\template $template)
+	public function __construct(\phpbb\config\config $config, \phpbb\template\template $template, \phpbb\user $user)
 	{
 		$this->config = $config;
 		$this->template = $template;
+		$this->user = $user;
 	}
 
 	/**
