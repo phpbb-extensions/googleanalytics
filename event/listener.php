@@ -90,7 +90,7 @@ class listener implements EventSubscriberInterface
 				'googleanalytics_id' => array(
 					'lang' => 'ACP_GOOGLEANALYTICS_ID',
 					'validate' => 'googleanayltics_id',
-					'type' => 'text:40:255',
+					'type' => 'text:40:20',
 					'explain' => true,
 				),
 			);
