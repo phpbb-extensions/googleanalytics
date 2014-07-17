@@ -88,7 +88,7 @@ class listener implements EventSubscriberInterface
 			// Define the new config vars
 			$ga_config_vars = array(
 				'googleanalytics_id' => array(
-					'lang' => 'GOOGLEANALYTICS_ID',
+					'lang' => 'ACP_GOOGLEANALYTICS_ID',
 					'validate' => 'googleanayltics_id',
 					'type' => 'text:40:255',
 					'explain' => true,
@@ -131,7 +131,7 @@ class listener implements EventSubscriberInterface
 			// Add error message if the input is not a valid Google Analytics ID
 			if (!preg_match('/^ua-\d{4,9}-\d{1,4}$/i', strval($input)))
 			{
-				$error[] = $this->user->lang('GOOGLEANALYTICS_ID_INVALID', $input);
+				$error[] = $this->user->lang('ACP_GOOGLEANALYTICS_ID_INVALID', $input);
 			}
 
 			// Update error event data
