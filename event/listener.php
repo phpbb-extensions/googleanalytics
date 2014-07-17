@@ -86,7 +86,7 @@ class listener implements EventSubscriberInterface
 			$display_vars = $event['display_vars'];
 
 			// Define the new config vars
-			$my_config_vars = array(
+			$ga_config_vars = array(
 				'googleanalytics_id' => array(
 					'lang' => 'GOOGLEANALYTICS_ID',
 					'validate' => 'googleanayltics_id',
@@ -95,14 +95,14 @@ class listener implements EventSubscriberInterface
 				),
 			);
 
-			// Insert the config vars after...
+			// Insert the config vars after override_user_style
 			$insert_after = 'override_user_style';
 
 			// Rebuild new config var array
 			$position = array_search($insert_after, array_keys($display_vars['vars'])) + 1;
 			$display_vars['vars'] = array_merge(
 				array_slice($display_vars['vars'], 0, $position),
-				$my_config_vars,
+				$ga_config_vars,
 				array_slice($display_vars['vars'], $position)
 			);
 
