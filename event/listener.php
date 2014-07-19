@@ -89,7 +89,7 @@ class listener implements EventSubscriberInterface
 			$ga_config_vars = array(
 				'googleanalytics_id' => array(
 					'lang' => 'ACP_GOOGLEANALYTICS_ID',
-					'validate' => 'googleanayltics_id',
+					'validate' => 'googleanalytics_id',
 					'type' => 'text:40:20',
 					'explain' => true,
 				),
@@ -122,7 +122,7 @@ class listener implements EventSubscriberInterface
 	public function validate_googleanalytics_id($event)
 	{
 		// Check if the validate test is for google_analytics
-		if ($event['config_definition']['validate'] == 'googleanayltics_id')
+		if ($event['config_definition']['validate'] == 'googleanalytics_id')
 		{
 			// Store the error and input event data
 			$error = $event['error'];
