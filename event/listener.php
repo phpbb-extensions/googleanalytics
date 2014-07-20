@@ -124,13 +124,13 @@ class listener implements EventSubscriberInterface
 		$input = $event['cfg_array']['googleanalytics_id'];
 
 		// Check if the validate test is for google_analytics
-		if (($event['config_definition']['validate'] == 'googleanalytics_id') && ($input is !== ''))
+		if (($event['config_definition']['validate'] == 'googleanalytics_id') && ($input !== ''))
 		{
 			// Store the error and input event data
 			$error = $event['error'];
 
 			// Add error message if the input is not a valid Google Analytics ID
-			if (!preg_match('/^ua-\d{4,9}-\d{1,4}$/i', $input))
+			if (!preg_match('/^UA-\d{4,9}-\d{1,4}$/', $input))
 			{
 				$error[] = $this->user->lang('ACP_GOOGLEANALYTICS_ID_INVALID', $input);
 			}
