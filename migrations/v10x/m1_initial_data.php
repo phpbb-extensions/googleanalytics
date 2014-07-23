@@ -24,7 +24,6 @@ class m1_initial_data extends \phpbb\db\migration\migration
 	public function update_data()
 	{
 		return array(
-			// Add our config table settings
 			array('config.add', array('googleanalytics_id', '')),
 		);
 	}
