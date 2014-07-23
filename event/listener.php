@@ -52,8 +52,8 @@ class listener implements EventSubscriberInterface
 	static public function getSubscribedEvents()
 	{
 		return array(
-			'core.page_header'					=> 'load_google_analytics',
 			'core.acp_board_config_edit_add'	=> 'add_googleanalytics_configs',
+			'core.page_header'					=> 'load_google_analytics',
 			'core.validate_config_variable'		=> 'validate_googleanalytics_id',
 		);
 	}
