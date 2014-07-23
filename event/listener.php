@@ -79,6 +79,9 @@ class listener implements EventSubscriberInterface
 	*/
 	public function add_googleanalytics_configs($event)
 	{
+		// Load language file
+		$this->user->add_lang_ext('phpbb/googleanalytics', 'googleanalytics_acp');
+
 		// Add a config to the settings mode, after override_user_style
 		if ($event['mode'] == 'settings' && isset($event['display_vars']['vars']['override_user_style']))
 		{
