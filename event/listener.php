@@ -23,18 +23,23 @@ class listener implements EventSubscriberInterface
 	/** @var \phpbb\template\template */
 	protected $template;
 
+	/** @var \phpbb\user */
+	protected $user;
+
 	/**
 	* Constructor
 	*
 	* @param \phpbb\config\config        $config             Config object
 	* @param \phpbb\template\template    $template           Template object
-	* @return \phpbb\boardrules\event\listener
+	* @param \phpbb\user                 $user               User object
+	* @return \phpbb\googleanalytics\event\listener
 	* @access public
 	*/
-	public function __construct(\phpbb\config\config $config, \phpbb\template\template $template)
+	public function __construct(\phpbb\config\config $config, \phpbb\template\template $template, \phpbb\user $user)
 	{
 		$this->config = $config;
 		$this->template = $template;
+		$this->user = $user;
 	}
 
 	/**
@@ -47,7 +52,9 @@ class listener implements EventSubscriberInterface
 	static public function getSubscribedEvents()
 	{
 		return array(
-			'core.page_header'	=> 'load_google_analytics',
+			'core.acp_board_config_edit_add'	=> 'add_googleanalytics_configs',
+			'core.page_header'					=> 'load_google_analytics',
+			'core.validate_config_variable'		=> 'validate_googleanalytics_id',
 		);
 	}
 
@@ -61,5 +68,78 @@ class listener implements EventSubscriberInterface
 	public function load_google_analytics($event)
 	{
 		$this->template->assign_var('GOOGLEANALYTICS_ID', $this->config['googleanalytics_id']);
+	}
+
+	/**
+	* Add config vars to ACP Board Settings
+	*
+	* @param object $event The event object
+	* @return null
+	* @access public
+	*/
+	public function add_googleanalytics_configs($event)
+	{
+		// Load language file
+		$this->user->add_lang_ext('phpbb/googleanalytics', 'googleanalytics_acp');
+
+		// Add a config to the settings mode, after override_user_style
+		if ($event['mode'] == 'settings' && isset($event['display_vars']['vars']['override_user_style']))
+		{
+			// Store display_vars event in a local variable
+			$display_vars = $event['display_vars'];
+
+			// Define the new config vars
+			$ga_config_vars = array(
+				'googleanalytics_id' => array(
+					'lang' => 'ACP_GOOGLEANALYTICS_ID',
+					'validate' => 'googleanalytics_id',
+					'type' => 'text:40:20',
+					'explain' => true,
+				),
+			);
+
+			// Insert the config vars after override_user_style
+			$insert_after = 'override_user_style';
+
+			// Rebuild new config var array
+			$position = array_search($insert_after, array_keys($display_vars['vars'])) + 1;
+			$display_vars['vars'] = array_merge(
+				array_slice($display_vars['vars'], 0, $position),
+				$ga_config_vars,
+				array_slice($display_vars['vars'], $position)
+			);
+
+			// Update the display_vars event with the new array
+			$event['display_vars'] = $display_vars;
+		}
+	}
+
+
+	/**
+	* Validate the Google Analytics ID
+	*
+	* @param object $event The event object
+	* @return null
+	* @access public
+	*/
+	public function validate_googleanalytics_id($event)
+	{
+		$input = $event['cfg_array']['googleanalytics_id'];
+
+		// Check if the validate test is for google_analytics
+		if (($event['config_definition']['validate'] == 'googleanalytics_id') && ($input !== ''))
+		{
+			// Store the error and input event data
+			$error = $event['error'];
+
+			// Add error message if the input is not a valid Google Analytics ID
+			if (!preg_match('/^UA-\d{4,9}-\d{1,4}$/', $input))
+			{
+				$error[] = $this->user->lang('ACP_GOOGLEANALYTICS_ID_INVALID', $input);
+			}
+
+			// Update error event data
+			$event['error'] = $error;
+		}
 	}
 }
