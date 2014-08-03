@@ -47,14 +47,14 @@ class google_analytics_test extends \phpbb_functional_test_case
 
 		// Test that GA settings field is found in the correct position (after OVERRIDE_STYLE)
 		$nodes = $crawler->filter('#acp_board > fieldset > dl > dt > label')->extract(array('_text'));
-		foreach ($nodes as $config_name)
+		foreach ($nodes as $key => $config_name)
 		{
 			if (strpos($config_name, $this->lang('OVERRIDE_STYLE')) !== 0)
 			{
 				continue;
 			}
 
-			$this->assertContainsLang('ACP_GOOGLEANALYTICS_ID', current($nodes));
+			$this->assertContainsLang('ACP_GOOGLEANALYTICS_ID', $nodes[$key + 1]);
 		}
 
 		// Set GA form values
