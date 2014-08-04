@@ -42,6 +42,8 @@ class google_analytics_test extends \phpbb_functional_test_case
 		$this->add_lang('acp/board');
 		$this->add_lang_ext('phpbb/googleanalytics', 'googleanalytics_acp');
 
+		$found = false;
+
 		// Load ACP board settings page
 		$crawler = self::request('GET', 'adm/index.php?i=acp_board&mode=settings&sid=' . $this->sid);
 
@@ -54,7 +56,15 @@ class google_analytics_test extends \phpbb_functional_test_case
 				continue;
 			}
 
+			$found = true;
+
 			$this->assertContainsLang('ACP_GOOGLEANALYTICS_ID', $nodes[$key + 1]);
+		}
+
+		// If GA settings not found where expected, test if they exist on page at all
+		if (!$found)
+		{
+			$this->assertContainsLang('ACP_GOOGLEANALYTICS_ID', $crawler->text());
 		}
 
 		// Set GA form values
