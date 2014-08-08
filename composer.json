@@ -9,7 +9,6 @@
 	"authors": [
 		{
 			"name": "Nathan Guse",
-			"username": "EXreaction",
 			"email": "nathaniel.guse@gmail.com",
 			"role": "Extensions Development Team Lead"
 		},
@@ -21,20 +20,17 @@
 		},
 		{
 			"name": "Marc Alexander",
-			"username": "Marc",
 			"email": "admin@m-a-styles.de",
 			"homepage": "http://www.m-a-styles.de",
 			"role": "Extensions Team Consultant"
 		},
 		{
 			"name": "Matt Friedman",
-			"username": "VSE",
 			"homepage": "http://mattfriedman.me",
 			"role": "Extensions Development Team"
 		},
 		{
 			"name": "Lukasz Kaczynski",
-			"username": "Pico88",
 			"role": "Extensions Development Team"
 		}
 	],
