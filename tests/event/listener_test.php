@@ -10,6 +10,8 @@
 
 namespace phpbb\googleanalytics\tests\event;
 
+require_once dirname(__FILE__) . '/../../../../../includes/functions_acp.php';
+
 class event_listener_test extends \phpbb_test_case
 {
 	/** @var \phpbb\googleanalytics\event\listener */
