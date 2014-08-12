@@ -98,16 +98,9 @@ class listener implements EventSubscriberInterface
 				),
 			);
 
-			// Insert the config vars after override_user_style
-			$insert_after = 'override_user_style';
-
-			// Rebuild new config var array
-			$position = array_search($insert_after, array_keys($display_vars['vars'])) + 1;
-			$display_vars['vars'] = array_merge(
-				array_slice($display_vars['vars'], 0, $position),
-				$ga_config_vars,
-				array_slice($display_vars['vars'], $position)
-			);
+			// Add the new config vars after override_user_style in the display_vars config array
+			$insert_after = array('after' => 'override_user_style');
+			$display_vars['vars'] = phpbb_insert_config_array($display_vars['vars'], $ga_config_vars, $insert_after);
 
 			// Update the display_vars event with the new array
 			$event['display_vars'] = $display_vars;
