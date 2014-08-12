@@ -24,10 +24,11 @@ class event_listener_test extends \phpbb_test_case
 	{
 		parent::setUp();
 
-		global $phpbb_dispatcher;
+		global $phpbb_dispatcher, $phpbb_extension_manager, $phpbb_root_path;
 
 		// Mock some global classes that may be called during code execution
 		$phpbb_dispatcher = new \phpbb_mock_event_dispatcher();
+		$phpbb_extension_manager = new \phpbb_mock_extension_manager($phpbb_root_path);
 
 		// Load/Mock classes required by the event listener class
 		$this->config = new \phpbb\config\config(array('googleanalytics_id' => 'UA-000000-01'));
@@ -68,8 +69,8 @@ class event_listener_test extends \phpbb_test_case
 	public function test_getSubscribedEvents()
 	{
 		$this->assertEquals(array(
-			'core.page_header',
 			'core.acp_board_config_edit_add',
+			'core.page_header',
 			'core.validate_config_variable',
 		), array_keys(\phpbb\googleanalytics\event\listener::getSubscribedEvents()));
 	}
@@ -90,6 +91,67 @@ class event_listener_test extends \phpbb_test_case
 		$this->assertEquals(array(
 			'GOOGLEANALYTICS_ID'	=> $this->config['googleanalytics_id'],
 		), $this->template->get_template_vars());
+	}
+
+	/**
+	* Data set for test_add_googleanalytics_configs
+	*
+	* @return array Array of test data
+	* @access public
+	*/
+	public function add_googleanalytics_configs_data()
+	{
+		return array(
+			array( // expected config and mode
+				'settings',
+				array('vars' => array('override_user_style' => array())),
+				array('override_user_style', 'googleanalytics_id'),
+			),
+			array( // unexpected mode
+				'foobar',
+				array('vars' => array('override_user_style' => array())),
+				array('override_user_style'),
+			),
+			array( // unexpected config
+				'settings',
+				array('vars' => array('foobar' => array())),
+				array('foobar'),
+			),
+			array( // unexpected config and mode
+				'foobar',
+				array('vars' => array('foobar' => array())),
+				array('foobar'),
+			),
+		);
+	}
+
+	/**
+	* Test the add_googleanalytics_configs event
+	*
+	* @dataProvider add_googleanalytics_configs_data
+	* @access public
+	*/
+	public function test_add_googleanalytics_configs($mode, $display_vars, $expected_keys)
+	{
+		$this->set_listener();
+
+		$dispatcher = new \Symfony\Component\EventDispatcher\EventDispatcher();
+		$dispatcher->addListener('core.acp_board_config_edit_add', array($this->listener, 'add_googleanalytics_configs'));
+
+		$event_data = array('display_vars', 'mode');
+		$event = new \phpbb\event\data(compact($event_data));
+		$dispatcher->dispatch('core.acp_board_config_edit_add', $event);
+
+		$event_data_after = $event->get_data_filtered($event_data);
+		foreach ($event_data as $expected)
+		{
+			$this->assertArrayHasKey($expected, $event_data_after);
+		}
+		extract($event_data_after);
+
+		$keys = array_keys($display_vars['vars']);
+
+		$this->assertEquals($expected_keys, $keys);
 	}
 
 	/**
@@ -163,66 +225,5 @@ class event_listener_test extends \phpbb_test_case
 		extract($event_data_after);
 
 		$this->assertEquals($expected_error, $error);
-	}
-
-	/**
-	* Data set for test_add_googleanalytics_configs
-	*
-	* @return array Array of test data
-	* @access public
-	*/
-	public function add_googleanalytics_configs_data()
-	{
-		return array(
-			array( // expected config and mode
-				'settings',
-				array('vars' => array('override_user_style' => array())),
-				array('override_user_style', 'googleanalytics_id'),
-			),
-			array( // unexpected mode
-				'foobar',
-				array('vars' => array('override_user_style' => array())),
-				array('override_user_style'),
-			),
-			array( // unexpected config
-				'settings',
-				array('vars' => array('foobar' => array())),
-				array('foobar'),
-			),
-			array( // unexpected config and mode
-				'foobar',
-				array('vars' => array('foobar' => array())),
-				array('foobar'),
-			),
-		);
-	}
-
-	/**
-	* Test the add_googleanalytics_configs event
-	*
-	* @dataProvider add_googleanalytics_configs_data
-	* @access public
-	*/
-	public function test_add_googleanalytics_configs($mode, $display_vars, $expected_keys)
-	{
-		$this->set_listener();
-
-		$dispatcher = new \Symfony\Component\EventDispatcher\EventDispatcher();
-		$dispatcher->addListener('core.acp_board_config_edit_add', array($this->listener, 'add_googleanalytics_configs'));
-
-		$event_data = array('display_vars', 'mode');
-		$event = new \phpbb\event\data(compact($event_data));
-		$dispatcher->dispatch('core.acp_board_config_edit_add', $event);
-
-		$event_data_after = $event->get_data_filtered($event_data);
-		foreach ($event_data as $expected)
-		{
-			$this->assertArrayHasKey($expected, $event_data_after);
-		}
-		extract($event_data_after);
-
-		$keys = array_keys($display_vars['vars']);
-
-		$this->assertEquals($expected_keys, $keys);
 	}
 }
