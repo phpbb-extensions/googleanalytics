@@ -82,8 +82,8 @@ class listener implements EventSubscriberInterface
 		// Load language file
 		$this->user->add_lang_ext('phpbb/googleanalytics', 'googleanalytics_acp');
 
-		// Add a config to the settings mode, after override_user_style
-		if ($event['mode'] == 'settings' && isset($event['display_vars']['vars']['override_user_style']))
+		// Add a config to the settings mode, after board_timezone
+		if ($event['mode'] == 'settings' && isset($event['display_vars']['vars']['board_timezone']))
 		{
 			// Store display_vars event in a local variable
 			$display_vars = $event['display_vars'];
@@ -98,8 +98,8 @@ class listener implements EventSubscriberInterface
 				),
 			);
 
-			// Add the new config vars after override_user_style in the display_vars config array
-			$insert_after = array('after' => 'override_user_style');
+			// Add the new config vars after board_timezone in the display_vars config array
+			$insert_after = array('after' => 'board_timezone');
 			$display_vars['vars'] = phpbb_insert_config_array($display_vars['vars'], $ga_config_vars, $insert_after);
 
 			// Update the display_vars event with the new array

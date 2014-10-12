@@ -106,13 +106,13 @@ class event_listener_test extends \phpbb_test_case
 		return array(
 			array( // expected config and mode
 				'settings',
-				array('vars' => array('override_user_style' => array())),
-				array('override_user_style', 'googleanalytics_id'),
+				array('vars' => array('board_timezone' => array())),
+				array('board_timezone', 'googleanalytics_id'),
 			),
 			array( // unexpected mode
 				'foobar',
-				array('vars' => array('override_user_style' => array())),
-				array('override_user_style'),
+				array('vars' => array('board_timezone' => array())),
+				array('board_timezone'),
 			),
 			array( // unexpected config
 				'settings',

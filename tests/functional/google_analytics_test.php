@@ -47,11 +47,11 @@ class google_analytics_test extends \phpbb_functional_test_case
 		// Load ACP board settings page
 		$crawler = self::request('GET', 'adm/index.php?i=acp_board&mode=settings&sid=' . $this->sid);
 
-		// Test that GA settings field is found in the correct position (after OVERRIDE_STYLE)
+		// Test that GA settings field is found in the correct position (after SYSTEM_TIMEZONE)
 		$nodes = $crawler->filter('#acp_board > fieldset > dl > dt > label')->extract(array('_text'));
 		foreach ($nodes as $key => $config_name)
 		{
-			if (strpos($config_name, $this->lang('OVERRIDE_STYLE')) !== 0)
+			if (strpos($config_name, $this->lang('SYSTEM_TIMEZONE')) !== 0)
 			{
 				continue;
 			}
