@@ -1,16 +1,17 @@
 {
 	"name": "phpbb/googleanalytics",
 	"type": "phpbb-extension",
-	"description": "An extension which adds Google Analytics to your phpBB forum",
+	"description": "An extension that allows administrators to easily add their Google Analytics tracking code to their phpBB forum.",
 	"homepage": "https://phpbb.com",
-	"version": "1.0.0-b1",
+	"version": "1.0.0",
 	"keywords": ["phpbb", "extension", "google", "analytics"],
 	"license": "GPL-2.0",
 	"authors": [
 		{
-			"name": "Nathan Guse",
-			"email": "nathaniel.guse@gmail.com",
-			"role": "Extensions Development Team Lead"
+			"name": "Marc Alexander",
+			"email": "admin@m-a-styles.de",
+			"homepage": "http://www.m-a-styles.de",
+			"role": "Extensions Team Consultant"
 		},
 		{
 			"name": "Michael Cullum",
@@ -19,15 +20,14 @@
 			"role": "Extensions Team Consultant"
 		},
 		{
-			"name": "Marc Alexander",
-			"email": "admin@m-a-styles.de",
-			"homepage": "http://www.m-a-styles.de",
-			"role": "Extensions Team Consultant"
-		},
-		{
 			"name": "Matt Friedman",
 			"homepage": "http://mattfriedman.me",
-			"role": "Extensions Development Team"
+			"role": "Extensions Development Team Lead"
+		},
+		{
+			"name": "Nathan Guse",
+			"email": "nathaniel.guse@gmail.com",
+			"role": "Former Extensions Development Team Lead"
 		},
 		{
 			"name": "Lukasz Kaczynski",
