@@ -14,7 +14,7 @@ You can install this on the latest release of phpBB 3.1 by following the steps b
 4. Copy the `googleanalytics` directory to `phpBB/ext/phpbb/` (if done correctly, you'll have the main composer JSON file at (your forum root)/ext/phpbb/googleanalytics/composer.json).
 5. Navigate in the ACP to `Customise -> Manage extensions`.
 6. Look for `Google Analytics` under the Disabled Extensions list, and click its `Enable` link.
-7. Set up and configure Board Rules by navigating in the ACP to `Extensions` -> `Google Analytics`.
+7. Set up and configure Google Analytics by navigating in the ACP to `General` -> `Board Configuration` -> `Board Settings`.
 
 ## Uninstall
 
