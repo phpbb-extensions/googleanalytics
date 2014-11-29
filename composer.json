@@ -3,7 +3,7 @@
 	"type": "phpbb-extension",
 	"description": "An extension that allows administrators to easily add their Google Analytics tracking code to their phpBB forum.",
 	"homepage": "https://phpbb.com",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"keywords": ["phpbb", "extension", "google", "analytics"],
 	"license": "GPL-2.0",
 	"authors": [
