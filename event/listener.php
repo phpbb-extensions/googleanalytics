@@ -61,11 +61,10 @@ class listener implements EventSubscriberInterface
 	/**
 	* Load Google Analytics js code
 	*
-	* @param object $event The event object
 	* @return null
 	* @access public
 	*/
-	public function load_google_analytics($event)
+	public function load_google_analytics()
 	{
 		$this->template->assign_var('GOOGLEANALYTICS_ID', $this->config['googleanalytics_id']);
 	}
