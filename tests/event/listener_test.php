@@ -19,8 +19,6 @@ class event_listener_test extends \phpbb_test_case
 
 	/**
 	* Setup test environment
-	*
-	* @access public
 	*/
 	public function setUp()
 	{
@@ -40,8 +38,6 @@ class event_listener_test extends \phpbb_test_case
 
 	/**
 	* Create our event listener
-	*
-	* @access protected
 	*/
 	protected function set_listener()
 	{
@@ -54,8 +50,6 @@ class event_listener_test extends \phpbb_test_case
 
 	/**
 	* Test the event listener is constructed correctly
-	*
-	* @access public
 	*/
 	public function test_construct()
 	{
@@ -65,8 +59,6 @@ class event_listener_test extends \phpbb_test_case
 
 	/**
 	* Test the event listener is subscribing events
-	*
-	* @access public
 	*/
 	public function test_getSubscribedEvents()
 	{
@@ -79,8 +71,6 @@ class event_listener_test extends \phpbb_test_case
 
 	/**
 	* Test the load_google_analytics event
-	*
-	* @access public
 	*/
 	public function test_load_google_analytics()
 	{
@@ -99,7 +89,6 @@ class event_listener_test extends \phpbb_test_case
 	* Data set for test_add_googleanalytics_configs
 	*
 	* @return array Array of test data
-	* @access public
 	*/
 	public function add_googleanalytics_configs_data()
 	{
@@ -131,7 +120,6 @@ class event_listener_test extends \phpbb_test_case
 	* Test the add_googleanalytics_configs event
 	*
 	* @dataProvider add_googleanalytics_configs_data
-	* @access public
 	*/
 	public function test_add_googleanalytics_configs($mode, $display_vars, $expected_keys)
 	{
@@ -160,7 +148,6 @@ class event_listener_test extends \phpbb_test_case
 	* Data set for test_validate_googleanalytics_id
 	*
 	* @return array Array of test data
-	* @access public
 	*/
 	public function validate_googleanalytics_id_data()
 	{
@@ -202,7 +189,6 @@ class event_listener_test extends \phpbb_test_case
 	* Test the validate_googleanalytics_id event
 	*
 	* @dataProvider validate_googleanalytics_id_data
-	* @access public
 	*/
 	public function test_validate_googleanalytics_id($cfg_array, $expected_error)
 	{
