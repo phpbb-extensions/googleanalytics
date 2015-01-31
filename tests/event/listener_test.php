@@ -17,6 +17,10 @@ class event_listener_test extends \phpbb_test_case
 	/** @var \phpbb\googleanalytics\event\listener */
 	protected $listener;
 
+	protected $config;
+	protected $template;
+	protected $user;
+
 	/**
 	* Setup test environment
 	*/
@@ -32,7 +36,8 @@ class event_listener_test extends \phpbb_test_case
 
 		// Load/Mock classes required by the event listener class
 		$this->config = new \phpbb\config\config(array('googleanalytics_id' => 'UA-000000-01'));
-		$this->template = new \phpbb\googleanalytics\tests\mock\template();
+		$this->template = $this->getMockBuilder('\phpbb\template\template')
+			->getMock();
 		$this->user = new \phpbb\user('\phpbb\datetime');
 	}
 
@@ -76,13 +81,13 @@ class event_listener_test extends \phpbb_test_case
 	{
 		$this->set_listener();
 
+		$this->template->expects($this->once())
+			->method('assign_var')
+			->with('GOOGLEANALYTICS_ID', $this->config['googleanalytics_id']);
+
 		$dispatcher = new \Symfony\Component\EventDispatcher\EventDispatcher();
 		$dispatcher->addListener('core.page_header', array($this->listener, 'load_google_analytics'));
 		$dispatcher->dispatch('core.page_header');
-
-		$this->assertEquals(array(
-			'GOOGLEANALYTICS_ID'	=> $this->config['googleanalytics_id'],
-		), $this->template->get_template_vars());
 	}
 
 	/**
