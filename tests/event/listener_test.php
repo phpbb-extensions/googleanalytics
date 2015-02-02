@@ -17,10 +17,12 @@ class event_listener_test extends \phpbb_test_case
 	/** @var \phpbb\googleanalytics\event\listener */
 	protected $listener;
 
+	protected $config;
+	protected $template;
+	protected $user;
+
 	/**
 	* Setup test environment
-	*
-	* @access public
 	*/
 	public function setUp()
 	{
@@ -34,14 +36,13 @@ class event_listener_test extends \phpbb_test_case
 
 		// Load/Mock classes required by the event listener class
 		$this->config = new \phpbb\config\config(array('googleanalytics_id' => 'UA-000000-01'));
-		$this->template = new \phpbb\googleanalytics\tests\mock\template();
+		$this->template = $this->getMockBuilder('\phpbb\template\template')
+			->getMock();
 		$this->user = new \phpbb\user('\phpbb\datetime');
 	}
 
 	/**
 	* Create our event listener
-	*
-	* @access protected
 	*/
 	protected function set_listener()
 	{
@@ -54,8 +55,6 @@ class event_listener_test extends \phpbb_test_case
 
 	/**
 	* Test the event listener is constructed correctly
-	*
-	* @access public
 	*/
 	public function test_construct()
 	{
@@ -65,8 +64,6 @@ class event_listener_test extends \phpbb_test_case
 
 	/**
 	* Test the event listener is subscribing events
-	*
-	* @access public
 	*/
 	public function test_getSubscribedEvents()
 	{
@@ -79,27 +76,24 @@ class event_listener_test extends \phpbb_test_case
 
 	/**
 	* Test the load_google_analytics event
-	*
-	* @access public
 	*/
 	public function test_load_google_analytics()
 	{
 		$this->set_listener();
 
+		$this->template->expects($this->once())
+			->method('assign_var')
+			->with('GOOGLEANALYTICS_ID', $this->config['googleanalytics_id']);
+
 		$dispatcher = new \Symfony\Component\EventDispatcher\EventDispatcher();
 		$dispatcher->addListener('core.page_header', array($this->listener, 'load_google_analytics'));
 		$dispatcher->dispatch('core.page_header');
-
-		$this->assertEquals(array(
-			'GOOGLEANALYTICS_ID'	=> $this->config['googleanalytics_id'],
-		), $this->template->get_template_vars());
 	}
 
 	/**
 	* Data set for test_add_googleanalytics_configs
 	*
 	* @return array Array of test data
-	* @access public
 	*/
 	public function add_googleanalytics_configs_data()
 	{
@@ -131,7 +125,6 @@ class event_listener_test extends \phpbb_test_case
 	* Test the add_googleanalytics_configs event
 	*
 	* @dataProvider add_googleanalytics_configs_data
-	* @access public
 	*/
 	public function test_add_googleanalytics_configs($mode, $display_vars, $expected_keys)
 	{
@@ -160,7 +153,6 @@ class event_listener_test extends \phpbb_test_case
 	* Data set for test_validate_googleanalytics_id
 	*
 	* @return array Array of test data
-	* @access public
 	*/
 	public function validate_googleanalytics_id_data()
 	{
@@ -202,7 +194,6 @@ class event_listener_test extends \phpbb_test_case
 	* Test the validate_googleanalytics_id event
 	*
 	* @dataProvider validate_googleanalytics_id_data
-	* @access public
 	*/
 	public function test_validate_googleanalytics_id($cfg_array, $expected_error)
 	{

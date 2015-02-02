@@ -21,7 +21,6 @@ class google_analytics_test extends \phpbb_functional_test_case
 	* Define the extensions to be tested
 	*
 	* @return array vendor/name of extension(s) to test
-	* @access static
 	*/
 	static protected function setup_extensions()
 	{
@@ -30,8 +29,6 @@ class google_analytics_test extends \phpbb_functional_test_case
 
 	/**
 	* Test Google Analytics ACP page and save settings
-	*
-	* @access public
 	*/
 	public function test_set_acp_settings()
 	{
@@ -80,8 +77,6 @@ class google_analytics_test extends \phpbb_functional_test_case
 
 	/**
 	* Test Google Analytics code appears as expected
-	*
-	* @access public
 	*/
 	public function test_google_analytics_code()
 	{
