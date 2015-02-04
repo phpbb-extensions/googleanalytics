@@ -16,6 +16,18 @@ namespace phpbb\googleanalytics\migrations\v10x;
 class m1_initial_data extends \phpbb\db\migration\migration
 {
 	/**
+	* Assign migration file dependencies for this migration
+	*
+	* @return array Array of migration files
+	* @static
+	* @access public
+	*/
+	static public function depends_on()
+	{
+		return array('\phpbb\db\migration\data\v310\gold');
+	}
+
+	/**
 	* Add Google Analytics data to the database.
 	*
 	* @return array Array of table data
