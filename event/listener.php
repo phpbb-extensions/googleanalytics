@@ -105,7 +105,6 @@ class listener implements EventSubscriberInterface
 		}
 	}
 
-
 	/**
 	* Validate the Google Analytics ID
 	*
