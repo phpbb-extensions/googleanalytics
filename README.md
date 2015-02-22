@@ -4,7 +4,6 @@ An extension for phpBB 3.1 that allows administrators to easily add their Google
 
 [![Build Status](https://travis-ci.org/phpbb-extensions/googleanalytics.png)](https://travis-ci.org/phpbb-extensions/googleanalytics)
 
-
 ## Quick Install
 You can install this on the latest release of phpBB 3.1 by following the steps below:
 
