@@ -41,5 +41,5 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, array(
 	'ACP_GOOGLEANALYTICS_ID'			=> 'Votre ID Google Analytics',
 	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Saisir votre code ID Google Analytics, i.e.: <samp>UA-0000000-00</samp>.',
-	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '“%s” n’est pas un code ID Google Analytics valide.<br />Il doit être au format “UA-0000000-00”.',
+	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '« %s » n’est pas un code ID Google Analytics valide.<br />Il doit être au format « UA-0000000-00 ».',
 ));
