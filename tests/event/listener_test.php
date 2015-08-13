@@ -17,8 +17,13 @@ class event_listener_test extends \phpbb_test_case
 	/** @var \phpbb\googleanalytics\event\listener */
 	protected $listener;
 
+	/** @var \phpbb\config\config */
 	protected $config;
+
+	/** @var \PHPUnit_Framework_MockObject_MockObject|\phpbb\template\template */
 	protected $template;
+
+	/** @var \phpbb\user */
 	protected $user;
 
 	/**
