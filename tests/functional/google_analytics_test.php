@@ -15,6 +15,7 @@ namespace phpbb\googleanalytics\tests\functional;
 */
 class google_analytics_test extends \phpbb_functional_test_case
 {
+	/** @var string */
 	protected $sample_ga_code = 'UA-000000-00';
 
 	/**
