@@ -2,7 +2,7 @@
 /**
 *
 * Google Analytics extension for the phpBB Forum Software package.
-* French translation by PayBas (www.html-edition.com)
+* French translation by HTML-Edition (http://www.html-edition.com)
 *
 * @copyright (c) 2014 phpBB Limited <https://www.phpbb.com>
 * @license GNU General Public License, version 2 (GPL-2.0)
@@ -39,7 +39,7 @@ if (empty($lang) || !is_array($lang))
 //
 
 $lang = array_merge($lang, array(
-	'ACP_GOOGLEANALYTICS_ID'			=> 'Votre ID Google Analytics',
-	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Saisir votre code ID Google Analytics, i.e.: <samp>UA-0000000-00</samp>.',
-	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '« %s » n’est pas un code ID Google Analytics valide.<br />Il doit être au format « UA-0000000-00 ».',
+	'ACP_GOOGLEANALYTICS_ID'			=> 'ID Google Analytics',
+	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Saisir son ID Google Analytics, tel que : <samp>UA-0000000-00</samp>.',
+	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '« %s » n’est pas un ID Google Analytics valide.<br />Ce doit être au format « UA-0000000-00 ».',
 ));
