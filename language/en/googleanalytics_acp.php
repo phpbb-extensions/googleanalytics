@@ -38,7 +38,9 @@ if (empty($lang) || !is_array($lang))
 //
 
 $lang = array_merge($lang, array(
-	'ACP_GOOGLEANALYTICS_ID'			=> 'Google Analytics ID',
-	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Enter your Google Analytics ID code, e.g.: <samp>UA-0000000-00</samp>.',
-	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '“%s” is not a valid Google Analytics ID code.<br />It should be in the form “UA-0000000-00”.',
+	'ACP_GOOGLEANALYTICS_ID'					=> 'Google Analytics ID',
+	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'			=> 'Enter your Google Analytics ID code, e.g.: <samp>UA-0000000-00</samp>.',
+	'ACP_GOOGLEANALYTICS_ID_INVALID'			=> '“%s” is not a valid Google Analytics ID code.<br />It should be in the form “UA-0000000-00”.',
+	'ACP_GOOGLEANALYTICS_TRACK_USER_ID'			=> 'Track user id',
+	'ACP_GOOGLEANALYTICS_TRACK_USER_ID_EXPLAIN'	=> 'If enabled, Google Analytics will track the unique userId value for each authenticated user.',
 ));
