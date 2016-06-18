@@ -85,7 +85,7 @@ class listener implements EventSubscriberInterface
 		$this->user->add_lang_ext('phpbb/googleanalytics', 'googleanalytics_acp');
 
 		// Add a config to the settings mode, after board_timezone
-		if ($event['mode'] == 'settings' && isset($event['display_vars']['vars']['board_timezone']))
+		if ($event['mode'] === 'settings' && isset($event['display_vars']['vars']['board_timezone']))
 		{
 			// Store display_vars event in a local variable
 			$display_vars = $event['display_vars'];
@@ -127,7 +127,7 @@ class listener implements EventSubscriberInterface
 		$input = $event['cfg_array']['googleanalytics_id'];
 
 		// Check if the validate test is for google_analytics
-		if (($event['config_definition']['validate'] == 'googleanalytics_id') && ($input !== ''))
+		if ($input !== '' && $event['config_definition']['validate'] === 'googleanalytics_id')
 		{
 			// Store the error and input event data
 			$error = $event['error'];
