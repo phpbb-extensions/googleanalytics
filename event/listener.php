@@ -71,7 +71,7 @@ class listener implements EventSubscriberInterface
 	/**
 	* Add config vars to ACP Board Settings
 	*
-	* @param object $event The event object
+	* @param \phpbb\event\data $event The event object
 	* @return null
 	* @access public
 	*/
@@ -108,7 +108,7 @@ class listener implements EventSubscriberInterface
 	/**
 	* Validate the Google Analytics ID
 	*
-	* @param object $event The event object
+	* @param \phpbb\event\data $event The event object
 	* @return null
 	* @access public
 	*/
