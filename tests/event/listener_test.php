@@ -106,7 +106,7 @@ class event_listener_test extends \phpbb_test_case
 			array( // expected config and mode
 				'settings',
 				array('vars' => array('board_timezone' => array())),
-				array('board_timezone', 'googleanalytics_id'),
+				array('board_timezone', 'googleanalytics_id', 'googleanalytics_track_user_id'),
 			),
 			array( // unexpected mode
 				'foobar',
