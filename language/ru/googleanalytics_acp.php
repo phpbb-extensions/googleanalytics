@@ -39,8 +39,8 @@ if (empty($lang) || !is_array($lang))
 
 $lang = array_merge($lang, array(
 	'ACP_GOOGLEANALYTICS_ID'					=> 'Google Analytics ID',
-	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'			=> 'Enter your Google Analytics ID code, e.g.: <samp>UA-0000000-00</samp>.',
-	'ACP_GOOGLEANALYTICS_ID_INVALID'			=> '“%s” is not a valid Google Analytics ID code.<br />It should be in the form “UA-0000000-00”.',
-	'ACP_GOOGLEANALYTICS_TRACK_USER_ID'			=> 'Track user id',
-	'ACP_GOOGLEANALYTICS_TRACK_USER_ID_EXPLAIN'	=> 'If enabled, Google Analytics will track the unique userId value for each authenticated user. This functionality must be enabled and set up according to <a href="https://support.google.com/analytics/answer/3123666">this article</a>.',
+	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'			=> 'Введите ваш идентификатор Google Analytics, например: <samp>UA-0000000-00</samp>.',
+	'ACP_GOOGLEANALYTICS_ID_INVALID'			=> '“%s” не является корректным идентификатором Google Analytics.<br />Он должен быть в формате “UA-0000000-00”.',
+	'ACP_GOOGLEANALYTICS_TRACK_USER_ID'			=> 'Отслеживать ID пользователя',
+	'ACP_GOOGLEANALYTICS_TRACK_USER_ID_EXPLAIN'	=> 'Если включено, Google Analytics будет отслеживать уникальное значение userId для каждого аутентифицированного пользователя. Данная функциональность должна быть включена и настроена согласно <a href="https://support.google.com/analytics/answer/3123666">этой статье</a>.',
 ));

@@ -65,11 +65,11 @@ class listener implements EventSubscriberInterface
 	*/
 	public function load_google_analytics()
 	{
-		$this->template->assign_var('GOOGLEANALYTICS_ID', $this->config['googleanalytics_id']);
-		if ($this->config['googleanalytics_track_user_id'] && $this->user->data['is_registered'])
-		{
-			$this->template->assign_var('GOOGLEANALYTICS_USER_ID', "ga('set', 'userId', {$this->user->data['user_id']});");
-		}
+		$this->template->assign_vars(array(
+			'GOOGLEANALYTICS_ID' => $this->config['googleanalytics_id'],
+			'GOOGLEANALYTICS_USER_ID' => $this->user->data['user_id'],
+			'S_GOOGLEANALYTICS_USER_ID' => ($this->config['googleanalytics_track_user_id'] && $this->user->data['is_registered']),
+		));
 	}
 
 	/**
