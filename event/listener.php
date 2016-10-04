@@ -60,7 +60,7 @@ class listener implements EventSubscriberInterface
 	/**
 	* Load Google Analytics js code
 	*
-	* @return null
+	* @return void
 	* @access public
 	*/
 	public function load_google_analytics()
@@ -76,7 +76,7 @@ class listener implements EventSubscriberInterface
 	* Add config vars to ACP Board Settings
 	*
 	* @param \phpbb\event\data $event The event object
-	* @return null
+	* @return void
 	* @access public
 	*/
 	public function add_googleanalytics_configs($event)
@@ -119,7 +119,7 @@ class listener implements EventSubscriberInterface
 	* Validate the Google Analytics ID
 	*
 	* @param \phpbb\event\data $event The event object
-	* @return null
+	* @return void
 	* @access public
 	*/
 	public function validate_googleanalytics_id($event)
