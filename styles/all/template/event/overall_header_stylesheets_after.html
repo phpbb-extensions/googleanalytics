@@ -6,6 +6,9 @@
 	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
 	ga('create', '{GOOGLEANALYTICS_ID}', 'auto');
+	<!-- IF S_GOOGLEANALYTICS_USER_ID -->
+	ga('set', 'userId', {GOOGLEANALYTICS_USER_ID});
+	<!-- ENDIF -->
 	<!-- EVENT phpbb_googleanalytics_alter_ga_requirements -->
 	ga('send', 'pageview');
 </script>
