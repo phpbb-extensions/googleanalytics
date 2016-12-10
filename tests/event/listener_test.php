@@ -40,14 +40,9 @@ class event_listener_test extends \phpbb_test_case
 		$phpbb_extension_manager = new \phpbb_mock_extension_manager($phpbb_root_path);
 
 		// Load/Mock classes required by the event listener class
-		$this->config = new \phpbb\config\config(array(
-			'googleanalytics_id' => 'UA-000000-01',
-			'googleanalytics_track_user_id' => 1,
-		));
-
+		$this->config = new \phpbb\config\config(array('googleanalytics_id' => 'UA-000000-01'));
 		$this->template = $this->getMockBuilder('\phpbb\template\template')
 			->getMock();
-
 		$this->user = new \phpbb\user('\phpbb\datetime');
 		$this->user->data['user_id'] = 2;
 		$this->user->data['is_registered'] = true;
@@ -117,7 +112,7 @@ class event_listener_test extends \phpbb_test_case
 			array( // expected config and mode
 				'settings',
 				array('vars' => array('warnings_expire_days' => array())),
-				array('warnings_expire_days', 'legend_googleanalytics', 'googleanalytics_id', 'googleanalytics_track_user_id'),
+				array('warnings_expire_days', 'legend_googleanalytics', 'googleanalytics_id'),
 			),
 			array( // unexpected mode
 				'foobar',
