@@ -31,6 +31,16 @@ class m2_track_user_id extends \phpbb\db\migration\migration
 	}
 
 	/**
+	 * Check if the migration is effectively installed
+	 *
+	 * @return bool True if this migration is installed, False if this migration is not installed
+	 */
+	public function effectively_installed()
+	{
+		return $this->config->offsetExists('googleanalytics_track_user_id');
+	}
+
+	/**
 	* Add Google Analytics data to the database.
 	*
 	* @return array Array of table data
