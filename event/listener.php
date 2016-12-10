@@ -65,7 +65,11 @@ class listener implements EventSubscriberInterface
 	*/
 	public function load_google_analytics()
 	{
-		$this->template->assign_var('GOOGLEANALYTICS_ID', $this->config['googleanalytics_id']);
+		$this->template->assign_vars(array(
+			'GOOGLEANALYTICS_ID'		=> $this->config['googleanalytics_id'],
+			'GOOGLEANALYTICS_USER_ID'	=> $this->user->data['user_id'],
+			'S_GOOGLEANALYTICS_USER_ID'	=> $this->config['googleanalytics_track_user_id'] && $this->user->data['is_registered'],
+		));
 	}
 
 	/**
@@ -77,28 +81,34 @@ class listener implements EventSubscriberInterface
 	*/
 	public function add_googleanalytics_configs($event)
 	{
-		// Load language file
-		$this->user->add_lang_ext('phpbb/googleanalytics', 'googleanalytics_acp');
-
-		// Add a config to the settings mode, after board_timezone
-		if ($event['mode'] === 'settings' && isset($event['display_vars']['vars']['board_timezone']))
+		// Add a config to the settings mode, after warnings_expire_days
+		if ($event['mode'] === 'settings' && isset($event['display_vars']['vars']['warnings_expire_days']))
 		{
+			// Load language file
+			$this->user->add_lang_ext('phpbb/googleanalytics', 'googleanalytics_acp');
+
 			// Store display_vars event in a local variable
 			$display_vars = $event['display_vars'];
 
 			// Define the new config vars
 			$ga_config_vars = array(
+				'legend_googleanalytics' => 'ACP_GOOGLEANALYTICS',
 				'googleanalytics_id' => array(
-					'lang' => 'ACP_GOOGLEANALYTICS_ID',
-					'validate' => 'googleanalytics_id',
-					'type' => 'text:40:20',
-					'explain' => true,
+					'lang'		=> 'ACP_GOOGLEANALYTICS_ID',
+					'validate'	=> 'googleanalytics_id',
+					'type'		=> 'text:40:20',
+					'explain'	=> true,
+				),
+				'googleanalytics_track_user_id' => array(
+					'lang'		=> 'ACP_GOOGLEANALYTICS_TRACK_USER_ID',
+					'validate'	=> 'bool',
+					'type'		=> 'radio:yes_no',
+					'explain'	=> true,
 				),
 			);
 
-			// Add the new config vars after board_timezone in the display_vars config array
-			$insert_after = array('after' => 'board_timezone');
-			$display_vars['vars'] = phpbb_insert_config_array($display_vars['vars'], $ga_config_vars, $insert_after);
+			// Add the new config vars after warnings_expire_days in the display_vars config array
+			$display_vars['vars'] = phpbb_insert_config_array($display_vars['vars'], $ga_config_vars, array('after' => 'warnings_expire_days'));
 
 			// Update the display_vars event with the new array
 			$event['display_vars'] = $display_vars;

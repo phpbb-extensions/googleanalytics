@@ -38,7 +38,10 @@ if (empty($lang) || !is_array($lang))
 //
 
 $lang = array_merge($lang, array(
-	'ACP_GOOGLEANALYTICS_ID'			=> 'Google Analytics ID',
-	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Enter your Google Analytics ID code, e.g.: <samp>UA-0000000-00</samp>.',
-	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '“%s” is not a valid Google Analytics ID code.<br />It should be in the form “UA-0000000-00”.',
+	'ACP_GOOGLEANALYTICS'						=> 'Google Analytics',
+	'ACP_GOOGLEANALYTICS_ID'					=> 'Google Analytics ID',
+	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'			=> 'Enter your Google Analytics ID code, e.g.: <samp>UA-0000000-00</samp>.',
+	'ACP_GOOGLEANALYTICS_ID_INVALID'			=> '“%s” is not a valid Google Analytics ID code.<br />It should be in the form “UA-0000000-00”.',
+	'ACP_GOOGLEANALYTICS_TRACK_USER_ID'			=> 'Enable user ID tracking',
+	'ACP_GOOGLEANALYTICS_TRACK_USER_ID_EXPLAIN'	=> 'If enabled, Google Analytics will track your registered users across multiple devices and sessions, for a more accurate user count in your reports. This functionality must also be enabled and configured in your Google Analytics account. <a href="https://support.google.com/analytics/answer/3123666">Click for more information</a>.',
 ));
