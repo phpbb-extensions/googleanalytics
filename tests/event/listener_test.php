@@ -93,7 +93,6 @@ class event_listener_test extends \phpbb_test_case
 			->with(array(
 				'GOOGLEANALYTICS_ID'		=> $this->config['googleanalytics_id'],
 				'GOOGLEANALYTICS_USER_ID'	=> $this->user->data['user_id'],
-				'S_GOOGLEANALYTICS_USER_ID'	=> $this->user->data['is_registered'],
 			));
 
 		$dispatcher = new \Symfony\Component\EventDispatcher\EventDispatcher();

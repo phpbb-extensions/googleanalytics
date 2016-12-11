@@ -68,7 +68,6 @@ class listener implements EventSubscriberInterface
 		$this->template->assign_vars(array(
 			'GOOGLEANALYTICS_ID'		=> $this->config['googleanalytics_id'],
 			'GOOGLEANALYTICS_USER_ID'	=> $this->user->data['user_id'],
-			'S_GOOGLEANALYTICS_USER_ID'	=> $this->user->data['is_registered'],
 		));
 	}
 

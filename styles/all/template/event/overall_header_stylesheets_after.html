@@ -6,7 +6,7 @@
 	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
 	ga('create', '{{ GOOGLEANALYTICS_ID }}', 'auto');
-	{% if S_GOOGLEANALYTICS_USER_ID -%}
+	{% if S_REGISTERED_USER -%}
 	ga('set', 'userId', {{ GOOGLEANALYTICS_USER_ID }});
 	{% endif -%}
 	{% EVENT phpbb_googleanalytics_alter_ga_requirements -%}
