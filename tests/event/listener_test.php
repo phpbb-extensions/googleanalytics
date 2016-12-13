@@ -44,6 +44,8 @@ class event_listener_test extends \phpbb_test_case
 		$this->template = $this->getMockBuilder('\phpbb\template\template')
 			->getMock();
 		$this->user = new \phpbb\user('\phpbb\datetime');
+		$this->user->data['user_id'] = 2;
+		$this->user->data['is_registered'] = true;
 	}
 
 	/**
@@ -87,8 +89,11 @@ class event_listener_test extends \phpbb_test_case
 		$this->set_listener();
 
 		$this->template->expects($this->once())
-			->method('assign_var')
-			->with('GOOGLEANALYTICS_ID', $this->config['googleanalytics_id']);
+			->method('assign_vars')
+			->with(array(
+				'GOOGLEANALYTICS_ID'		=> $this->config['googleanalytics_id'],
+				'GOOGLEANALYTICS_USER_ID'	=> $this->user->data['user_id'],
+			));
 
 		$dispatcher = new \Symfony\Component\EventDispatcher\EventDispatcher();
 		$dispatcher->addListener('core.page_header', array($this->listener, 'load_google_analytics'));
@@ -105,13 +110,13 @@ class event_listener_test extends \phpbb_test_case
 		return array(
 			array( // expected config and mode
 				'settings',
-				array('vars' => array('board_timezone' => array())),
-				array('board_timezone', 'googleanalytics_id'),
+				array('vars' => array('warnings_expire_days' => array())),
+				array('warnings_expire_days', 'legend_googleanalytics', 'googleanalytics_id'),
 			),
 			array( // unexpected mode
 				'foobar',
-				array('vars' => array('board_timezone' => array())),
-				array('board_timezone'),
+				array('vars' => array('warnings_expire_days' => array())),
+				array('warnings_expire_days'),
 			),
 			array( // unexpected config
 				'settings',
