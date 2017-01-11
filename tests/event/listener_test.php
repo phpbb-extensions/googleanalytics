@@ -33,17 +33,15 @@ class event_listener_test extends \phpbb_test_case
 	{
 		parent::setUp();
 
-		global $phpbb_dispatcher, $phpbb_extension_manager, $phpbb_root_path;
-
-		// Mock some global classes that may be called during code execution
-		$phpbb_dispatcher = new \phpbb_mock_event_dispatcher();
-		$phpbb_extension_manager = new \phpbb_mock_extension_manager($phpbb_root_path);
+		global $phpbb_root_path, $phpEx;
 
 		// Load/Mock classes required by the event listener class
 		$this->config = new \phpbb\config\config(array('googleanalytics_id' => 'UA-000000-01'));
 		$this->template = $this->getMockBuilder('\phpbb\template\template')
 			->getMock();
-		$this->user = new \phpbb\user('\phpbb\datetime');
+		$lang_loader = new \phpbb\language\language_file_loader($phpbb_root_path, $phpEx);
+		$lang = new \phpbb\language\language($lang_loader);
+		$this->user = new \phpbb\user($lang, '\phpbb\datetime');
 		$this->user->data['user_id'] = 2;
 		$this->user->data['is_registered'] = true;
 	}
