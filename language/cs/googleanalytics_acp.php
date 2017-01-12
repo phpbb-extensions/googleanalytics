@@ -40,6 +40,6 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, array(
 	'ACP_GOOGLEANALYTICS'				=> 'Google Analytics',
 	'ACP_GOOGLEANALYTICS_ID'			=> 'Google Analytics ID',
-	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Zadejte Vaše ID ve službě Google Analytics, např.: <samp>UA-0000000-00</samp>.<br /><br />Google Analytics můžete sledovat vaše registrovaných uživatelů napříč různými zařízeními a relací, pro přesnější počet uživatelů v přehledech. K tomu, aby toto rozšířené funkce User ID měření musí být nakonfigurován v účtu Google Analytics. <a href="https://support.google.com/analytics/answer/3123666">Klikněte pro více informací</a>.',
+	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Zadejte Vaše ID ve službě Google Analytics, např.: <samp>UA-0000000-00</samp>.<br /><br />Google Analytics dokáže sledovat přihlášené uživatele napříč zařízeními pro přesnější informace o návštěvnících. Pro povolení této rozšířené funkcionality musíte povolit funkci User ID ve svém účtu Google Analytics. <a href="https://support.google.com/analytics/answer/3123666">Klikněte pro více informací</a>.',
 	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '“%s” není platné ID klienta ve službě Google Analytics.<br />Mělo by být ve tvaru “UA-0000000-00”.',
 ));

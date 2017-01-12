@@ -41,6 +41,6 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, array(
 	'ACP_GOOGLEANALYTICS'				=> 'Google Analytics',
 	'ACP_GOOGLEANALYTICS_ID'			=> 'Google Analytics ID',
-	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Εισάγετε το αναγνωριστικό παρακολούθησης (ID code) του Google Analytics, π.χ.: <samp>UA-0000000-00</samp>.<br /><br />Το Google Analytics μπορεί να παρακολουθεί εγγεγραμμένοι χρήστες σας σε πολλαπλές συσκευές και συνεδρίες, για μια πιο ακριβή καταμέτρηση των χρηστών στις αναφορές σας. Για να ενεργοποιήσετε αυτό το βελτιωμένη λειτουργικότητα User ID παρακολούθησης πρέπει να ρυθμιστεί στο λογαριασμό σας στο Google Analytics. <a href="https://support.google.com/analytics/answer/3123666">Κάντε κλικ για περισσότερες πληροφορίες</a>.',
+	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Εισάγετε το αναγνωριστικό παρακολούθησης (ID code) του Google Analytics, π.χ.: <samp>UA-0000000-00</samp>.<br /><br />Το Google Analytics μπορεί να παρακολουθεί εγγεγραμμένους χρήστες σας σε πολλαπλές συσκευές και συνεδρίες, για μια πιο ακριβή καταμέτρηση των χρηστών στις αναφορές σας. Για να ενεργοποιήσετε αυτή τη βελτιωμένη λειτουργία παρακολούθησης του User ID πρέπει να ρυθμίσετε το λογαριασμό σας στο Google Analytics. <a href="https://support.google.com/analytics/answer/3123666?hl=el">Πατήστε εδώ για περισσότερες πληροφορίες</a>.',
 	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> 'Το "%s" δεν είναι έγκυρο αναγνωριστικό παρακολούθησης (ID code) του Google Analytics.<br />Πρέπει να είναι μορφής "UA-0000000-00".',
 ));

@@ -41,6 +41,6 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, array(
 	'ACP_GOOGLEANALYTICS'				=> 'Google Analytics',
 	'ACP_GOOGLEANALYTICS_ID'			=> 'Google Analytics ID',
-	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Upiši svoj Google Analytics ID kod, npr.: <samp>UA-0000000-00</samp>.<br /><br />Google Analytics možete pratiti svoje registriranih korisnika na više uređaja i sjednice, za točniju broj korisnika u izvješćima. Da biste omogućili ovu poboljšana funkcionalnost korisniku ID za praćenje mora biti konfigurirana na vašem računu usluge Google Analytics. <a href="https://support.google.com/analytics/answer/3123666">Kliknite za više informacija</a>.',
+	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Upiši svoj Google Analytics ID kod, npr.: <samp>UA-0000000-00</samp>.<br /><br />Google Analytics može pratiti tvoje registrirane korisnike/ce putem više uređaja i sesija (a) za što točnije zbrajanje korisnika/ca u tvojim izviješćima. Za omogućavanje ove poboljšanje funkcionalnosti, praćenje ID-a korisnika/ca mora biti konfigurirano u tvojem Google Analytics korisničkom računu. Klikni <a href="https://support.google.com/analytics/answer/3123666">ovdje</a> za više informacija.',
 	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '“%s” nije ispravan Google Analytics ID kod.<br />Trebao bi biti u obliku: “UA-0000000-00”.',
 ));

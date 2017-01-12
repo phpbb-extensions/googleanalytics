@@ -41,6 +41,6 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, array(
 	'ACP_GOOGLEANALYTICS'				=> 'Google Analytics',
 	'ACP_GOOGLEANALYTICS_ID'			=> 'Google Analytics ID',
-	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Digite o seu código do Google Analytics ID, por exemplo : <samp>UA-0000000-00</samp>.<br /><br />Google Analytics can track your registered users across multiple devices and sessions, for a more accurate user count in your reports. To enable this enhanced functionality User ID tracking must be configured in your Google Analytics account. <a href="https://support.google.com/analytics/answer/3123666">Click for more information</a>.',
+	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Digite o seu código do Google Analytics ID, por exemplo : <samp>UA-0000000-00</samp>.<br /><br />O Google Analytics pode rastrear seus usuários registrados em vários dispositivos e sessões, para uma contagem de usuários mais precisa em seus relatórios. Para ativar essa funcionalidade aprimorada, o rastreamento de ID do usuário deve ser configurado em sua conta do Google Analytics. <a href="https://support.google.com/analytics/answer/3123666"> Clique para obter mais informações</a>.',
 	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '“%s” não é um código ID Google Analytics válido.<br />Deve ser dessa forma “UA-0000000-00”.',
 ));

@@ -40,6 +40,6 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, array(
 	'ACP_GOOGLEANALYTICS'				=> 'Google Analytics',
 	'ACP_GOOGLEANALYTICS_ID'			=> 'Google Analytics ID',
-	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Google Analytics ID kodunuzu girin, ör: <samp>UA-0000000-00</samp>.<br /><br />Google Analytics, kayıtlı kullanıcılarınızı birden çok cihazda ve oturumda izleyebilir; böylece, raporlarınızdaki daha doğru bir kullanıcı sayısı elde edersiniz. Bu gelişmiş işlevselliği etkinleştirmek için Kullanıcı kimliği izleme, Google Analytics hesabınızda yapılandırılmalıdır. <a href="https://support.google.com/analytics/answer/3123666">Daha fazla bilgi için tıklayınız</a>.',
+	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Google Analytics ID kodunuzu girin, ör: <samp>UA-0000000-00</samp>.<br /><br />Google Analytics, kayıtlı kullanıcılarınızı birden çok cihazda ve oturumda raporlarınızda daha doğru bir kullanıcı sayısı elde etmeniz için izleyebilir. Bu gelişmiş işlevselliği etkinleştirmek için Kullanıcı ID izleme özelliği Google Analytics hesabınızda yapılandırılmalıdır. <a href="https://support.google.com/analytics/answer/3123666">Daha fazla bilgi için tıklayın</a>.',
 	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '“%s” geçerli bir Google Analytics ID kodu değil.<br />Kod şuna benzer şekilde olmalı “UA-0000000-00”.',
 ));
