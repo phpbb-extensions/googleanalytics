@@ -39,7 +39,8 @@ if (empty($lang) || !is_array($lang))
 //
 
 $lang = array_merge($lang, array(
+	'ACP_GOOGLEANALYTICS'				=> 'Google Analytics',
 	'ACP_GOOGLEANALYTICS_ID'			=> 'ID Google Analytics',
-	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Saisir son ID Google Analytics, tel que : <samp>UA-0000000-00</samp>.',
+	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Saisir son ID Google Analytics, tel que : <samp>UA-0000000-00</samp>.<br /><br />Google Analytics peut suivre vos utilisateurs enregistrés sur plusieurs périphériques et sessions, afin d’obtenir un nombre d’utilisateurs plus précis dans vos rapports. Pour activer cette fonctionnalité améliorée, le suivi des ID utilisateur doit être configuré dans votre compte Google Analytics. <a href="https://support.google.com/analytics/answer/3123666">Cliquez pour plus d’informations</a>.',
 	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '« %s » n’est pas un ID Google Analytics valide.<br />Ce doit être au format « UA-0000000-00 ».',
 ));
