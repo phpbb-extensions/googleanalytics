@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.3 - 2017-08-04
+
+- Minor code improvements
+- Added Russian translation
+- Added Slovak translation
+
 ## 1.0.2 - 2017-01-12
 
 - Supports phpBB 3.1 and 3.2
