@@ -39,7 +39,8 @@ if (empty($lang) || !is_array($lang))
 //
 
 $lang = array_merge($lang, array(
+	'ACP_GOOGLEANALYTICS'				=> 'Google Analytics',
 	'ACP_GOOGLEANALYTICS_ID'			=> 'Google Analytics ID',
-	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Ange din Google Analytics ID kod, t.ex: <samp>UA-0000000-00</samp>.',
+	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Ange din Google Analytics ID kod, t.ex: <samp>UA-0000000-00</samp>.<br /><br />Google Analytics kan hålla reda på dina registrerade användare över flera enheter och sessioner så att dina rapporter blir exaktare. Aktivera denna funktionalitet genom att konfigurera "User ID tracking" i ditt Google Analytics konto. <a href="https://support.google.com/analytics/answer/3123666">Klicka här för mer information</a>.',
 	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '“%s” är ingen giltig Google Analytics ID kod.<br />Den bör ha formatet “UA-0000000-00”.',
 ));

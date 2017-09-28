@@ -39,7 +39,8 @@ if (empty($lang) || !is_array($lang))
 //
 
 $lang = array_merge($lang, array(
+	'ACP_GOOGLEANALYTICS'				=> 'Google Analytics',
 	'ACP_GOOGLEANALYTICS_ID'			=> 'Google Analytics ID',
-	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Plaats hier je Google Analytics ID code, bijv: <samp>UA-0000000-00</samp>.',
+	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Plaats hier je Google Analytics ID code, bijv: <samp>UA-0000000-00</samp>.<br /><br />Google Analytics kan je geregistreerde gebruikers volgen over meerdere apparaten en sessies voor betere gebruikersaantallen in je rapportages. Om deze verbeterde functionaliteit in te schakelen dien je de functie User-ID te configureren in je Google Analytics-account. <a href="https://support.google.com/analytics/answer/3123666">Klik hier voor meer informatie</a>.',
 	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '“%s” is geen geldige Google Analytics ID code.<br />Het moet iets zijn in de vorm van “UA-0000000-00”.',
 ));

@@ -2,7 +2,6 @@
 /**
 *
 * Google Analytics extension for the phpBB Forum Software package.
-* Translate by: rexkyo (http://phpbb-tw.net/)
 *
 * @copyright (c) 2014 phpBB Limited <https://www.phpbb.com>
 * @license GNU General Public License, version 2 (GPL-2.0)
@@ -40,7 +39,7 @@ if (empty($lang) || !is_array($lang))
 
 $lang = array_merge($lang, array(
 	'ACP_GOOGLEANALYTICS'				=> 'Google Analytics',
-	'ACP_GOOGLEANALYTICS_ID'			=> 'Google Analytics（分析） ID',
-	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> '輸入你的 Google Analytics（分析） ID code, 例如: <samp>UA-0000000-00</samp>.<br /><br />Google Analytics（分析）可以跨多個設備和會話跟踪您的註冊用戶，以便在報告中提供更準確的用戶數。 要啟用此增強功能，您必須在Google Analytics（分析）帳戶中配置用戶ID跟踪。<a href="https://support.google.com/analytics/answer/3123666"> 單擊獲取更多信息。</a>',
-	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '“%s” 不是有效的 Google Analytics（分析） ID code.<br />它的格式應該會是像這樣 “UA-0000000-00”.',
+	'ACP_GOOGLEANALYTICS_ID'			=> 'Google Analytics ID',
+	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Inserisci l’ID Google Analytics, Es.: <samp>UA-0000000-00</samp>.<br /><br />Google Analytics in grado di monitorare gli utenti registrati su più dispositivi e le sessioni, per un numero di utenti più accurato nei rapporti. Per attivare questa funzionalità avanzate di monitoraggio ID utente deve essere configurato nel tuo account Google Analytics. <a href="https://support.google.com/analytics/answer/3123666">Fare clic qui per maggiori informazioni</a>.',
+	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '“%s” non è un codice ID valido di Google Analytics.<br />Dove essere nel formato “UA-0000000-00”.',
 ));

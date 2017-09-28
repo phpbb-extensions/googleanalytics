@@ -1,5 +1,24 @@
 # Changelog
 
+## 1.0.3 - 2017-08-04
+
+- Minor code improvements
+- Added Russian translation
+- Added Slovak translation
+
+## 1.0.2 - 2017-01-12
+
+- Supports phpBB 3.1 and 3.2
+- Added support for tracking users by their user ID (must be enabled in your Google Analytics account to take advantage of it)
+- Lots of internal code updates and improvements
+- Added Brazilian Portuguese translation
+- Added Croatian translation (casual and formal)
+- Added Czech translation
+- Added Danish translation
+- Added Greek translation
+- Added Italian translation
+- Added Turkish translation
+
 ## 1.0.1 - 2014-11-28
 
 - Fixed issues in the README.md

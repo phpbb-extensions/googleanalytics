@@ -39,7 +39,8 @@ if (empty($lang) || !is_array($lang))
 //
 
 $lang = array_merge($lang, array(
+	'ACP_GOOGLEANALYTICS'				=> 'Google Analytics',
 	'ACP_GOOGLEANALYTICS_ID'			=> 'Google Analytics ID',
-	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Introduza o seu código Google Analytics ID, e.g.: <samp>UA-0000000-00</samp>.',
+	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Introduza o seu código Google Analytics ID, e.g.: <samp>UA-0000000-00</samp>.<br /><br />O Google Analytics pode rastrear seus usuários registrados em vários dispositivos e sessões, para uma contagem de usuários mais precisa em seus relatórios. Para ativar essa funcionalidade aprimorada, o rastreamento de ID do usuário deve ser configurado em sua conta do Google Analytics. <a href="https://support.google.com/analytics/answer/3123666">Clique para obter mais informações</a>.',
 	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '“%s” não é um código Google Analytics ID válido.<br />Ele deve estar na forma “UA-0000000-00”.',
 ));

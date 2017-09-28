@@ -10,15 +10,20 @@
 
 namespace phpbb\googleanalytics\tests\event;
 
-require_once dirname(__FILE__) . '/../../../../../includes/functions_acp.php';
+require_once __DIR__ . '/../../../../../includes/functions_acp.php';
 
 class event_listener_test extends \phpbb_test_case
 {
 	/** @var \phpbb\googleanalytics\event\listener */
 	protected $listener;
 
+	/** @var \phpbb\config\config */
 	protected $config;
+
+	/** @var \PHPUnit_Framework_MockObject_MockObject|\phpbb\template\template */
 	protected $template;
+
+	/** @var \phpbb\user */
 	protected $user;
 
 	/**
@@ -28,17 +33,17 @@ class event_listener_test extends \phpbb_test_case
 	{
 		parent::setUp();
 
-		global $phpbb_dispatcher, $phpbb_extension_manager, $phpbb_root_path;
-
-		// Mock some global classes that may be called during code execution
-		$phpbb_dispatcher = new \phpbb_mock_event_dispatcher();
-		$phpbb_extension_manager = new \phpbb_mock_extension_manager($phpbb_root_path);
+		global $phpbb_root_path, $phpEx;
 
 		// Load/Mock classes required by the event listener class
 		$this->config = new \phpbb\config\config(array('googleanalytics_id' => 'UA-000000-01'));
 		$this->template = $this->getMockBuilder('\phpbb\template\template')
 			->getMock();
-		$this->user = new \phpbb\user('\phpbb\datetime');
+		$lang_loader = new \phpbb\language\language_file_loader($phpbb_root_path, $phpEx);
+		$lang = new \phpbb\language\language($lang_loader);
+		$this->user = new \phpbb\user($lang, '\phpbb\datetime');
+		$this->user->data['user_id'] = 2;
+		$this->user->data['is_registered'] = true;
 	}
 
 	/**
@@ -82,8 +87,11 @@ class event_listener_test extends \phpbb_test_case
 		$this->set_listener();
 
 		$this->template->expects($this->once())
-			->method('assign_var')
-			->with('GOOGLEANALYTICS_ID', $this->config['googleanalytics_id']);
+			->method('assign_vars')
+			->with(array(
+				'GOOGLEANALYTICS_ID'		=> $this->config['googleanalytics_id'],
+				'GOOGLEANALYTICS_USER_ID'	=> $this->user->data['user_id'],
+			));
 
 		$dispatcher = new \Symfony\Component\EventDispatcher\EventDispatcher();
 		$dispatcher->addListener('core.page_header', array($this->listener, 'load_google_analytics'));
@@ -100,13 +108,13 @@ class event_listener_test extends \phpbb_test_case
 		return array(
 			array( // expected config and mode
 				'settings',
-				array('vars' => array('board_timezone' => array())),
-				array('board_timezone', 'googleanalytics_id'),
+				array('vars' => array('warnings_expire_days' => array())),
+				array('warnings_expire_days', 'legend_googleanalytics', 'googleanalytics_id'),
 			),
 			array( // unexpected mode
 				'foobar',
-				array('vars' => array('board_timezone' => array())),
-				array('board_timezone'),
+				array('vars' => array('warnings_expire_days' => array())),
+				array('warnings_expire_days'),
 			),
 			array( // unexpected config
 				'settings',

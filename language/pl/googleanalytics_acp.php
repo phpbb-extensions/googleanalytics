@@ -39,7 +39,8 @@ if (empty($lang) || !is_array($lang))
 //
 
 $lang = array_merge($lang, array(
+	'ACP_GOOGLEANALYTICS'				=> 'Google Analytics',
 	'ACP_GOOGLEANALYTICS_ID'			=> 'Identyfikator śledzenia Google Analytics',
-	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Wprowadź swój identyfikator śledzenia Google Analytics, n.p.: <samp>UA-0000000-00</samp>.',
+	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Wprowadź swój identyfikator śledzenia Google Analytics, n.p.: <samp>UA-0000000-00</samp>.<br /><br />Google Analytics może śledzić zarejestrowanych użytkowników na wielu urządzeniach i sesji, bardziej dokładne liczby użytkowników w raportach. Aby włączyć tę zwiększona funkcjonalność śledzenia identyfikator użytkownika musi być skonfigurowana na koncie Google Analytics. <a href="https://support.google.com/analytics/answer/3123666">Kliknij, aby uzyskać więcej informacji</a>.',
 	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '“%s” nie jest prawidłowym identyfikatorem śledzenia Google Analytics.<br />Identyfikator śledzenia powinien mieć postać “UA-0000000-00”.',
 ));

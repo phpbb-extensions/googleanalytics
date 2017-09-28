@@ -2,6 +2,7 @@
 /**
 *
 * Google Analytics extension for the phpBB Forum Software package.
+* Russian translation by HD321kbps
 *
 * @copyright (c) 2014 phpBB Limited <https://www.phpbb.com>
 * @license GNU General Public License, version 2 (GPL-2.0)
@@ -40,6 +41,6 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, array(
 	'ACP_GOOGLEANALYTICS'				=> 'Google Analytics',
 	'ACP_GOOGLEANALYTICS_ID'			=> 'Google Analytics ID',
-	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Enter your Google Analytics ID code, e.g.: <samp>UA-0000000-00</samp>.<br /><br />Google Analytics can track your registered users across multiple devices and sessions, for a more accurate user count in your reports. To enable this enhanced functionality User ID tracking must be configured in your Google Analytics account. <a href="https://support.google.com/analytics/answer/3123666">Click for more information</a>.',
-	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '“%s” is not a valid Google Analytics ID code.<br />It should be in the form “UA-0000000-00”.',
+	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Введите свой Google Analytics ID код, Например: <samp>UA-0000000-00</samp>.<br /><br />Google Analytics может отслеживать сеансы зарегистрированных пользователей на нескольких устройствах, чтобы обеспечить более точное количество пользователей в отчетах. Чтобы включить эту расширенную функциональность, необходимо настроить отслеживание идентификатора пользователя в своей учетной записи Google Analytics. <a href="https://support.google.com/analytics/answer/3123666">Нажмите для получения дополнительной информации</a>.',
+	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '“%s” является недопустимым Google Analytics ID кодом.<br />Он должен быть в формате “UA-0000000-00”.',
 ));
