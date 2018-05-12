@@ -9,6 +9,9 @@
 	{% if S_REGISTERED_USER -%}
 	ga('set', 'userId', {{ GOOGLEANALYTICS_USER_ID }});
 	{% endif -%}
+	{% if S_ANONYMIZE_IP -%}
+	ga('set', 'anonymizeIp', true);
+	{% endif -%}
 	{% EVENT phpbb_googleanalytics_alter_ga_requirements -%}
 	ga('send', 'pageview');
 </script>

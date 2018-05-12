@@ -68,6 +68,7 @@ class listener implements EventSubscriberInterface
 		$this->template->assign_vars(array(
 			'GOOGLEANALYTICS_ID'		=> $this->config['googleanalytics_id'],
 			'GOOGLEANALYTICS_USER_ID'	=> $this->user->data['user_id'],
+			'S_ANONYMIZE_IP'			=> $this->config['ga_anonymize_ip'],
 		));
 	}
 
@@ -96,6 +97,12 @@ class listener implements EventSubscriberInterface
 					'lang'		=> 'ACP_GOOGLEANALYTICS_ID',
 					'validate'	=> 'googleanalytics_id',
 					'type'		=> 'text:40:20',
+					'explain'	=> true,
+				),
+				'ga_anonymize_ip' => array(
+					'lang'		=> 'ACP_GA_ANONYMIZE_IP',
+					'validate'	=> 'bool',
+					'type'		=> 'radio:yes_no',
 					'explain'	=> true,
 				),
 			);
