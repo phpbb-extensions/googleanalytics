@@ -43,4 +43,6 @@ $lang = array_merge($lang, array(
 	'ACP_GOOGLEANALYTICS_ID'			=> 'Google Analytics ID',
 	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Введите свой Google Analytics ID код, Например: <samp>UA-0000000-00</samp>.<br /><br />Google Analytics может отслеживать сеансы зарегистрированных пользователей на нескольких устройствах, чтобы обеспечить более точное количество пользователей в отчетах. Чтобы включить эту расширенную функциональность, необходимо настроить отслеживание идентификатора пользователя в своей учетной записи Google Analytics. <a href="https://support.google.com/analytics/answer/3123666">Нажмите для получения дополнительной информации</a>.',
 	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '“%s” является недопустимым Google Analytics ID кодом.<br />Он должен быть в формате “UA-0000000-00”.',
+	'ACP_GA_ANONYMIZE_IP'				=> 'Turn on IP Anonymization',
+	'ACP_GA_ANONYMIZE_IP_EXPLAIN'		=> 'Enable this option if you want the data collected by Google Analytics to be compliant with the EU‘s General Data Protection Regulation (GDPR). Note that enabling this option may slightly reduce the accuracy of geographic reporting.',
 ));
