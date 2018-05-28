@@ -36,7 +36,10 @@ class event_listener_test extends \phpbb_test_case
 		global $phpbb_root_path, $phpEx;
 
 		// Load/Mock classes required by the event listener class
-		$this->config = new \phpbb\config\config(array('googleanalytics_id' => 'UA-000000-01'));
+		$this->config = new \phpbb\config\config(array(
+			'googleanalytics_id' => 'UA-000000-01',
+			'ga_anonymize_ip' => 0,
+		));
 		$this->template = $this->getMockBuilder('\phpbb\template\template')
 			->getMock();
 		$lang_loader = new \phpbb\language\language_file_loader($phpbb_root_path, $phpEx);
@@ -91,6 +94,7 @@ class event_listener_test extends \phpbb_test_case
 			->with(array(
 				'GOOGLEANALYTICS_ID'		=> $this->config['googleanalytics_id'],
 				'GOOGLEANALYTICS_USER_ID'	=> $this->user->data['user_id'],
+				'S_ANONYMIZE_IP'			=> $this->config['ga_anonymize_ip'],
 			));
 
 		$dispatcher = new \Symfony\Component\EventDispatcher\EventDispatcher();
@@ -109,7 +113,7 @@ class event_listener_test extends \phpbb_test_case
 			array( // expected config and mode
 				'settings',
 				array('vars' => array('warnings_expire_days' => array())),
-				array('warnings_expire_days', 'legend_googleanalytics', 'googleanalytics_id'),
+				array('warnings_expire_days', 'legend_googleanalytics', 'googleanalytics_id', 'ga_anonymize_ip'),
 			),
 			array( // unexpected mode
 				'foobar',
