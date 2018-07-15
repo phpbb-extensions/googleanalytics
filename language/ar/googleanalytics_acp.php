@@ -43,4 +43,6 @@ $lang = array_merge($lang, array(
 	'ACP_GOOGLEANALYTICS_ID'			=> 'Google Analytics ID',
 	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'أكتب كود Google Analytics ID الخاص بك، مثل: <br /><br /><samp>UA-0000000-00</samp>.إحصائيات قوقل يمكنها تتبع أعضاء منتداك المسجلين عبر الأجهزة والجلسات المتعددة، حتى يكون عدد الأعضاء أكثر دقة. لتفعيل هذه الوظيفة المحَسِّنة يجب أن يكون رقم تتبع المستخدم ID مضبوط في حسابك إحصائيات قوقل. <a href="https://support.google.com/analytics/answer/3123666">اضغط هنا للمعلومات أكثر</a>.',
 	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '“%s” كود Google Analytics ID الذي أدخلته غير صالح.<br />يجب أن يكون على الشكل “UA-0000000-00”.',
+	'ACP_GA_ANONYMIZE_IP'				=> 'Turn on IP Anonymization',
+	'ACP_GA_ANONYMIZE_IP_EXPLAIN'		=> 'Enable this option if you want the data collected by Google Analytics to be compliant with the EU‘s General Data Protection Regulation (GDPR). Note that enabling this option may slightly reduce the accuracy of geographic reporting.',
 ));

@@ -43,4 +43,6 @@ $lang = array_merge($lang, array(
 	'ACP_GOOGLEANALYTICS_ID'			=> 'Google Analytics ID',
 	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Vložte váš kód Google Analytics ID, napr.: <samp>UA-0000000-00</samp>.<br /><br />Google Analytics môže sledovať vašich zaregistrovaných používateľov naprieč viacerými zariadeniami a sedeniami, aby ste mali vo vašich hláseniach presnejšie počty používateľov. Aby ste túto rozšírenú funkcionalitu aktivovali, musíte nastaviť sledovanie User ID vo vašom účte Google Analytics. <a href="https://support.google.com/analytics/answer/3123666">Kliknite pre viac informácií</a>.',
 	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '“%s” nie je platný kód Google Analytics ID.<br />Mal by mať tvar “UA-0000000-00”.',
+	'ACP_GA_ANONYMIZE_IP'				=> 'Turn on IP Anonymization',
+	'ACP_GA_ANONYMIZE_IP_EXPLAIN'		=> 'Enable this option if you want the data collected by Google Analytics to be compliant with the EU‘s General Data Protection Regulation (GDPR). Note that enabling this option may slightly reduce the accuracy of geographic reporting.',
 ));
