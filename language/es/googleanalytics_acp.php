@@ -35,7 +35,7 @@ if (empty($lang) || !is_array($lang))
 // in a url you again do not need to specify an order e.g., 'Click %sHERE%s' is fine
 //
 // Some characters you may want to copy&paste:
-// ’ » “ ” …
+// ’ « » “ ” …
 //
 
 $lang = array_merge($lang, array(
@@ -43,6 +43,6 @@ $lang = array_merge($lang, array(
 	'ACP_GOOGLEANALYTICS_ID'			=> 'ID de Google Analytics',
 	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Introduzca su código ID de Google Analytics, por ejemplo: <samp>UA-0000000-00</samp>.<br /><br />Google Analytics puede realizar un seguimiento de sus usuarios registrados en varios dispositivos y sesiones, para obtener un número de usuarios más preciso en sus informes. Para habilitar esta función mejorada, el seguimiento de ID de usuario debe configurarse en su cuenta de Google Analytics. <a href="https://support.google.com/analytics/answer/3123666">Clic para más información</a>.',
 	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '“%s” no es un código ID válido de Google Analytics.<br />Debería ser de esta forma “UA-0000000-00”.',
-	'ACP_GA_ANONYMIZE_IP'				=> 'Turn on IP Anonymization',
-	'ACP_GA_ANONYMIZE_IP_EXPLAIN'		=> 'Enable this option if you want the data collected by Google Analytics to be compliant with the EU‘s General Data Protection Regulation (GDPR). Note that enabling this option may slightly reduce the accuracy of geographic reporting.',
+	'ACP_GA_ANONYMIZE_IP'				=> 'Activar anonimización de IP',
+	'ACP_GA_ANONYMIZE_IP_EXPLAIN'		=> 'Active esta opción si desea que los datos recopilados por Google Analytics cumplan con el Reglamento general de protección de datos de la UE (GDPR). Tenga en cuenta que habilitar esta opción puede reducir ligeramente la precisión de los informes geográficos.',
 ));
