@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.4 - 2018-05-17
+
+- Added an option to enable visitor IP anonymization. This is recommended by Google to make the data collected for Analytics compliant with the EU‘s GDPR laws which go into effect May 25, 2018.
+- Added German translation (formal and casual)
+
 ## 1.0.3 - 2017-08-04
 
 - Minor code improvements

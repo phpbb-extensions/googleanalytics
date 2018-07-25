@@ -43,4 +43,6 @@ $lang = array_merge($lang, array(
 	'ACP_GOOGLEANALYTICS_ID'			=> 'Google Analytics ID',
 	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Introduza o seu código Google Analytics ID, e.g.: <samp>UA-0000000-00</samp>.<br /><br />O Google Analytics pode rastrear seus usuários registrados em vários dispositivos e sessões, para uma contagem de usuários mais precisa em seus relatórios. Para ativar essa funcionalidade aprimorada, o rastreamento de ID do usuário deve ser configurado em sua conta do Google Analytics. <a href="https://support.google.com/analytics/answer/3123666">Clique para obter mais informações</a>.',
 	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '“%s” não é um código Google Analytics ID válido.<br />Ele deve estar na forma “UA-0000000-00”.',
+	'ACP_GA_ANONYMIZE_IP'				=> 'Turn on IP Anonymization',
+	'ACP_GA_ANONYMIZE_IP_EXPLAIN'		=> 'Enable this option if you want the data collected by Google Analytics to be compliant with the EU‘s General Data Protection Regulation (GDPR). Note that enabling this option may slightly reduce the accuracy of geographic reporting.',
 ));
