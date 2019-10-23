@@ -125,7 +125,7 @@ class listener implements EventSubscriberInterface
 	*/
 	public function validate_googleanalytics_id($event)
 	{
-		$input = $event['cfg_array']['googleanalytics_id'];
+		$input = isset($event['cfg_array']['googleanalytics_id']) ? $event['cfg_array']['googleanalytics_id'] : '';
 
 		// Check if the validate test is for google_analytics
 		if ($input !== '' && $event['config_definition']['validate'] === 'googleanalytics_id')
