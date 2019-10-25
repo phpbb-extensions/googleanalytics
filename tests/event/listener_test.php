@@ -93,6 +93,7 @@ class listener_test extends \phpbb_test_case
 			->method('assign_vars')
 			->with(array(
 				'GOOGLEANALYTICS_ID'		=> $this->config['googleanalytics_id'],
+				'GOOGLEANALYTICS_TAG'		=> $this->config['googleanalytics_tag'],
 				'GOOGLEANALYTICS_USER_ID'	=> $this->user->data['user_id'],
 				'S_ANONYMIZE_IP'			=> $this->config['ga_anonymize_ip'],
 			));
@@ -113,7 +114,7 @@ class listener_test extends \phpbb_test_case
 			array( // expected config and mode
 				'settings',
 				array('vars' => array('warnings_expire_days' => array())),
-				array('warnings_expire_days', 'legend_googleanalytics', 'googleanalytics_id', 'ga_anonymize_ip'),
+				array('warnings_expire_days', 'legend_googleanalytics', 'googleanalytics_id', 'ga_anonymize_ip', 'googleanalytics_tag'),
 			),
 			array( // unexpected mode
 				'foobar',

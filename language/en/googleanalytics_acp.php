@@ -44,4 +44,8 @@ $lang = array_merge($lang, array(
 	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '“%s” is not a valid Google Analytics ID code.<br />It should be in the form “UA-0000000-00”.',
 	'ACP_GA_ANONYMIZE_IP'				=> 'Turn on IP Anonymization',
 	'ACP_GA_ANONYMIZE_IP_EXPLAIN'		=> 'Enable this option if you want the data collected by Google Analytics to be compliant with the EU‘s General Data Protection Regulation (GDPR). Note that enabling this option may slightly reduce the accuracy of geographic reporting.',
+	'ACP_GOOGLEANALYTICS_TAG'			=> 'Google Analytics Script Tag',
+	'ACP_GOOGLEANALYTICS_TAG_EXPLAIN'	=> 'Choose your preferred Google Analytics code snippet. Global site tag (gtag.js) is the current snippet recommended by Google. Google Analytics tag (analytics.js) is the legacy code snippet. <a href="https://developers.google.com/analytics/devguides/collection/gtagjs/migration">Click for more information</a>.',
+	'ACP_GA_ANALYTICS_TAG'				=> 'Google Analytics Tag (analytics.js)',
+	'ACP_GA_GTAGS_TAG'					=> 'Global Site Tag (gtag.js)',
 ));
