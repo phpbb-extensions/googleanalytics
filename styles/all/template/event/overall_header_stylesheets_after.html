@@ -10,9 +10,9 @@
 			gtag('js', new Date());
 
 			gtag('config', '{{ GOOGLEANALYTICS_ID }}', {
-				{% EVENT phpbb_googleanalytics_gtag_options %}
-				{% if S_REGISTERED_USER %}'user_id': '{{ GOOGLEANALYTICS_USER_ID }}',{% endif %}
-				{% if S_ANONYMIZE_IP %}'anonymize_ip': true,{% endif %}
+				{%- EVENT phpbb_googleanalytics_gtag_options -%}
+				{%- if S_REGISTERED_USER %}'user_id': '{{ GOOGLEANALYTICS_USER_ID }}',{% endif -%}
+				{%- if S_ANONYMIZE_IP %}'anonymize_ip': true,{% endif -%}
 			});
 		</script>
 	{% else %}
