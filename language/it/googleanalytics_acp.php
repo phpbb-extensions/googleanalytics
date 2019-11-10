@@ -45,7 +45,7 @@ $lang = array_merge($lang, array(
 	'ACP_GA_ANONYMIZE_IP'				=> 'Turn on IP Anonymization',
 	'ACP_GA_ANONYMIZE_IP_EXPLAIN'		=> 'Enable this option if you want the data collected by Google Analytics to be compliant with the EU‘s General Data Protection Regulation (GDPR). Note that enabling this option may slightly reduce the accuracy of geographic reporting.',
 	'ACP_GOOGLEANALYTICS_TAG'			=> 'Google Analytics Script Tag',
-	'ACP_GOOGLEANALYTICS_TAG_EXPLAIN'	=> 'Choose your preferred Google Analytics code snippet. Global site tag (gtag.js) is the current snippet recommended by Google. Google Analytics tag (analytics.js) is the legacy code snippet. <a href="https://developers.google.com/analytics/devguides/collection/gtagjs/migration">Click for more information <i class="icon fa-external-link fa-fw" aria-hidden="true"></i></a>.',
+	'ACP_GOOGLEANALYTICS_TAG_EXPLAIN'	=> 'Scegli il tuo codice Google Analytics preferito. Global Site Tag (gtag.js) è il codice corrente raccomandato da Google. Google Analytics Tag (analytics.js) è il vecchio codice. <a href="https://developers.google.com/analytics/devguides/collection/gtagjs/migration">Fare clic qui per maggiori informazioni <i class="icon fa-external-link fa-fw" aria-hidden="true"></i></a>.',
 	'ACP_GA_ANALYTICS_TAG'				=> 'Google Analytics Tag (analytics.js)',
 	'ACP_GA_GTAGS_TAG'					=> 'Global Site Tag (gtag.js)',
 ));
