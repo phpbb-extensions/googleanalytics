@@ -48,7 +48,7 @@ class listener implements EventSubscriberInterface
 	* @static
 	* @access public
 	*/
-	static public function getSubscribedEvents()
+	public static function getSubscribedEvents()
 	{
 		return array(
 			'core.acp_board_config_edit_add'	=> 'add_googleanalytics_configs',
