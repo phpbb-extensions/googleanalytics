@@ -48,7 +48,7 @@ class listener implements EventSubscriberInterface
 	* @static
 	* @access public
 	*/
-	static public function getSubscribedEvents()
+	public static function getSubscribedEvents()
 	{
 		return array(
 			'core.acp_board_config_edit_add'	=> 'add_googleanalytics_configs',
@@ -67,6 +67,7 @@ class listener implements EventSubscriberInterface
 	{
 		$this->template->assign_vars(array(
 			'GOOGLEANALYTICS_ID'		=> $this->config['googleanalytics_id'],
+			'GOOGLEANALYTICS_TAG'		=> $this->config['googleanalytics_tag'],
 			'GOOGLEANALYTICS_USER_ID'	=> $this->user->data['user_id'],
 			'S_ANONYMIZE_IP'			=> $this->config['ga_anonymize_ip'],
 		));
@@ -105,6 +106,17 @@ class listener implements EventSubscriberInterface
 					'type'		=> 'radio:yes_no',
 					'explain'	=> true,
 				),
+				'googleanalytics_tag' => array(
+					'lang'		=> 'ACP_GOOGLEANALYTICS_TAG',
+					'validate'	=> 'int',
+					'type'		=> 'select',
+					'function'	=> 'build_select',
+					'params'	=> array(array(
+						0	=> 'ACP_GA_ANALYTICS_TAG',
+						1	=> 'ACP_GA_GTAGS_TAG',
+					), '{CONFIG_VALUE}'),
+					'explain'	=> true,
+				),
 			);
 
 			// Add the new config vars after warnings_expire_days in the display_vars config array
@@ -125,7 +137,7 @@ class listener implements EventSubscriberInterface
 	*/
 	public function validate_googleanalytics_id($event)
 	{
-		$input = $event['cfg_array']['googleanalytics_id'];
+		$input = isset($event['cfg_array']['googleanalytics_id']) ? $event['cfg_array']['googleanalytics_id'] : '';
 
 		// Check if the validate test is for google_analytics
 		if ($input !== '' && $event['config_definition']['validate'] === 'googleanalytics_id')

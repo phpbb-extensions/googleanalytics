@@ -12,7 +12,7 @@ namespace phpbb\googleanalytics\tests\event;
 
 require_once __DIR__ . '/../../../../../includes/functions_acp.php';
 
-class event_listener_test extends \phpbb_test_case
+class listener_test extends \phpbb_test_case
 {
 	/** @var \phpbb\googleanalytics\event\listener */
 	protected $listener;
@@ -93,6 +93,7 @@ class event_listener_test extends \phpbb_test_case
 			->method('assign_vars')
 			->with(array(
 				'GOOGLEANALYTICS_ID'		=> $this->config['googleanalytics_id'],
+				'GOOGLEANALYTICS_TAG'		=> $this->config['googleanalytics_tag'],
 				'GOOGLEANALYTICS_USER_ID'	=> $this->user->data['user_id'],
 				'S_ANONYMIZE_IP'			=> $this->config['ga_anonymize_ip'],
 			));
@@ -113,7 +114,7 @@ class event_listener_test extends \phpbb_test_case
 			array( // expected config and mode
 				'settings',
 				array('vars' => array('warnings_expire_days' => array())),
-				array('warnings_expire_days', 'legend_googleanalytics', 'googleanalytics_id', 'ga_anonymize_ip'),
+				array('warnings_expire_days', 'legend_googleanalytics', 'googleanalytics_id', 'ga_anonymize_ip', 'googleanalytics_tag'),
 			),
 			array( // unexpected mode
 				'foobar',
@@ -199,6 +200,11 @@ class event_listener_test extends \phpbb_test_case
 				array('googleanalytics_id' => 'foo-bar-foo'),
 				array('ACP_GOOGLEANALYTICS_ID_INVALID'),
 			),
+			array(
+				// no googleanalytics_id, no error
+				array('foo' => 'bar'),
+				array(),
+			),
 		);
 	}
 
@@ -211,7 +217,7 @@ class event_listener_test extends \phpbb_test_case
 	{
 		$this->set_listener();
 
-		$config_name = 'googleanalytics_id';
+		$config_name = key($cfg_array);
 		$config_definition = array('validate' => 'googleanalytics_id');
 		$error = array();
 

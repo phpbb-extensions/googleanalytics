@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.5 - 2019-11-15
+
+- Support added for Google Analytics new Global Site tag. Now there is an option to select whether you want to use the new Global Site tag (gtag.js), or the older Analytics tag (analytics.js). Existing installations will not be automatically switched over to the newer Global Site tag, however, fresh installs will default to the newer Global Site tag. Details about the new Global Site tag can be found in your Google Analytics Account Admin.
+- Fixed a bug where Google Analytics ACP Board settings could conflict with other extensions ACP Board settings that resulted in a PHP error.
+- Added Spanish casual honorifics translation.
+
 ## 1.0.4 - 2018-05-17
 
 - Added an option to enable visitor IP anonymization. This is recommended by Google to make the data collected for Analytics compliant with the EU‘s GDPR laws which go into effect May 25, 2018.

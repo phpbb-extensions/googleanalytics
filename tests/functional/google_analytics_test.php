@@ -23,7 +23,7 @@ class google_analytics_test extends \phpbb_functional_test_case
 	*
 	* @return array vendor/name of extension(s) to test
 	*/
-	static protected function setup_extensions()
+	protected static function setup_extensions()
 	{
 		return array('phpbb/googleanalytics');
 	}
@@ -82,6 +82,6 @@ class google_analytics_test extends \phpbb_functional_test_case
 	public function test_google_analytics_code()
 	{
 		$crawler = self::request('GET', 'index.php');
-		$this->assertContains($this->sample_ga_code, $crawler->filter('head > script')->text());
+		$this->assertContains($this->sample_ga_code, $crawler->filter('head > script')->eq(1)->text());
 	}
 }
