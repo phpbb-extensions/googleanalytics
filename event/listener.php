@@ -146,9 +146,15 @@ class listener implements EventSubscriberInterface
 			$error = $event['error'];
 
 			// Add error message if the input is not a valid Google Analytics ID
-			if (!preg_match('/^UA-\d{4,9}-\d{1,4}$/', $input))
+			if (!preg_match('/^UA-\d{4,9}-\d{1,4}|G-[A-Z0-9]{10}$/', $input))
 			{
 				$error[] = $this->user->lang('ACP_GOOGLEANALYTICS_ID_INVALID', $input);
+			}
+
+			// Add error message if GTAG is not selected for use with a Measurement ID
+			if (preg_match('/^G-[A-Z0-9]{10}$/', $input) && (int) $event['cfg_array']['googleanalytics_tag'] === 0)
+			{
+				$error[] = $this->user->lang('ACP_GOOGLEANALYTICS_TAG_INVALID', $input);
 			}
 
 			// Update error event data
