@@ -172,32 +172,47 @@ class listener_test extends \phpbb_test_case
 		return array(
 			array(
 				// valid code, no error
-				array('googleanalytics_id' => 'UA-0000-00'),
+				array('googleanalytics_id' => 'UA-0000-00', 'googleanalytics_tag' => 0),
+				array(),
+			),
+			array(
+				// valid code, no error
+				array('googleanalytics_id' => 'UA-0000-00', 'googleanalytics_tag' => 1),
+				array(),
+			),
+			array(
+				// valid code, no error
+				array('googleanalytics_id' => 'G-XXXXXXXXXX', 'googleanalytics_tag' => 1),
 				array(),
 			),
 			array(
 				// no code, no error
-				array('googleanalytics_id' => ''),
+				array('googleanalytics_id' => '', 'googleanalytics_tag' => 1),
 				array(),
 			),
 			array(
+				// invalid code, no error
+				array('googleanalytics_id' => 'G-XXXXXXXXXX', 'googleanalytics_tag' => 0),
+				array('ACP_GOOGLEANALYTICS_TAG_INVALID'),
+			),
+			array(
 				// invalid code, error
-				array('googleanalytics_id' => 'UA-00-00'),
+				array('googleanalytics_id' => 'UA-00-00', 'googleanalytics_tag' => 1),
 				array('ACP_GOOGLEANALYTICS_ID_INVALID'),
 			),
 			array(
 				// invalid code, error
-				array('googleanalytics_id' => 'UA-00000-00000'),
+				array('googleanalytics_id' => 'UA-00000-00000', 'googleanalytics_tag' => 1),
 				array('ACP_GOOGLEANALYTICS_ID_INVALID'),
 			),
 			array(
 				// invalid code, error
-				array('googleanalytics_id' => 'AU-0000-00'),
+				array('googleanalytics_id' => 'AU-0000-00', 'googleanalytics_tag' => 1),
 				array('ACP_GOOGLEANALYTICS_ID_INVALID'),
 			),
 			array(
 				// invalid code, error
-				array('googleanalytics_id' => 'foo-bar-foo'),
+				array('googleanalytics_id' => 'foo-bar-foo', 'googleanalytics_tag' => 1),
 				array('ACP_GOOGLEANALYTICS_ID_INVALID'),
 			),
 			array(
