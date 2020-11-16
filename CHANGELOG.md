@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.6 - 2020-11-15
+
+- Added support for Google Analytics Measurement ID. This is for users who have set up a Google Analytics 4 property with a Web data stream (which begins with "G-") instead of Universal Analytics (which begins with "UA-").
+
 ## 1.0.5 - 2019-11-15
 
 - Support added for Google Analytics new Global Site tag. Now there is an option to select whether you want to use the new Global Site tag (gtag.js), or the older Analytics tag (analytics.js). Existing installations will not be automatically switched over to the newer Global Site tag, however, fresh installs will default to the newer Global Site tag. Details about the new Global Site tag can be found in your Google Analytics Account Admin.
