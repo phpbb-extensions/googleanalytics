@@ -41,8 +41,9 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, array(
 	'ACP_GOOGLEANALYTICS'				=> 'Google Analytics',
 	'ACP_GOOGLEANALYTICS_ID'			=> 'Cod de urmarire Google Analytics ',
-	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Scrie codul tau Google Analytics de urmarire, ex: <samp>UA-0000000-00</samp>.<br /><br />Google Analytics poate urmări utilizatorii înregistrați pe mai multe dispozitive și sesiuni, pentru un număr de utilizator mai precise în rapoarte. Pentru a activa această funcționalitate îmbunătățită de utilizare ID-ul de urmărire trebuie să fie configurat în contul dvs. Google Analytics. <a href="https://support.google.com/analytics/answer/3123666">Click pentru mai multe informații <i class="icon fa-external-link fa-fw" aria-hidden="true"></i></a>.',
-	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '“%s” nu este un cod valid de urmarire Google Analytics.<br />Trebuie sa fie sub forma “UA-0000000-00”.',
+	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Scrie codul tau Google Analytics de urmarire, ex: <samp>UA-000000-00</samp> or Measurement ID <samp>G-XXXXXXXXXX</samp>.<br /><br />Google Analytics poate urmări utilizatorii înregistrați pe mai multe dispozitive și sesiuni, pentru un număr de utilizator mai precise în rapoarte. Pentru a activa această funcționalitate îmbunătățită de utilizare ID-ul de urmărire trebuie să fie configurat în contul dvs. Google Analytics. <a href="https://support.google.com/analytics/answer/3123666">Click pentru mai multe informații <i class="icon fa-external-link fa-fw" aria-hidden="true"></i></a>.',
+	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '“%s” nu este un cod valid de urmarire Google Analytics.<br />Trebuie sa fie sub forma “UA-000000-00” or “G-XXXXXXXXXX”.',
+	'ACP_GOOGLEANALYTICS_TAG_INVALID'	=> '“Global Site Tag (gtag.js)” must be the selected Google Analytics Script Tag when using a Measurement ID.',
 	'ACP_GA_ANONYMIZE_IP'				=> 'Turn on IP Anonymization',
 	'ACP_GA_ANONYMIZE_IP_EXPLAIN'		=> 'Enable this option if you want the data collected by Google Analytics to be compliant with the EU‘s General Data Protection Regulation (GDPR). Note that enabling this option may slightly reduce the accuracy of geographic reporting.',
 	'ACP_GOOGLEANALYTICS_TAG'			=> 'Google Analytics Script Tag',
