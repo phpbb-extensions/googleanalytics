@@ -29,7 +29,7 @@ class listener_test extends \phpbb_test_case
 	/**
 	* Setup test environment
 	*/
-	public function setUp()
+	protected function setUp(): void
 	{
 		parent::setUp();
 
