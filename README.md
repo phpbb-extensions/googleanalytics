@@ -1,6 +1,6 @@
 # Google Analytics Extension
 
-An extension for phpBB 3.1 that allows administrators to easily add their Google Analytics tracking code to their phpBB forum.
+A phpBB official extension that allows administrators to easily add Google Analytics to their forums.
 
 [![Build Status](https://github.com/phpbb-extensions/googleanalytics/workflows/Tests/badge.svg)](https://github.com/phpbb-extensions/googleanalytics/actions)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/phpbb-extensions/googleanalytics/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/phpbb-extensions/googleanalytics/?branch=master)
