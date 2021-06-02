@@ -18,7 +18,7 @@ class m2_anonymize_ip extends \phpbb\db\migration\migration
 	/**
 	 * {@inheritdoc}
 	 */
-	static public function depends_on()
+	public static function depends_on()
 	{
 		return array('\phpbb\googleanalytics\migrations\v10x\m1_initial_data');
 	}
