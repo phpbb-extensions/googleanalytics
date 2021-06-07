@@ -20,7 +20,7 @@ class listener_test extends \phpbb_test_case
 	/** @var \phpbb\config\config */
 	protected $config;
 
-	/** @var \PHPUnit_Framework_MockObject_MockObject|\phpbb\template\template */
+	/** @var \PHPUnit\Framework\MockObject\MockObject|\phpbb\template\template */
 	protected $template;
 
 	/** @var \phpbb\user */
@@ -98,9 +98,9 @@ class listener_test extends \phpbb_test_case
 				'S_ANONYMIZE_IP'			=> $this->config['ga_anonymize_ip'],
 			));
 
-		$dispatcher = new \Symfony\Component\EventDispatcher\EventDispatcher();
+		$dispatcher = new \phpbb\event\dispatcher();
 		$dispatcher->addListener('core.page_header', array($this->listener, 'load_google_analytics'));
-		$dispatcher->dispatch('core.page_header');
+		$dispatcher->trigger_event('core.page_header');
 	}
 
 	/**
@@ -143,19 +143,12 @@ class listener_test extends \phpbb_test_case
 	{
 		$this->set_listener();
 
-		$dispatcher = new \Symfony\Component\EventDispatcher\EventDispatcher();
+		$dispatcher = new \phpbb\event\dispatcher();
 		$dispatcher->addListener('core.acp_board_config_edit_add', array($this->listener, 'add_googleanalytics_configs'));
 
 		$event_data = array('display_vars', 'mode');
-		$event = new \phpbb\event\data(compact($event_data));
-		$dispatcher->dispatch('core.acp_board_config_edit_add', $event);
-
-		$event_data_after = $event->get_data_filtered($event_data);
-		foreach ($event_data as $expected)
-		{
-			self::assertArrayHasKey($expected, $event_data_after);
-		}
-		extract($event_data_after);
+		$event_data_after = $dispatcher->trigger_event('core.acp_board_config_edit_add', compact($event_data));
+		extract($event_data_after, EXTR_OVERWRITE);
 
 		$keys = array_keys($display_vars['vars']);
 
@@ -236,19 +229,17 @@ class listener_test extends \phpbb_test_case
 		$config_definition = array('validate' => 'googleanalytics_id');
 		$error = array();
 
-		$dispatcher = new \Symfony\Component\EventDispatcher\EventDispatcher();
+		$dispatcher = new \phpbb\event\dispatcher();
 		$dispatcher->addListener('core.validate_config_variable', array($this->listener, 'validate_googleanalytics_id'));
 
 		$event_data = array('cfg_array', 'config_name', 'config_definition', 'error');
-		$event = new \phpbb\event\data(compact($event_data));
-		$dispatcher->dispatch('core.validate_config_variable', $event);
+		$event_data_after = $dispatcher->trigger_event('core.validate_config_variable', compact($event_data));
 
-		$event_data_after = $event->get_data_filtered($event_data);
 		foreach ($event_data as $expected)
 		{
 			self::assertArrayHasKey($expected, $event_data_after);
 		}
-		extract($event_data_after);
+		extract($event_data_after, EXTR_OVERWRITE);
 
 		self::assertEquals($expected_error, $error);
 	}
