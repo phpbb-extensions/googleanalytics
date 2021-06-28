@@ -1,36 +1,36 @@
 <?php
 /**
-*
-* Google Analytics extension for the phpBB Forum Software package.
-*
-* @copyright (c) 2014 phpBB Limited <https://www.phpbb.com>
-* @license GNU General Public License, version 2 (GPL-2.0)
-*
-*/
+ *
+ * Google Analytics extension for the phpBB Forum Software package.
+ *
+ * @copyright (c) 2014 phpBB Limited <https://www.phpbb.com>
+ * @license GNU General Public License, version 2 (GPL-2.0)
+ *
+ */
 
 namespace phpbb\googleanalytics\tests\functional;
 
 /**
-* @group functional
-*/
+ * @group functional
+ */
 class google_analytics_test extends \phpbb_functional_test_case
 {
 	/** @var string */
 	protected $sample_ga_code = 'UA-000000-00';
 
 	/**
-	* Define the extensions to be tested
-	*
-	* @return array vendor/name of extension(s) to test
-	*/
+	 * Define the extensions to be tested
+	 *
+	 * @return array vendor/name of extension(s) to test
+	 */
 	protected static function setup_extensions()
 	{
-		return array('phpbb/googleanalytics');
+		return ['phpbb/googleanalytics'];
 	}
 
 	/**
-	* Test Google Analytics ACP page and save settings
-	*/
+	 * Test Google Analytics ACP page and save settings
+	 */
 	public function test_set_acp_settings()
 	{
 		$this->login();
@@ -46,7 +46,7 @@ class google_analytics_test extends \phpbb_functional_test_case
 		$crawler = self::request('GET', 'adm/index.php?i=acp_board&mode=settings&sid=' . $this->sid);
 
 		// Test that GA settings field is found in the correct position (after WARNINGS_EXPIRE)
-		$nodes = $crawler->filter('#acp_board > fieldset > dl > dt > label')->extract(array('_text'));
+		$nodes = $crawler->filter('#acp_board > fieldset > dl > dt > label')->extract(['_text']);
 		foreach ($nodes as $key => $config_name)
 		{
 			if (strpos($config_name, $this->lang('WARNINGS_EXPIRE')) !== 0)
@@ -77,8 +77,8 @@ class google_analytics_test extends \phpbb_functional_test_case
 	}
 
 	/**
-	* Test Google Analytics code appears as expected
-	*/
+	 * Test Google Analytics code appears as expected
+	 */
 	public function test_google_analytics_code()
 	{
 		$crawler = self::request('GET', 'index.php');

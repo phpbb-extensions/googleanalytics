@@ -20,7 +20,7 @@ class m2_anonymize_ip extends \phpbb\db\migration\migration
 	 */
 	public static function depends_on()
 	{
-		return array('\phpbb\googleanalytics\migrations\v10x\m1_initial_data');
+		return ['\phpbb\googleanalytics\migrations\v10x\m1_initial_data'];
 	}
 
 	/**
@@ -28,8 +28,8 @@ class m2_anonymize_ip extends \phpbb\db\migration\migration
 	 */
 	public function update_data()
 	{
-		return array(
-			array('config.add', array('ga_anonymize_ip', 0)),
-		);
+		return [
+			['config.add', ['ga_anonymize_ip', 0]],
+		];
 	}
 }

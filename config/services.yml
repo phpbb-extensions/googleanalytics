@@ -3,6 +3,7 @@ services:
         class: phpbb\googleanalytics\event\listener
         arguments:
             - '@config'
+            - '@language'
             - '@template'
             - '@user'
         tags:

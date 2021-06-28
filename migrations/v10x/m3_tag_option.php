@@ -20,7 +20,7 @@ class m3_tag_option extends \phpbb\db\migration\migration
 	 */
 	public static function depends_on()
 	{
-		return array('\phpbb\googleanalytics\migrations\v10x\m1_initial_data');
+		return ['\phpbb\googleanalytics\migrations\v10x\m1_initial_data'];
 	}
 
 	/**
@@ -41,8 +41,8 @@ class m3_tag_option extends \phpbb\db\migration\migration
 	 */
 	public function update_data()
 	{
-		return array(
-			array('config.add', array('googleanalytics_tag', (int) empty($this->config['googleanalytics_id']))),
-		);
+		return [
+			['config.add', ['googleanalytics_tag', (int) empty($this->config['googleanalytics_id'])]],
+		];
 	}
 }
