@@ -15,7 +15,7 @@ class ext_test extends \phpbb_test_case
 	/** @var \PHPUnit\Framework\MockObject\MockObject|\Symfony\Component\DependencyInjection\ContainerInterface */
 	protected $container;
 
-	/** @var \PHPUnit\Framework\MockObject\MockObject|\phpbb\finder */
+	/** @var \PHPUnit\Framework\MockObject\MockObject|\phpbb\finder\finder */
 	protected $extension_finder;
 
 	/** @var \PHPUnit\Framework\MockObject\MockObject|\phpbb\db\migrator */
@@ -34,7 +34,7 @@ class ext_test extends \phpbb_test_case
 			->getMock();
 
 		// Stub the ext finder and disable its constructor
-		$this->extension_finder = $this->getMockBuilder('\phpbb\finder')
+		$this->extension_finder = $this->getMockBuilder('\phpbb\finder\finder')
 			->disableOriginalConstructor()
 			->getMock();
 
