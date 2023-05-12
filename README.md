@@ -31,4 +31,4 @@ A phpBB official extension that allows administrators to easily add Google Analy
 * Translations should be posted to the [Google Analytics topic at phpBB.com](https://www.phpbb.com/customise/db/extension/googleanalytics/support/topic/130756). We accept pull requests for translation corrections, but we do not accept pull requests for new translations.
 
 ## License
-[GNU General Public License v2](http://opensource.org/licenses/GPL-2.0)
+[GNU General Public License v2](https://opensource.org/licenses/GPL-2.0)
