@@ -41,13 +41,13 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, array(
 	'ACP_GOOGLEANALYTICS'				=> 'Google Analytics',
 	'ACP_GOOGLEANALYTICS_ID'			=> 'Google Analytics ID',
-	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Ange din Google Analytics ID kod, t.ex: <samp>UA-000000-00</samp> or Measurement ID <samp>G-XXXXXXXXXX</samp>.<br /><br />Google Analytics kan hålla reda på dina registrerade användare över flera enheter och sessioner så att dina rapporter blir exaktare. Aktivera denna funktionalitet genom att konfigurera "User ID tracking" i ditt Google Analytics konto. <a href="https://support.google.com/analytics/answer/3123666">Klicka här för mer information <i class="icon fa-external-link fa-fw" aria-hidden="true"></i></a>.',
+	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Ange din Google Analytics ID kod, t.ex: <samp>UA-000000-00</samp> or Measurement ID <samp>G-XXXXXXXXXX</samp>.<br /><br />Google Analytics kan hålla reda på dina registrerade användare över flera enheter och sessioner så att dina rapporter blir exaktare. Aktivera denna funktionalitet genom att konfigurera "User ID tracking" i ditt Google Analytics konto. <a href="https://support.google.com/analytics/answer/3123666">Klicka här för mer information <i class="fa-arrow-up-right-from-square fas fa-fw" aria-hidden="true"></i></a>.',
 	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '“%s” är ingen giltig Google Analytics ID kod.<br />Den bör ha formatet “UA-000000-00” or “G-XXXXXXXXXX”.',
 	'ACP_GOOGLEANALYTICS_TAG_INVALID'	=> '“Global Site Tag (gtag.js)” must be the selected Google Analytics Script Tag when using a Measurement ID.',
 	'ACP_GA_ANONYMIZE_IP'				=> 'Turn on IP Anonymization',
 	'ACP_GA_ANONYMIZE_IP_EXPLAIN'		=> 'Enable this option if you want the data collected by Google Analytics to be compliant with the EU‘s General Data Protection Regulation (GDPR). Note that enabling this option may slightly reduce the accuracy of geographic reporting.',
 	'ACP_GOOGLEANALYTICS_TAG'			=> 'Google Analytics Script Tag',
-	'ACP_GOOGLEANALYTICS_TAG_EXPLAIN'	=> 'Välj önskad Google Analytics-kod. Global Site Tag (gtag.js) är den aktuella koden som rekommenderas av Google. Google Analytics Tag (analytics.js) är den gamla koden. <a href="https://developers.google.com/analytics/devguides/collection/gtagjs/migration">Klicka här för mer information <i class="icon fa-external-link fa-fw" aria-hidden="true"></i></a>.',
+	'ACP_GOOGLEANALYTICS_TAG_EXPLAIN'	=> 'Välj önskad Google Analytics-kod. Global Site Tag (gtag.js) är den aktuella koden som rekommenderas av Google. Google Analytics Tag (analytics.js) är den gamla koden. <a href="https://developers.google.com/analytics/devguides/collection/gtagjs/migration">Klicka här för mer information <i class="fa-arrow-up-right-from-square fas fa-fw" aria-hidden="true"></i></a>.',
 	'ACP_GA_ANALYTICS_TAG'				=> 'Google Analytics Tag (analytics.js)',
 	'ACP_GA_GTAGS_TAG'					=> 'Global Site Tag (gtag.js)',
 ));

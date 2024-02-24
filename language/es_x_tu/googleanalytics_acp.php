@@ -41,13 +41,13 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, array(
 	'ACP_GOOGLEANALYTICS'				=> 'Google Analytics',
 	'ACP_GOOGLEANALYTICS_ID'			=> 'ID de Google Analytics',
-	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Introduce tu código ID de Google Analytics, por ejemplo: <samp>UA-000000-00</samp> or Measurement ID <samp>G-XXXXXXXXXX</samp>.<br /><br />Google Analytics puede realizar un seguimiento de tus usuarios registrados en varios dispositivos y sesiones, para obtener un número de usuarios más preciso en tus informes. Para habilitar esta función mejorada, el seguimiento de ID de usuario debe configurarse en tu cuenta de Google Analytics. <a href="https://support.google.com/analytics/answer/3123666">Clic para más información <i class="icon fa-external-link fa-fw" aria-hidden="true"></i></a>.',
+	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Introduce tu código ID de Google Analytics, por ejemplo: <samp>UA-000000-00</samp> or Measurement ID <samp>G-XXXXXXXXXX</samp>.<br /><br />Google Analytics puede realizar un seguimiento de tus usuarios registrados en varios dispositivos y sesiones, para obtener un número de usuarios más preciso en tus informes. Para habilitar esta función mejorada, el seguimiento de ID de usuario debe configurarse en tu cuenta de Google Analytics. <a href="https://support.google.com/analytics/answer/3123666">Clic para más información <i class="fa-arrow-up-right-from-square fas fa-fw" aria-hidden="true"></i></a>.',
 	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '“%s” no es un código ID válido de Google Analytics.<br />Debería ser de esta forma “UA-000000-00” or “G-XXXXXXXXXX”.',
 	'ACP_GOOGLEANALYTICS_TAG_INVALID'	=> '“Global Site Tag (gtag.js)” must be the selected Google Analytics Script Tag when using a Measurement ID.',
 	'ACP_GA_ANONYMIZE_IP'				=> 'Activar anonimización de IP',
 	'ACP_GA_ANONYMIZE_IP_EXPLAIN'		=> 'Activa esta opción si deseas que los datos recopilados por Google Analytics cumplan con el Reglamento general de protección de datos de la UE (GDPR). Ten en cuenta que habilitar esta opción puede reducir ligeramente la precisión de los informes geográficos.',
 	'ACP_GOOGLEANALYTICS_TAG'			=> 'Google Analytics Script Tag',
-	'ACP_GOOGLEANALYTICS_TAG_EXPLAIN'	=> 'Elije tu código preferido de Google Analytics. Global Site Tag (gtag.js) es el fragmento actual recomendado por Google. Google Analytics Tag (analytics.js) es el fragmento de código antiguo. <a href="https://developers.google.com/analytics/devguides/collection/gtagjs/migration">Clic para más información <i class="icon fa-external-link fa-fw" aria-hidden="true"></i></a>.',
+	'ACP_GOOGLEANALYTICS_TAG_EXPLAIN'	=> 'Elije tu código preferido de Google Analytics. Global Site Tag (gtag.js) es el fragmento actual recomendado por Google. Google Analytics Tag (analytics.js) es el fragmento de código antiguo. <a href="https://developers.google.com/analytics/devguides/collection/gtagjs/migration">Clic para más información <i class="fa-arrow-up-right-from-square fas fa-fw" aria-hidden="true"></i></a>.',
 	'ACP_GA_ANALYTICS_TAG'				=> 'Google Analytics Tag (analytics.js)',
 	'ACP_GA_GTAGS_TAG'					=> 'Global Site Tag (gtag.js)',
 ));
