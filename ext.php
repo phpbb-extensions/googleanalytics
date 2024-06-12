@@ -19,6 +19,6 @@ class ext extends base
 	 */
 	public function is_enableable()
 	{
-		return phpbb_version_compare(PHPBB_VERSION, '3.2.0', '>=');
+		return phpbb_version_compare(PHPBB_VERSION, '4.0.0-dev', '>=');
 	}
 }
