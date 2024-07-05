@@ -119,7 +119,7 @@ class listener implements EventSubscriberInterface
 					'lang'		=> 'ACP_GOOGLEANALYTICS_TAG',
 					'validate'	=> 'int',
 					'type'		=> 'select',
-					'function'	=> 'build_select',
+					'function'	=> [$this, 'build_select'],
 					'params'	=> [[
 						0	=> 'ACP_GA_ANALYTICS_TAG',
 						1	=> 'ACP_GA_GTAGS_TAG',
@@ -170,5 +170,17 @@ class listener implements EventSubscriberInterface
 
 		// Update error event data
 		$event['error'] = $error;
+	}
+
+	/**
+	 * Get select options for ACP
+	 *
+	 * @param array $options
+	 * @param bool|int|string $default
+	 * @return array
+	 */
+	public function build_select(array $options, bool|int|string $default): array
+	{
+		return ['options' => build_select($options, $default)];
 	}
 }
