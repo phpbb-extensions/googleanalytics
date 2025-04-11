@@ -2,7 +2,7 @@
 
 A phpBB official extension that allows administrators to easily add Google Analytics to their forums.
 
-[![Build Status](https://github.com/phpbb-extensions/googleanalytics/workflows/Tests/badge.svg)](https://github.com/phpbb-extensions/googleanalytics/actions)
+[![Build Status](https://github.com/phpbb-extensions/googleanalytics/actions/workflows/tests.yml/badge.svg)](https://github.com/phpbb-extensions/googleanalytics/actions)
 [![codecov](https://codecov.io/gh/phpbb-extensions/googleanalytics/branch/master/graph/badge.svg?token=1HQh953sBs)](https://codecov.io/gh/phpbb-extensions/googleanalytics)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/phpbb-extensions/googleanalytics/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/phpbb-extensions/googleanalytics/?branch=master)
 
