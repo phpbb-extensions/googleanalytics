@@ -41,8 +41,8 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, array(
 	'ACP_GOOGLEANALYTICS'				=> 'Google Analytics',
 	'ACP_GOOGLEANALYTICS_ID'			=> 'Google Analytics ID',
-	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'أكتب كود Google Analytics ID الخاص بك، مثل: <br /><br /><samp>UA-000000-00</samp> or Measurement ID <samp>G-XXXXXXXXXX</samp>.إحصائيات قوقل يمكنها تتبع أعضاء منتداك المسجلين عبر الأجهزة والجلسات المتعددة، حتى يكون عدد الأعضاء أكثر دقة. لتفعيل هذه الوظيفة المحَسِّنة يجب أن يكون رقم تتبع المستخدم ID مضبوط في حسابك إحصائيات قوقل. <a href="https://support.google.com/analytics/answer/3123666">اضغط هنا للمعلومات أكثر <i class="fa-arrow-up-right-from-square fas fa-fw" aria-hidden="true"></i></a>.',
-	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '“%s” كود Google Analytics ID الذي أدخلته غير صالح.<br />يجب أن يكون على الشكل “UA-000000-00” or “G-XXXXXXXXXX”.',
+	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'أكتب كود Google Analytics ID الخاص بك، مثل: <br><br><samp>UA-000000-00</samp> or Measurement ID <samp>G-XXXXXXXXXX</samp>.إحصائيات قوقل يمكنها تتبع أعضاء منتداك المسجلين عبر الأجهزة والجلسات المتعددة، حتى يكون عدد الأعضاء أكثر دقة. لتفعيل هذه الوظيفة المحَسِّنة يجب أن يكون رقم تتبع المستخدم ID مضبوط في حسابك إحصائيات قوقل. <a href="https://support.google.com/analytics/answer/3123666">اضغط هنا للمعلومات أكثر <i class="fa-arrow-up-right-from-square fas fa-fw" aria-hidden="true"></i></a>.',
+	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '“%s” كود Google Analytics ID الذي أدخلته غير صالح.<br>يجب أن يكون على الشكل “UA-000000-00” or “G-XXXXXXXXXX”.',
 	'ACP_GOOGLEANALYTICS_TAG_INVALID'	=> '“Global Site Tag (gtag.js)” must be the selected Google Analytics Script Tag when using a Measurement ID.',
 	'ACP_GA_ANONYMIZE_IP'				=> 'Turn on IP Anonymization',
 	'ACP_GA_ANONYMIZE_IP_EXPLAIN'		=> 'Enable this option if you want the data collected by Google Analytics to be compliant with the EU‘s General Data Protection Regulation (GDPR). Note that enabling this option may slightly reduce the accuracy of geographic reporting.',

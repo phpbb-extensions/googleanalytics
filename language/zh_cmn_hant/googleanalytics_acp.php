@@ -41,8 +41,8 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, array(
 	'ACP_GOOGLEANALYTICS'				=> 'Google Analytics',
 	'ACP_GOOGLEANALYTICS_ID'			=> 'Google Analytics（分析） ID',
-	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> '輸入你的 Google Analytics（分析） ID code, 例如: <samp>UA-000000-00</samp> or Measurement ID <samp>G-XXXXXXXXXX</samp>.<br /><br />Google Analytics（分析）可以跨多個設備和會話跟踪您的註冊用戶，以便在報告中提供更準確的用戶數。 要啟用此增強功能，您必須在Google Analytics（分析）帳戶中配置用戶ID跟踪。<a href="https://support.google.com/analytics/answer/3123666"> 單擊獲取更多信息。 <i class="fa-arrow-up-right-from-square fas fa-fw" aria-hidden="true"></i></a>',
-	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '“%s” 不是有效的 Google Analytics（分析） ID code.<br />它的格式應該會是像這樣 “UA-000000-00” or “G-XXXXXXXXXX”.',
+	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> '輸入你的 Google Analytics（分析） ID code, 例如: <samp>UA-000000-00</samp> or Measurement ID <samp>G-XXXXXXXXXX</samp>.<br><br>Google Analytics（分析）可以跨多個設備和會話跟踪您的註冊用戶，以便在報告中提供更準確的用戶數。 要啟用此增強功能，您必須在Google Analytics（分析）帳戶中配置用戶ID跟踪。<a href="https://support.google.com/analytics/answer/3123666"> 單擊獲取更多信息。 <i class="fa-arrow-up-right-from-square fas fa-fw" aria-hidden="true"></i></a>',
+	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '“%s” 不是有效的 Google Analytics（分析） ID code.<br>它的格式應該會是像這樣 “UA-000000-00” or “G-XXXXXXXXXX”.',
 	'ACP_GOOGLEANALYTICS_TAG_INVALID'	=> '“Global Site Tag (gtag.js)” must be the selected Google Analytics Script Tag when using a Measurement ID.',
 	'ACP_GA_ANONYMIZE_IP'				=> 'Turn on IP Anonymization',
 	'ACP_GA_ANONYMIZE_IP_EXPLAIN'		=> 'Enable this option if you want the data collected by Google Analytics to be compliant with the EU‘s General Data Protection Regulation (GDPR). Note that enabling this option may slightly reduce the accuracy of geographic reporting.',
