@@ -84,4 +84,15 @@ class google_analytics_test extends \phpbb_functional_test_case
 		$crawler = self::request('GET', 'index.php');
 		self::assertStringContainsString($this->sample_ga_code, $crawler->filter('head > script')->eq(1)->text());
 	}
+
+	/**
+	 * Test Analytics agreement appears as expected
+	 */
+	public function test_ucp_agreement()
+	{
+		$this->add_lang_ext('phpbb/googleanalytics', 'googleanalytics_ucp');
+
+		$crawler = self::request('GET', 'ucp.php?mode=privacy');
+		$this->assertStringContainsString($this->lang('PHPBB_ANALYTICS_PRIVACY_POLICY', 'yourdomain.com'), $crawler->filter('.agreement')->html());
+	}
 }
