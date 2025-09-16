@@ -112,7 +112,7 @@ class listener_test extends \phpbb_test_case
 	 *
 	 * @return array Array of test data
 	 */
-	public function add_googleanalytics_configs_data()
+	public static function add_googleanalytics_configs_data()
 	{
 		return [
 			[ // expected config and mode
@@ -164,7 +164,7 @@ class listener_test extends \phpbb_test_case
 	 *
 	 * @return array Array of test data
 	 */
-	public function validate_googleanalytics_id_data()
+	public static function validate_googleanalytics_id_data()
 	{
 		return [
 			[
