@@ -10,8 +10,6 @@
 
 namespace phpbb\googleanalytics\tests\event;
 
-require_once __DIR__ . '/../../../../../includes/functions_acp.php';
-
 class listener_test extends \phpbb_test_case
 {
 	/** @var \phpbb\googleanalytics\event\listener */
@@ -21,13 +19,22 @@ class listener_test extends \phpbb_test_case
 	protected $config;
 
 	/** @var \phpbb\language\language */
-	protected $lang;
+	protected $language;
 
 	/** @var \PHPUnit\Framework\MockObject\MockObject|\phpbb\template\template */
 	protected $template;
 
 	/** @var \phpbb\user */
 	protected $user;
+
+	public static function setUpBeforeClass(): void
+	{
+		$acp_functions = __DIR__ . '/../../../../../includes/functions_acp.php';
+		if (is_file($acp_functions))
+		{
+			require_once $acp_functions;
+		}
+	}
 
 	/**
 	 * Setup test environment
@@ -46,8 +53,8 @@ class listener_test extends \phpbb_test_case
 		$this->template = $this->getMockBuilder('\phpbb\template\template')
 			->getMock();
 		$lang_loader = new \phpbb\language\language_file_loader($phpbb_root_path, $phpEx);
-		$this->lang = new \phpbb\language\language($lang_loader);
-		$this->user = new \phpbb\user($this->lang, '\phpbb\datetime');
+		$this->language = new \phpbb\language\language($lang_loader);
+		$this->user = new \phpbb\user($this->language, '\phpbb\datetime');
 		$this->user->data['user_id'] = 2;
 		$this->user->data['is_registered'] = true;
 	}
@@ -59,7 +66,7 @@ class listener_test extends \phpbb_test_case
 	{
 		$this->listener = new \phpbb\googleanalytics\event\listener(
 			$this->config,
-			$this->lang,
+			$this->language,
 			$this->template,
 			$this->user
 		);
@@ -80,9 +87,10 @@ class listener_test extends \phpbb_test_case
 	public function test_getSubscribedEvents()
 	{
 		self::assertEquals([
-			'core.acp_board_config_edit_add',
 			'core.page_header',
+			'core.acp_board_config_edit_add',
 			'core.validate_config_variable',
+			'core.page_footer_after',
 		], array_keys(\phpbb\googleanalytics\event\listener::getSubscribedEvents()));
 	}
 
@@ -152,7 +160,7 @@ class listener_test extends \phpbb_test_case
 
 		$event_data = ['display_vars', 'mode'];
 		$event_data_after = $dispatcher->trigger_event('core.acp_board_config_edit_add', compact($event_data));
-		extract($event_data_after, EXTR_OVERWRITE);
+		extract($event_data_after);
 
 		$keys = array_keys($display_vars['vars']);
 
@@ -243,8 +251,56 @@ class listener_test extends \phpbb_test_case
 		{
 			self::assertArrayHasKey($expected, $event_data_after);
 		}
-		extract($event_data_after, EXTR_OVERWRITE);
+		extract($event_data_after);
 
 		self::assertEquals($expected_error, $error);
+	}
+
+	/**
+	 * Data for test_append_agreement
+	 *
+	 * @return array
+	 */
+	public function append_agreement_data()
+	{
+		return [
+			[false, 'PRIVACY', 0], // No agreement
+			[true, 'TERMS', 0], // Wrong title
+			[true, 'PRIVACY', 1], // Correct conditions
+		];
+	}
+
+	/**
+	 * Test the append_agreement method
+	 *
+	 * @dataProvider append_agreement_data
+	 * @param mixed $s_agreement S_AGREEMENT template variable value
+	 * @param mixed $agreement_title AGREEMENT_TITLE template variable value
+	 * @param int $expected_append_calls Expected append_var calls
+	 */
+	public function test_append_agreement($s_agreement, $agreement_title, $expected_append_calls)
+	{
+		$this->config['sitename'] = 'Test Forum';
+		$this->user->page['page_name'] = 'ucp.php';
+
+		$this->template->expects(self::atMost(2))
+			->method('retrieve_var')
+			->withConsecutive(['S_AGREEMENT'], ['AGREEMENT_TITLE'])
+			->willReturnOnConsecutiveCalls($s_agreement, $this->language->lang($agreement_title));
+
+		if ($expected_append_calls > 0)
+		{
+			$this->template->expects(self::once())
+				->method('append_var')
+				->with('AGREEMENT_TEXT', $this->language->lang('PHPBB_ANALYTICS_PRIVACY_POLICY', 'Test Forum'));
+		}
+		else
+		{
+			$this->template->expects(self::never())
+				->method('append_var');
+		}
+
+		$this->set_listener();
+		$this->listener->append_agreement();
 	}
 }
