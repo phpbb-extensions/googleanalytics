@@ -60,9 +60,10 @@ class listener implements EventSubscriberInterface
 	public static function getSubscribedEvents()
 	{
 		return [
+			'core.page_header'				=> 'load_google_analytics',
 			'core.acp_board_config_edit_add'	=> 'add_googleanalytics_configs',
-			'core.page_header'					=> 'load_google_analytics',
-			'core.validate_config_variable'		=> 'validate_googleanalytics_id',
+			'core.validate_config_variable'	=> 'validate_googleanalytics_id',
+			'core.page_footer_after'		=> 'append_agreement',
 		];
 	}
 
@@ -170,5 +171,25 @@ class listener implements EventSubscriberInterface
 
 		// Update error event data
 		$event['error'] = $error;
+	}
+
+	/**
+	 * Append additional agreement details to the privacy agreement.
+	 *
+	 * @return void
+	 */
+	public function append_agreement()
+	{
+		if (!$this->config['googleanalytics_id']
+			|| (strpos($this->user->page['page_name'], 'ucp') !== 0)
+			|| !$this->template->retrieve_var('S_AGREEMENT')
+			|| ($this->template->retrieve_var('AGREEMENT_TITLE') !== $this->language->lang('PRIVACY')))
+		{
+			return;
+		}
+
+		$this->language->add_lang('googleanalytics_ucp', 'phpbb/googleanalytics');
+
+		$this->template->append_var('AGREEMENT_TEXT', $this->language->lang('PHPBB_ANALYTICS_PRIVACY_POLICY', $this->config['sitename']));
 	}
 }
