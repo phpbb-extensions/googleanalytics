@@ -13,6 +13,7 @@
 				{%- EVENT phpbb_googleanalytics_gtag_options -%}
 				{%- if S_REGISTERED_USER %}'user_id': '{{ GOOGLEANALYTICS_USER_ID }}',{% endif -%}
 				{%- if S_ANONYMIZE_IP %}'anonymize_ip': true,{% endif -%}
+				{%- if S_COOKIE_SECURE -%}'cookie_flags': 'samesite=none;secure',{%- endif -%}
 			});
 		</script>
 	{% else %}

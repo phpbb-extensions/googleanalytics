@@ -48,7 +48,9 @@ class listener_test extends \phpbb_test_case
 		// Load/Mock classes required by the event listener class
 		$this->config = new \phpbb\config\config([
 			'googleanalytics_id' => 'UA-000000-01',
+			'googleanalytics_tag' => 1,
 			'ga_anonymize_ip' => 0,
+			'cookie_secure' => 0,
 		]);
 		$this->template = $this->getMockBuilder('\phpbb\template\template')
 			->getMock();
@@ -108,6 +110,7 @@ class listener_test extends \phpbb_test_case
 				'GOOGLEANALYTICS_TAG'		=> $this->config['googleanalytics_tag'],
 				'GOOGLEANALYTICS_USER_ID'	=> $this->user->data['user_id'],
 				'S_ANONYMIZE_IP'			=> $this->config['ga_anonymize_ip'],
+				'S_COOKIE_SECURE'			=> $this->config['cookie_secure'],
 			]);
 
 		$dispatcher = new \phpbb\event\dispatcher();

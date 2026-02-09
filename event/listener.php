@@ -80,6 +80,7 @@ class listener implements EventSubscriberInterface
 			'GOOGLEANALYTICS_TAG'		=> $this->config['googleanalytics_tag'],
 			'GOOGLEANALYTICS_USER_ID'	=> $this->user->data['user_id'],
 			'S_ANONYMIZE_IP'			=> $this->config['ga_anonymize_ip'],
+			'S_COOKIE_SECURE'			=> $this->config['cookie_secure'],
 		]);
 	}
 
