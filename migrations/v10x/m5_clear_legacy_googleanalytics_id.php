@@ -28,7 +28,7 @@ class m5_clear_legacy_googleanalytics_id extends \phpbb\db\migration\migration
 	 */
 	public function effectively_installed()
 	{
-		return !preg_match('/^UA-\d{4,9}-\d{1,4}$/', (string) $this->config['googleanalytics_id']);
+		return !preg_match('/^UA-\d{4,9}-\d{1,4}$/', $this->config['googleanalytics_id']);
 	}
 
 	/**

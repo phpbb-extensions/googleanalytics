@@ -11,7 +11,7 @@
 namespace phpbb\googleanalytics\migrations\v10x;
 
 /**
- * Migration stage 4: Remove legacy Google Analytics tag config option
+ * Migration stage 4: Remove the legacy Google Analytics tag config option
  */
 class m4_remove_legacy_tag_option extends \phpbb\db\migration\migration
 {

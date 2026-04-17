@@ -61,7 +61,7 @@ class listener implements EventSubscriberInterface
 	{
 		return [
 			'core.page_header'				=> 'load_google_analytics',
-			'core.acp_board_config_edit_add'	=> 'add_googleanalytics_configs',
+			'core.acp_board_config_edit_add'=> 'add_googleanalytics_configs',
 			'core.validate_config_variable'	=> 'validate_googleanalytics_id',
 			'core.page_footer_after'		=> 'append_agreement',
 		];
@@ -77,9 +77,9 @@ class listener implements EventSubscriberInterface
 	{
 		$this->template->assign_vars([
 			'GOOGLEANALYTICS_ID'		=> $this->config['googleanalytics_id'],
-			'GOOGLEANALYTICS_USER_ID'	=> $this->user->data['user_id'],
-			'S_ANONYMIZE_IP'			=> $this->config['ga_anonymize_ip'],
-			'S_COOKIE_SECURE'			=> $this->config['cookie_secure'],
+			'GOOGLEANALYTICS_USER_ID'	=> (int) $this->user->data['user_id'],
+			'S_ANONYMIZE_IP'			=> (bool) $this->config['ga_anonymize_ip'],
+			'S_COOKIE_SECURE'			=> (bool) $this->config['cookie_secure'],
 		]);
 	}
 
@@ -136,7 +136,7 @@ class listener implements EventSubscriberInterface
 	 */
 	public function validate_googleanalytics_id($event)
 	{
-		// Check if the validate test is for google_analytics
+		// Check if the validation test is for googleanalytics_id
 		if ($event['config_definition']['validate'] !== 'googleanalytics_id' || empty($event['cfg_array']['googleanalytics_id']))
 		{
 			return;
