@@ -16,7 +16,7 @@ namespace phpbb\googleanalytics\tests\functional;
 class google_analytics_test extends \phpbb_functional_test_case
 {
 	/** @var string */
-	protected $sample_ga_code = 'UA-000000-00';
+	protected $sample_ga_code = 'G-A1B2C3D4E5';
 
 	/**
 	 * Define the extensions to be tested
@@ -82,7 +82,7 @@ class google_analytics_test extends \phpbb_functional_test_case
 	public function test_google_analytics_code()
 	{
 		$crawler = self::request('GET', 'index.php');
-		self::assertStringContainsString($this->sample_ga_code, $crawler->filter('head > script')->eq(1)->text());
+		self::assertStringContainsString('https://www.googletagmanager.com/gtag/js?id=' . $this->sample_ga_code, $crawler->filter('head > script[src*="googletagmanager.com/gtag/js"]')->attr('src'));
 	}
 
 	/**

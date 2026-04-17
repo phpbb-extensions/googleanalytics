@@ -77,7 +77,6 @@ class listener implements EventSubscriberInterface
 	{
 		$this->template->assign_vars([
 			'GOOGLEANALYTICS_ID'		=> $this->config['googleanalytics_id'],
-			'GOOGLEANALYTICS_TAG'		=> $this->config['googleanalytics_tag'],
 			'GOOGLEANALYTICS_USER_ID'	=> $this->user->data['user_id'],
 			'S_ANONYMIZE_IP'			=> $this->config['ga_anonymize_ip'],
 			'S_COOKIE_SECURE'			=> $this->config['cookie_secure'],
@@ -117,17 +116,6 @@ class listener implements EventSubscriberInterface
 					'type'		=> 'radio:yes_no',
 					'explain'	=> true,
 				],
-				'googleanalytics_tag' => [
-					'lang'		=> 'ACP_GOOGLEANALYTICS_TAG',
-					'validate'	=> 'int',
-					'type'		=> 'select',
-					'function'	=> 'build_select',
-					'params'	=> [[
-						0	=> 'ACP_GA_ANALYTICS_TAG',
-						1	=> 'ACP_GA_GTAGS_TAG',
-					], '{CONFIG_VALUE}'],
-					'explain'	=> true,
-				],
 			];
 
 			// Add the new config vars after warnings_expire_days in the display_vars config array
@@ -159,15 +147,9 @@ class listener implements EventSubscriberInterface
 		$error = $event['error'];
 
 		// Add error message if the input is not a valid Google Analytics ID
-		if (!preg_match('/^UA-\d{4,9}-\d{1,4}$|^G-[A-Z0-9]{10}$/', $input))
+		if (!preg_match('/^G-[A-Z0-9]{10}$/', $input))
 		{
 			$error[] = $this->language->lang('ACP_GOOGLEANALYTICS_ID_INVALID', $input);
-		}
-
-		// Add error message if GTAG is not selected for use with a Measurement ID
-		if ((int) $event['cfg_array']['googleanalytics_tag'] === 0 && preg_match('/^G-[A-Z0-9]{10}$/', $input))
-		{
-			$error[] = $this->language->lang('ACP_GOOGLEANALYTICS_TAG_INVALID', $input);
 		}
 
 		// Update error event data
