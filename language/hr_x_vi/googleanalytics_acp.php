@@ -41,8 +41,8 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, array(
 	'ACP_GOOGLEANALYTICS'				=> 'Google Analytics',
 	'ACP_GOOGLEANALYTICS_ID'			=> 'Google Analytics ID',
-	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Upišite svoj Google Analytics ID kod, npr.: <samp>G-XXXXXXXXXX</samp>.<br /><br />Google Analytics može pratiti vaše registrirane korisnike/ce putem više uređaja i sesija (a) za što točnije zbrajanje korisnika/ca u vašim izviješćima. Za omogućavanje ove poboljšanje funkcionalnosti, praćenje ID-a korisnika/ca mora biti konfigurirano u vašem Google Analytics korisničkom računu. Kliknite <a href="https://support.google.com/analytics/answer/3123666">ovdje za više informacija <i class="icon fa-external-link fa-fw" aria-hidden="true"></i></a>.',
-	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '“%s” nije ispravan Google Analytics ID kod.<br />Trebao bi biti u obliku: “G-XXXXXXXXXX”.',
+	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Upišite svoj Google Analytics ID kod, npr.: <samp>G-XXXXXXXXXX</samp>.<br><br>Google Analytics može pratiti vaše registrirane korisnike/ce putem više uređaja i sesija (a) za što točnije zbrajanje korisnika/ca u vašim izviješćima. Za omogućavanje ove poboljšanje funkcionalnosti, praćenje ID-a korisnika/ca mora biti konfigurirano u vašem Google Analytics korisničkom računu. Kliknite <a href="https://support.google.com/analytics/answer/9213390" target="_blank">ovdje za više informacija <i class="icon fa-external-link fa-fw" aria-hidden="true"></i></a>.',
+	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '“%s” nije ispravan Google Analytics ID kod.<br>Trebao bi biti u obliku: “G-XXXXXXXXXX”.',
 	'ACP_GA_ANONYMIZE_IP'				=> 'Turn on IP Anonymization',
 	'ACP_GA_ANONYMIZE_IP_EXPLAIN'		=> 'Enable this option if you want the data collected by Google Analytics to be compliant with the EU‘s General Data Protection Regulation (GDPR). Note that enabling this option may slightly reduce the accuracy of geographic reporting.',
 ));

@@ -40,8 +40,8 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, array(
 	'ACP_GOOGLEANALYTICS'				=> 'Google Analytics',
 	'ACP_GOOGLEANALYTICS_ID'			=> 'Google Analytics ID',
-	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Zadejte Vaše ID ve službě Google Analytics, např.: <samp>G-XXXXXXXXXX</samp>.<br /><br />Google Analytics dokáže sledovat přihlášené uživatele napříč zařízeními pro přesnější informace o návštěvnících. Pro povolení této rozšířené funkcionality musíte povolit funkci User ID ve svém účtu Google Analytics. <a href="https://support.google.com/analytics/answer/3123666">Klikněte pro více informací <i class="icon fa-external-link fa-fw" aria-hidden="true"></i></a>.',
-	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '“%s” není platné ID klienta ve službě Google Analytics.<br />Mělo by být ve tvaru “G-XXXXXXXXXX”.',
+	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Zadejte Vaše ID ve službě Google Analytics, např.: <samp>G-XXXXXXXXXX</samp>.<br><br>Google Analytics dokáže sledovat přihlášené uživatele napříč zařízeními pro přesnější informace o návštěvnících. Pro povolení této rozšířené funkcionality musíte povolit funkci User ID ve svém účtu Google Analytics. <a href="https://support.google.com/analytics/answer/9213390" target="_blank">Klikněte pro více informací <i class="icon fa-external-link fa-fw" aria-hidden="true"></i></a>.',
+	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '“%s” není platné ID klienta ve službě Google Analytics.<br>Mělo by být ve tvaru “G-XXXXXXXXXX”.',
 	'ACP_GA_ANONYMIZE_IP'				=> 'Turn on IP Anonymization',
 	'ACP_GA_ANONYMIZE_IP_EXPLAIN'		=> 'Enable this option if you want the data collected by Google Analytics to be compliant with the EU‘s General Data Protection Regulation (GDPR). Note that enabling this option may slightly reduce the accuracy of geographic reporting.',
 ));

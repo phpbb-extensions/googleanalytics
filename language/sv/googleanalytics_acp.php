@@ -41,8 +41,8 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, array(
 	'ACP_GOOGLEANALYTICS'				=> 'Google Analytics',
 	'ACP_GOOGLEANALYTICS_ID'			=> 'Google Analytics ID',
-	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Ange din Google Analytics ID kod, t.ex: <samp>G-XXXXXXXXXX</samp>.<br /><br />Google Analytics kan hålla reda på dina registrerade användare över flera enheter och sessioner så att dina rapporter blir exaktare. Aktivera denna funktionalitet genom att konfigurera "User ID tracking" i ditt Google Analytics konto. <a href="https://support.google.com/analytics/answer/3123666">Klicka här för mer information <i class="icon fa-external-link fa-fw" aria-hidden="true"></i></a>.',
-	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '“%s” är ingen giltig Google Analytics ID kod.<br />Den bör ha formatet “G-XXXXXXXXXX”.',
+	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Ange din Google Analytics ID kod, t.ex: <samp>G-XXXXXXXXXX</samp>.<br><br>Google Analytics kan hålla reda på dina registrerade användare över flera enheter och sessioner så att dina rapporter blir exaktare. Aktivera denna funktionalitet genom att konfigurera "User ID tracking" i ditt Google Analytics konto. <a href="https://support.google.com/analytics/answer/9213390" target="_blank">Klicka här för mer information <i class="icon fa-external-link fa-fw" aria-hidden="true"></i></a>.',
+	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '“%s” är ingen giltig Google Analytics ID kod.<br>Den bör ha formatet “G-XXXXXXXXXX”.',
 	'ACP_GA_ANONYMIZE_IP'				=> 'Turn on IP Anonymization',
 	'ACP_GA_ANONYMIZE_IP_EXPLAIN'		=> 'Enable this option if you want the data collected by Google Analytics to be compliant with the EU‘s General Data Protection Regulation (GDPR). Note that enabling this option may slightly reduce the accuracy of geographic reporting.',
 ));
