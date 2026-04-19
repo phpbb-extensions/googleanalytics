@@ -64,6 +64,7 @@ class listener implements EventSubscriberInterface
 			'core.acp_board_config_edit_add'	=> 'add_googleanalytics_configs',
 			'core.validate_config_variable'	=> 'validate_googleanalytics_id',
 			'core.page_footer_after'		=> 'append_agreement',
+			'phpbb.consentmanager.collect_registrations' => 'register_analytics',
 		];
 	}
 
@@ -192,5 +193,27 @@ class listener implements EventSubscriberInterface
 		$this->language->add_lang('googleanalytics_ucp', 'phpbb/googleanalytics');
 
 		$this->template->append_var('AGREEMENT_TEXT', $this->language->lang('PHPBB_ANALYTICS_PRIVACY_POLICY', $this->config['sitename']));
+	}
+
+	/**
+	 * Register Google Analytics with Consent Manager when available.
+	 *
+	 * @param \phpbb\event\data|array $event The event object or event data
+	 * @return void
+	 */
+	public function register_analytics($event)
+	{
+		if (!$this->config['googleanalytics_id'])
+		{
+			return;
+		}
+
+		$this->language->add_lang('common', 'phpbb/googleanalytics');
+
+		$event['consent_manager']->register('phpbb.googleanalytics', [
+			'label'		=> $this->language->lang('GOOGLEANALYTICS_LABEL'),
+			'category'	=> 'analytics',
+			'description' => $this->language->lang('GOOGLEANALYTICS_DESCRIPTION'),
+		]);
 	}
 }

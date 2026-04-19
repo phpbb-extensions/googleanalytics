@@ -93,6 +93,7 @@ class listener_test extends \phpbb_test_case
 			'core.acp_board_config_edit_add',
 			'core.validate_config_variable',
 			'core.page_footer_after',
+			'phpbb.consentmanager.collect_registrations',
 		], array_keys(\phpbb\googleanalytics\event\listener::getSubscribedEvents()));
 	}
 
@@ -305,5 +306,54 @@ class listener_test extends \phpbb_test_case
 
 		$this->set_listener();
 		$this->listener->append_agreement();
+	}
+
+	public function register_analytics_data()
+	{
+		return [
+			'configured analytics' => ['G-A1B2C3D4E5', 1],
+			'missing analytics id' => ['', 0],
+		];
+	}
+
+	/**
+	 * @dataProvider register_analytics_data
+	 */
+	public function test_register_analytics($googleanalytics_id, $expected_calls)
+	{
+		$this->config['googleanalytics_id'] = $googleanalytics_id;
+		$this->set_listener();
+
+		$consent_manager = new consent_manager_double();
+
+		$this->listener->register_analytics([
+			'consent_manager' => $consent_manager,
+		]);
+
+		self::assertCount($expected_calls, $consent_manager->registrations);
+
+		if ($expected_calls)
+		{
+			self::assertSame('phpbb.googleanalytics', $consent_manager->registrations[0]['id']);
+			self::assertSame([
+				'label' => $this->language->lang('GOOGLEANALYTICS_LABEL'),
+				'category' => 'analytics',
+				'description' => $this->language->lang('GOOGLEANALYTICS_DESCRIPTION'),
+			], $consent_manager->registrations[0]['definition']);
+		}
+	}
+}
+
+class consent_manager_double
+{
+	/** @var array */
+	public $registrations = [];
+
+	public function register($id, array $definition)
+	{
+		$this->registrations[] = [
+			'id' => $id,
+			'definition' => $definition,
+		];
 	}
 }
