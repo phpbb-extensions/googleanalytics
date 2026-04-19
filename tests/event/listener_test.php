@@ -47,8 +47,7 @@ class listener_test extends \phpbb_test_case
 
 		// Load/Mock classes required by the event listener class
 		$this->config = new \phpbb\config\config([
-			'googleanalytics_id' => 'UA-000000-01',
-			'googleanalytics_tag' => 1,
+			'googleanalytics_id' => 'G-A1B2C3D4E5',
 			'ga_anonymize_ip' => 0,
 			'cookie_secure' => 0,
 		]);
@@ -96,18 +95,30 @@ class listener_test extends \phpbb_test_case
 		], array_keys(\phpbb\googleanalytics\event\listener::getSubscribedEvents()));
 	}
 
+	public function load_google_analytics_data()
+	{
+		return [
+			'ga4 id' => ['G-A1B2C3D4E5'],
+			'legacy ua passthrough' => ['UA-1234-56'],
+			'invalid passthrough' => ['foo-bar-foo'],
+		];
+	}
+
 	/**
 	 * Test the load_google_analytics event
+	 *
+	 * @dataProvider load_google_analytics_data
 	 */
-	public function test_load_google_analytics()
+	public function test_load_google_analytics($googleanalytics_id)
 	{
+		$this->config['googleanalytics_id'] = $googleanalytics_id;
+
 		$this->set_listener();
 
 		$this->template->expects(self::once())
 			->method('assign_vars')
 			->with([
 				'GOOGLEANALYTICS_ID'		=> $this->config['googleanalytics_id'],
-				'GOOGLEANALYTICS_TAG'		=> $this->config['googleanalytics_tag'],
 				'GOOGLEANALYTICS_USER_ID'	=> $this->user->data['user_id'],
 				'S_ANONYMIZE_IP'			=> $this->config['ga_anonymize_ip'],
 				'S_COOKIE_SECURE'			=> $this->config['cookie_secure'],
@@ -129,7 +140,7 @@ class listener_test extends \phpbb_test_case
 			[ // expected config and mode
 			  'settings',
 			  ['vars' => ['warnings_expire_days' => []]],
-			  ['warnings_expire_days', 'legend_googleanalytics', 'googleanalytics_id', 'ga_anonymize_ip', 'googleanalytics_tag'],
+			  ['warnings_expire_days', 'legend_googleanalytics', 'googleanalytics_id', 'ga_anonymize_ip'],
 			],
 			[ // unexpected mode
 			  'foobar',
@@ -180,22 +191,12 @@ class listener_test extends \phpbb_test_case
 		return [
 			[
 				// valid code, no error
-				['googleanalytics_id' => 'UA-1234-56', 'googleanalytics_tag' => 0],
-				[],
-			],
-			[
-				// valid code, no error
-				['googleanalytics_id' => 'UA-1234-56', 'googleanalytics_tag' => 1],
-				[],
-			],
-			[
-				// valid code, no error
-				['googleanalytics_id' => 'G-A1B2C3D4E5', 'googleanalytics_tag' => 1],
+				['googleanalytics_id' => 'G-A1B2C3D4E5'],
 				[],
 			],
 			[
 				// no code, no error
-				['googleanalytics_id' => '', 'googleanalytics_tag' => 1],
+				['googleanalytics_id' => ''],
 				[],
 			],
 			[
@@ -205,27 +206,22 @@ class listener_test extends \phpbb_test_case
 			],
 			[
 				// invalid code, error
-				['googleanalytics_id' => 'G-A1B2C3D4E5', 'googleanalytics_tag' => 0],
-				['ACP_GOOGLEANALYTICS_TAG_INVALID'],
-			],
-			[
-				// invalid code, error
-				['googleanalytics_id' => 'UA-12-34', 'googleanalytics_tag' => 1],
+				['googleanalytics_id' => 'UA-1234-56'],
 				['ACP_GOOGLEANALYTICS_ID_INVALID'],
 			],
 			[
 				// invalid code, error
-				['googleanalytics_id' => 'UA-01234-56789', 'googleanalytics_tag' => 1],
+				['googleanalytics_id' => 'G-1234-56'],
 				['ACP_GOOGLEANALYTICS_ID_INVALID'],
 			],
 			[
 				// invalid code, error
-				['googleanalytics_id' => 'AU-1234-56', 'googleanalytics_tag' => 1],
+				['googleanalytics_id' => 'A1B2C3D4E5'],
 				['ACP_GOOGLEANALYTICS_ID_INVALID'],
 			],
 			[
 				// invalid code, error
-				['googleanalytics_id' => 'foo-bar-foo', 'googleanalytics_tag' => 1],
+				['googleanalytics_id' => 'foo-bar-foo'],
 				['ACP_GOOGLEANALYTICS_ID_INVALID'],
 			],
 		];
@@ -267,9 +263,10 @@ class listener_test extends \phpbb_test_case
 	public static function append_agreement_data()
 	{
 		return [
-			[false, 'PRIVACY', 0], // No agreement
-			[true, 'TERMS', 0], // Wrong title
-			[true, 'PRIVACY', 1], // Correct conditions
+			['', false, 'PRIVACY', 0], // No analytics ID
+			['G-A1B2C3D4E5', false, 'PRIVACY', 0], // No agreement
+			['G-A1B2C3D4E5', true, 'TERMS', 0], // Wrong title
+			['G-A1B2C3D4E5', true, 'PRIVACY', 1], // Correct conditions
 		];
 	}
 
@@ -277,12 +274,14 @@ class listener_test extends \phpbb_test_case
 	 * Test the append_agreement method
 	 *
 	 * @dataProvider append_agreement_data
+	 * @param string $googleanalytics_id Configured Google Analytics ID
 	 * @param mixed $s_agreement S_AGREEMENT template variable value
 	 * @param mixed $agreement_title AGREEMENT_TITLE template variable value
 	 * @param int $expected_append_calls Expected append_var calls
 	 */
-	public function test_append_agreement($s_agreement, $agreement_title, $expected_append_calls)
+	public function test_append_agreement($googleanalytics_id, $s_agreement, $agreement_title, $expected_append_calls)
 	{
+		$this->config['googleanalytics_id'] = $googleanalytics_id;
 		$this->config['sitename'] = 'Test Forum';
 		$this->user->page['page_name'] = 'ucp.php';
 
