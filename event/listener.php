@@ -157,18 +157,6 @@ class listener implements EventSubscriberInterface
 	}
 
 	/**
-	 * Get select options for ACP
-	 *
-	 * @param array $options
-	 * @param bool|int|string $default
-	 * @return array
-	 */
-	public function build_select(array $options, bool|int|string $default): array
-	{
-		return ['options' => build_select($options, $default)];
-	}
-
-	/**
 	 * Append additional agreement details to the privacy agreement.
 	 *
 	 * @return void
