@@ -20,11 +20,23 @@ class google_analytics_consentmanager_test extends \phpbb_functional_test_case
 
 	protected static function setup_extensions()
 	{
-		return ['phpbb/consentmanager', 'phpbb/googleanalytics'];
+		$extensions = ['phpbb/googleanalytics'];
+
+		if (self::is_consentmanager_available())
+		{
+			array_unshift($extensions, 'phpbb/consentmanager');
+		}
+
+		return $extensions;
 	}
 
 	public function test_consentmanager_defers_google_analytics_scripts()
 	{
+		if (!self::is_consentmanager_available())
+		{
+			self::markTestSkipped('Consent Manager extension is not available.');
+		}
+
 		$this->login();
 		$this->admin_login();
 		$this->add_lang('acp/board');
@@ -51,6 +63,11 @@ class google_analytics_consentmanager_test extends \phpbb_functional_test_case
 
 	public function test_google_analytics_runs_normally_when_analytics_category_is_disabled()
 	{
+		if (!self::is_consentmanager_available())
+		{
+			self::markTestSkipped('Consent Manager extension is not available.');
+		}
+
 		$this->login();
 		$this->admin_login();
 		$this->add_lang('acp/board');
@@ -81,5 +98,10 @@ class google_analytics_consentmanager_test extends \phpbb_functional_test_case
 			0,
 			$crawler->filter('head > script[type="text/plain"][data-consent-category="analytics"]')->count()
 		);
+	}
+
+	protected static function is_consentmanager_available()
+	{
+		return is_file(__DIR__ . '/../../../../phpbb/consentmanager/ext.php');
 	}
 }
