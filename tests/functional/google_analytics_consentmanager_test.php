@@ -30,7 +30,7 @@ class google_analytics_consentmanager_test extends \phpbb_functional_test_case
 		return $extensions;
 	}
 
-	public function test_consentmanager_defers_google_analytics_scripts()
+	public function test_consentmanager_enables_google_consent_mode()
 	{
 		if (!self::is_consentmanager_available())
 		{
@@ -53,12 +53,17 @@ class google_analytics_consentmanager_test extends \phpbb_functional_test_case
 
 		self::assertSame(
 			'https://www.googletagmanager.com/gtag/js?id=' . $this->sample_ga_code,
-			$crawler->filter('head > script[type="text/plain"][data-consent-category="analytics"][src*="googletagmanager.com/gtag/js"]')->attr('src')
+			$crawler->filter('head > script[src*="googletagmanager.com/gtag/js"]')->attr('src')
 		);
-		self::assertGreaterThan(
-			0,
-			$crawler->filter('head > script[type="text/plain"][data-consent-category="analytics"]')->count()
-		);
+
+		$head = $crawler->filter('head')->html();
+		self::assertStringContainsString("window.gtag('consent', 'default'", $head);
+		self::assertStringContainsString("'analytics_storage': 'denied'", $head);
+		self::assertStringContainsString("window.consentManager.onChange(updateConsent)", $head);
+		self::assertStringContainsString("window.consentManager.hasConsent('analytics') ? 'granted' : 'denied'", $head);
+		self::assertStringNotContainsString("'ad_storage'", $head);
+		self::assertStringNotContainsString("'ad_user_data'", $head);
+		self::assertStringNotContainsString("'ad_personalization'", $head);
 	}
 
 	public function test_google_analytics_runs_normally_when_analytics_category_is_disabled()
@@ -94,10 +99,7 @@ class google_analytics_consentmanager_test extends \phpbb_functional_test_case
 			'https://www.googletagmanager.com/gtag/js?id=' . $this->sample_ga_code,
 			$crawler->filter('head > script[src*="googletagmanager.com/gtag/js"]')->attr('src')
 		);
-		self::assertSame(
-			0,
-			$crawler->filter('head > script[type="text/plain"][data-consent-category="analytics"]')->count()
-		);
+		self::assertStringNotContainsString("window.gtag('consent', 'default'", $crawler->filter('head')->html());
 	}
 
 	protected static function is_consentmanager_available()
