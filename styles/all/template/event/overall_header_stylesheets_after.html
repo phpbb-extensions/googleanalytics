@@ -1,5 +1,5 @@
 {% if GOOGLEANALYTICS_ID %}
-	{% if S_CONSENTMANAGER_ANALYTICS_ENABLED %}
+	{% if S_CONSENTMANAGER_ANALYTICS_ENABLED -%}
 	<script>
 		window.dataLayer = window.dataLayer || [];
 		window.gtag = window.gtag || function(){window.dataLayer.push(arguments);}
@@ -22,21 +22,22 @@
 			}
 		})(window);
 	</script>
-	{% endif %}
+	{% endif -%}
 	<!-- Google tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id={{ GOOGLEANALYTICS_ID }}"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
 		window.gtag = window.gtag || function(){window.dataLayer.push(arguments);}
-		{% if S_CONSENTMANAGER_ANALYTICS_ENABLED %}
+
+		{% if S_CONSENTMANAGER_ANALYTICS_ENABLED -%}
 		if (window.consentManager && typeof window.consentManager.hasConsent === 'function') {
 			window.gtag('consent', 'update', {
 				'analytics_storage': window.consentManager.hasConsent('analytics') ? 'granted' : 'denied'
 			});
 		}
 		{% endif %}
-		window.gtag('js', new Date());
 
+		window.gtag('js', new Date());
 		window.gtag('config', '{{ GOOGLEANALYTICS_ID }}', {
 			{%- EVENT phpbb_googleanalytics_gtag_options -%}
 			{%- if S_REGISTERED_USER %}'user_id': '{{ GOOGLEANALYTICS_USER_ID }}',{% endif -%}
