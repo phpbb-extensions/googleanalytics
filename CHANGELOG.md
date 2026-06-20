@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.0 - 2026-06-20
+
+- Added support for registering Google Analytics with phpBB's Consent Manager extension
+- Added support for secure cookies over HTTPS
+- Added support for phpBB 4 while retaining phpBB 3.2 and 3.3 compatibility
+- Updated links to the Google Analytics documentation
+- Removed support for discontinued legacy Universal Analytics (UA)
+
 ## 1.1.0 - 2025-09-20
 
 - Added an amendment to the forum privacy policy regarding how Google may collect and/or use user's data.
