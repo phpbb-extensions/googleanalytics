@@ -3,6 +3,7 @@
 *
 * Google Analytics extension for the phpBB Forum Software package.
 * Polish translation by Pico (aka Pico88)
+* @Polska wersja językowa Google Analytics 1.1.0 - 21.06.2026, Mateusz Dutko (vader) www.rnavspotters.pl
 *
 * @copyright (c) 2014 phpBB Limited <https://www.phpbb.com>
 * @license GNU General Public License, version 2 (GPL-2.0)
