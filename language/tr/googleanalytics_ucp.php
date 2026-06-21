@@ -45,7 +45,7 @@ $lang = array_merge($lang, [
 		<br><br>
 		Bu çerezler tarafından "%1$s" kullanımınıza ilişkin oluşturulan bilgiler (IP adresiniz dahil), Google tarafından Amerika Birleşik Devletleri veya diğer konumlardaki sunuculara iletilir ve saklanır. Google, bu bilgileri site kullanımınızı değerlendirmek, web sitesi etkinliği hakkında raporlar hazırlamak ve web sitesi etkinliği ve internet kullanımıyla ilgili diğer hizmetleri sağlamak için kullanır.<br><br>
 		<br><br>
-		Google, yasaların gerektirdiği veya söz konusu üçüncü tarafların bilgileri Google adına işlediği durumlarda bu bilgileri üçüncü taraflara da aktarabilir. Google\'ın verileri nasıl topladığı ve işlediği hakkında daha fazla bilgi edinmek için lütfen Google Gizlilik Politikası\'nı şu adreste inceleyin:: <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a>.
+		Google, yasaların gerektirdiği veya söz konusu üçüncü tarafların bilgileri Google adına işlediği durumlarda bu bilgileri üçüncü taraflara da aktarabilir. Google’ın verileri nasıl topladığı ve işlediği hakkında daha fazla bilgi edinmek için lütfen Google Gizlilik Politikası’nı şu adreste inceleyin:: <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a>.
 		<br><br>
 		Google Analyticsten çıkmak için şu adresten edinebileceğiniz Google Analytics devre dışı bırakma tarayıcı eklentisini yükleyebilirsiniz: <a href="https://tools.google.com/dlpage/gaoptout" target="_blank">https://tools.google.com/dlpage/gaoptout</a>.
 	',

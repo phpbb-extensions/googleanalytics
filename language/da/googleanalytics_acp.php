@@ -44,6 +44,6 @@ $lang = array_merge($lang, array(
 	'ACP_GOOGLEANALYTICS_ID'			=> 'Google Analytics ID',
 	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Indtast din Google Analytics ID kode, f.eks.: <samp>G-XXXXXXXXXX</samp>.<br><br>Google Analytics kan spore dine registrerede brugere på tværs af flere enheder og sessioner, for et mere præcist bruger tal i dine rapportere. For at aktivere denne forbedrede funktionalitet skal User ID sporing være konfigureret i din Google Analytics konto. <a href="https://support.google.com/analytics/answer/9213390" target="_blank">Klik for yderligere information <i class="icon fa-external-link fa-fw" aria-hidden="true"></i></a>.',
 	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '“%s” er ikke en gyldig Google Analytics ID kode.<br>Det skal være i formen: “G-XXXXXXXXXX”.',
-	'ACP_GA_ANONYMIZE_IP'				=> 'Turn on IP Anonymization',
-	'ACP_GA_ANONYMIZE_IP_EXPLAIN'		=> 'Enable this option if you want the data collected by Google Analytics to be compliant with the EU‘s General Data Protection Regulation (GDPR). Note that enabling this option may slightly reduce the accuracy of geographic reporting.',
+	'ACP_GA_ANONYMIZE_IP'				=> 'Slå IP-anonymisering til',
+	'ACP_GA_ANONYMIZE_IP_EXPLAIN'		=> 'Aktivér denne mulighed, hvis du ønsker, at data indsamlet af Google Analytics skal overholde EU’s generelle forordning om databeskyttelse (GDPR). Bemærk, at aktivering af denne mulighed kan reducere nøjagtigheden af geografiske rapporter en smule.',
 ));
