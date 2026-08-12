@@ -40,7 +40,7 @@ if (empty($lang) || !is_array($lang))
 
 $lang = array_merge($lang, array(
 	'ACP_GOOGLEANALYTICS'				=> 'Google Analytics',
-	'ACP_GOOGLEANALYTICS_ID'			=> 'ID Google Analytics',
+	'ACP_GOOGLEANALYTICS_ID'			=> 'Google Analytics ID',
 	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Saisir son ID Google Analytics, tel que : <samp>G-XXXXXXXXXX</samp>.<br><br>Afin de comptabiliser précisément le nombre d’utilisateurs dans les journaux, Google Analytics est en mesure de collecter les sessions des utilisateurs enregistrées suivant leurs périphériques. Pour profiter de cette opportunité, il est nécessaire de paramétrer la fonctionnalité avancée « User-ID » depuis son compte Google Analytics. <a href="https://support.google.com/analytics/answer/9213390" target="_blank">Cliquer ici pour davantage d’informations <i class="icon fa-external-link fa-fw" aria-hidden="true"></i></a>.',
 	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '« %s » n’est pas un ID Google Analytics valide.<br>Ce doit être au format « G-XXXXXXXXXX ».',
 	'ACP_GA_ANONYMIZE_IP'				=> 'Activer l’anonymisation de l’adresse IP',

@@ -3,6 +3,7 @@
 *
 * Google Analytics extension for the phpBB Forum Software package.
 * Polish translation by Pico (aka Pico88)
+* @Polska wersja językowa Google Analytics 1.1.0 - 21.06.2026, Mateusz Dutko (vader) www.rnavspotters.pl
 *
 * @copyright (c) 2014 phpBB Limited <https://www.phpbb.com>
 * @license GNU General Public License, version 2 (GPL-2.0)
@@ -40,7 +41,7 @@ if (empty($lang) || !is_array($lang))
 
 $lang = array_merge($lang, array(
 	'ACP_GOOGLEANALYTICS'				=> 'Google Analytics',
-	'ACP_GOOGLEANALYTICS_ID'			=> 'Identyfikator śledzenia Google Analytics',
+	'ACP_GOOGLEANALYTICS_ID'			=> 'Google Analytics ID',
 	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Wprowadź swój identyfikator śledzenia Google Analytics, n.p.: <samp>G-XXXXXXXXXX</samp>.<br><br>Google Analytics może śledzić zarejestrowanych użytkowników na wielu urządzeniach i sesji, bardziej dokładne liczby użytkowników w raportach. Aby włączyć tę zwiększona funkcjonalność śledzenia identyfikator użytkownika musi być skonfigurowana na koncie Google Analytics. <a href="https://support.google.com/analytics/answer/9213390" target="_blank">Kliknij, aby uzyskać więcej informacji <i class="icon fa-external-link fa-fw" aria-hidden="true"></i></a>.',
 	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '“%s” nie jest prawidłowym identyfikatorem śledzenia Google Analytics.<br>Identyfikator śledzenia powinien mieć postać “G-XXXXXXXXXX”.',
 	'ACP_GA_ANONYMIZE_IP'				=> 'Włącz anonimizację adresów IP',

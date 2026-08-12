@@ -40,7 +40,7 @@ if (empty($lang) || !is_array($lang))
 
 $lang = array_merge($lang, array(
 	'ACP_GOOGLEANALYTICS'				=> 'Google Analytics',
-	'ACP_GOOGLEANALYTICS_ID'			=> 'ID de Google Analytics',
+	'ACP_GOOGLEANALYTICS_ID'			=> 'Google Analytics ID',
 	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'Introduce tu código ID de Google Analytics, por ejemplo: <samp>G-XXXXXXXXXX</samp>.<br><br>Google Analytics puede realizar un seguimiento de tus usuarios registrados en varios dispositivos y sesiones, para obtener un número de usuarios más preciso en tus informes. Para habilitar esta función mejorada, el seguimiento de ID de usuario debe configurarse en tu cuenta de Google Analytics. <a href="https://support.google.com/analytics/answer/9213390" target="_blank">Clic para más información <i class="icon fa-external-link fa-fw" aria-hidden="true"></i></a>.',
 	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '“%s” no es un código ID válido de Google Analytics.<br>Debería ser de esta forma “G-XXXXXXXXXX”.',
 	'ACP_GA_ANONYMIZE_IP'				=> 'Activar anonimización de IP',
