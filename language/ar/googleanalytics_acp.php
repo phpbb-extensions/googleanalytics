@@ -43,6 +43,6 @@ $lang = array_merge($lang, array(
 	'ACP_GOOGLEANALYTICS_ID'			=> 'Google Analytics ID',
 	'ACP_GOOGLEANALYTICS_ID_EXPLAIN'	=> 'أكتب كود Google Analytics ID الخاص بك، مثل: <br><br><samp>G-XXXXXXXXXX</samp>.إحصائيات قوقل يمكنها تتبع أعضاء منتداك المسجلين عبر الأجهزة والجلسات المتعددة، حتى يكون عدد الأعضاء أكثر دقة. لتفعيل هذه الوظيفة المحَسِّنة يجب أن يكون رقم تتبع المستخدم ID مضبوط في حسابك إحصائيات قوقل. <a href="https://support.google.com/analytics/answer/9213390" target="_blank">اضغط هنا للمعلومات أكثر <i class="icon fa-external-link fa-fw" aria-hidden="true"></i></a>.',
 	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '“%s” كود Google Analytics ID الذي أدخلته غير صالح.<br>يجب أن يكون على الشكل “G-XXXXXXXXXX”.',
-	'ACP_GA_ANONYMIZE_IP'				=> 'Turn on IP Anonymization',
-	'ACP_GA_ANONYMIZE_IP_EXPLAIN'		=> 'Enable this option if you want the data collected by Google Analytics to be compliant with the EU‘s General Data Protection Regulation (GDPR). Note that enabling this option may slightly reduce the accuracy of geographic reporting.',
+	'ACP_GA_ANONYMIZE_IP'				=> 'تفعيل إخفاء هوية عنوان IP',
+	'ACP_GA_ANONYMIZE_IP_EXPLAIN'		=> 'فعّل هذا الخيار إذا كنت تريد أن تكون البيانات التي يجمعها Google Analytics متوافقة مع اللائحة العامة لحماية البيانات في الاتحاد الأوروبي (GDPR). لاحظ أن تفعيل هذا الخيار قد يقلل قليلًا من دقة التقارير الجغرافية.',
 ));
