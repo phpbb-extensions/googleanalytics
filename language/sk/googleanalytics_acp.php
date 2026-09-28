@@ -45,4 +45,6 @@ $lang = array_merge($lang, array(
 	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '“%s” nie je platný kód Google Analytics ID.<br>Mal by mať tvar “G-XXXXXXXXXX”.',
 	'ACP_GA_ANONYMIZE_IP'				=> 'Zapnúť anonymizáciu IP',
 	'ACP_GA_ANONYMIZE_IP_EXPLAIN'		=> 'Povoľte túto možnosť, ak chcete, aby údaje zhromaždené službou Google Analytics boli v súlade so všeobecným nariadením EÚ o ochrane údajov (GDPR). Upozorňujeme, že povolenie tejto možnosti môže mierne znížiť presnosť geografických hlásení.',
+	'ACP_GA_SHOW_AGREEMENT'				=> 'Informácie o analytike',
+	'ACP_GA_SHOW_AGREEMENT_EXPLAIN'		=> 'Zobraziť v zásadách ochrany osobných údajov podrobnosti o tom, ako služba Google Analytics zhromažďuje a spracúva informácie o používateľoch.',
 ));

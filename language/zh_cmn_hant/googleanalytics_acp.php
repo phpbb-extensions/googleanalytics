@@ -45,4 +45,6 @@ $lang = array_merge($lang, array(
 	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '“%s” 不是有效的 Google Analytics（分析） ID code.<br>它的格式應該會是像這樣 “G-XXXXXXXXXX”.',
 	'ACP_GA_ANONYMIZE_IP'				=> '開啟 IP 匿名化',
 	'ACP_GA_ANONYMIZE_IP_EXPLAIN'		=> '如果你希望 Google Analytics 收集的資料符合歐盟一般資料保護規則 (GDPR)，請啟用此選項。請注意，啟用此選項可能會稍微降低地理位置報表的準確度。',
+	'ACP_GA_SHOW_AGREEMENT'				=> 'Analytics 資訊揭露',
+	'ACP_GA_SHOW_AGREEMENT_EXPLAIN'		=> '在隱私權政策中顯示 Google Analytics 如何收集及處理使用者資訊的詳細資訊。',
 ));
