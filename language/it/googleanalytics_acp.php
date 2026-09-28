@@ -44,4 +44,6 @@ $lang = array_merge($lang, array(
 	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '“%s” non è un codice ID valido di Google Analytics.<br>Dove essere nel formato “G-XXXXXXXXXX”.',
 	'ACP_GA_ANONYMIZE_IP'				=> 'Attiva l’anonimizzazione IP',
 	'ACP_GA_ANONYMIZE_IP_EXPLAIN'		=> 'Abilita questa opzione se vuoi che i dati raccolti da Google Analytics siano conformi al Regolamento generale sulla protezione dei dati dell’UE (GDPR). Tieni presente che l’attivazione di questa opzione può ridurre leggermente la precisione dei report geografici.',
+	'ACP_GA_SHOW_AGREEMENT'				=> 'Informativa sui dati analitici',
+	'ACP_GA_SHOW_AGREEMENT_EXPLAIN'		=> 'Mostra nell’Informativa sulla privacy i dettagli su come Google Analytics raccoglie ed elabora le informazioni degli utenti.',
 ));

@@ -45,4 +45,6 @@ $lang = array_merge($lang, array(
 	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '“%s” nije ispravan Google Analytics ID kod.<br>Trebao bi biti u obliku: “G-XXXXXXXXXX”.',
 	'ACP_GA_ANONYMIZE_IP'				=> 'Uključi anonimizaciju IP adrese',
 	'ACP_GA_ANONYMIZE_IP_EXPLAIN'		=> 'Omogući ovu opciju ako želiš da podaci koje prikuplja Google Analytics budu usklađeni s Općom uredbom EU-a o zaštiti podataka (GDPR). Imaj na umu da omogućavanje ove opcije može malo smanjiti točnost geografskih izvješća.',
+	'ACP_GA_SHOW_AGREEMENT'				=> 'Obavijest o analitici',
+	'ACP_GA_SHOW_AGREEMENT_EXPLAIN'		=> 'Prikaži u Pravilima privatnosti pojedinosti o tome kako Google Analytics prikuplja i obrađuje korisničke podatke.',
 ));

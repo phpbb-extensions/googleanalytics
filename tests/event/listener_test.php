@@ -48,6 +48,7 @@ class listener_test extends \phpbb_test_case
 		// Load/Mock classes required by the event listener class
 		$this->config = new \phpbb\config\config([
 			'googleanalytics_id' => 'G-A1B2C3D4E5',
+			'googleanalytics_show_agreement' => 1,
 			'ga_anonymize_ip' => 0,
 			'cookie_secure' => 0,
 		]);
@@ -141,7 +142,7 @@ class listener_test extends \phpbb_test_case
 			[ // expected config and mode
 			  'settings',
 			  ['vars' => ['warnings_expire_days' => []]],
-			  ['warnings_expire_days', 'legend_googleanalytics', 'googleanalytics_id', 'ga_anonymize_ip'],
+			  ['warnings_expire_days', 'legend_googleanalytics', 'googleanalytics_id', 'ga_anonymize_ip', 'googleanalytics_show_agreement'],
 			],
 			[ // unexpected mode
 			  'foobar',
@@ -264,10 +265,11 @@ class listener_test extends \phpbb_test_case
 	public function append_agreement_data()
 	{
 		return [
-			['', false, 'PRIVACY', 0], // No analytics ID
-			['G-A1B2C3D4E5', false, 'PRIVACY', 0], // No agreement
-			['G-A1B2C3D4E5', true, 'TERMS', 0], // Wrong title
-			['G-A1B2C3D4E5', true, 'PRIVACY', 1], // Correct conditions
+			[true, '', false, 'PRIVACY', 0], // No analytics ID
+			[true, 'G-A1B2C3D4E5', false, 'PRIVACY', 0], // No agreement
+			[true, 'G-A1B2C3D4E5', true, 'TERMS', 0], // Wrong title
+			[false, 'G-A1B2C3D4E5', true, 'PRIVACY', 0], // Don't display agreement
+			[true, 'G-A1B2C3D4E5', true, 'PRIVACY', 1], // Correct conditions
 		];
 	}
 
@@ -275,13 +277,15 @@ class listener_test extends \phpbb_test_case
 	 * Test the append_agreement method
 	 *
 	 * @dataProvider append_agreement_data
+	 * @param bool $show_agreement Whether to display agreement text
 	 * @param string $googleanalytics_id Configured Google Analytics ID
 	 * @param mixed $s_agreement S_AGREEMENT template variable value
 	 * @param mixed $agreement_title AGREEMENT_TITLE template variable value
 	 * @param int $expected_append_calls Expected append_var calls
 	 */
-	public function test_append_agreement($googleanalytics_id, $s_agreement, $agreement_title, $expected_append_calls)
+	public function test_append_agreement($show_agreement, $googleanalytics_id, $s_agreement, $agreement_title, $expected_append_calls)
 	{
+		$this->config['googleanalytics_show_agreement'] = $show_agreement;
 		$this->config['googleanalytics_id'] = $googleanalytics_id;
 		$this->config['sitename'] = 'Test Forum';
 		$this->user->page['page_name'] = 'ucp.php';

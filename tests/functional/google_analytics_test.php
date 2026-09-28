@@ -69,6 +69,7 @@ class google_analytics_test extends \phpbb_functional_test_case
 		$form = $crawler->selectButton($this->lang('SUBMIT'))->form();
 		$values = $form->getValues();
 		$values['config[googleanalytics_id]'] = $this->sample_ga_code;
+		$values['config[googleanalytics_show_agreement]'] = 1;
 		$form->setValues($values);
 
 		// Submit form and test success

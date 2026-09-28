@@ -117,6 +117,12 @@ class listener implements EventSubscriberInterface
 					'type'		=> 'radio:yes_no',
 					'explain'	=> true,
 				],
+				'googleanalytics_show_agreement' => [
+					'lang'		=> 'ACP_GA_SHOW_AGREEMENT',
+					'validate'	=> 'bool',
+					'type'		=> 'radio:yes_no',
+					'explain'	=> true,
+				],
 			];
 
 			// Add the new config vars after warnings_expire_days in the display_vars config array
@@ -164,7 +170,8 @@ class listener implements EventSubscriberInterface
 	 */
 	public function append_agreement()
 	{
-		if (!$this->config['googleanalytics_id']
+		if (!$this->config['googleanalytics_show_agreement']
+			|| !$this->config['googleanalytics_id']
 			|| (strpos($this->user->page['page_name'], 'ucp') !== 0)
 			|| !$this->template->retrieve_var('S_AGREEMENT')
 			|| ($this->template->retrieve_var('AGREEMENT_TITLE') !== $this->language->lang('PRIVACY')))

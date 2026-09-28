@@ -46,4 +46,6 @@ $lang = array_merge($lang, array(
 	'ACP_GOOGLEANALYTICS_ID_INVALID'	=> '“%s” nie jest prawidłowym identyfikatorem śledzenia Google Analytics.<br>Identyfikator śledzenia powinien mieć postać “G-XXXXXXXXXX”.',
 	'ACP_GA_ANONYMIZE_IP'				=> 'Włącz anonimizację adresów IP',
 	'ACP_GA_ANONYMIZE_IP_EXPLAIN'		=> 'Wybranie Tak spowoduje, że dane zbierane przez Google Analytics będą zgodne z ogólnym rozporządzeniem o ochronie danych osobowych (RODO). Włączenie tej opcji może wpłynąć na dokładność geograficznej lokalizacji użytkowników.',
+	'ACP_GA_SHOW_AGREEMENT'				=> 'Informacje o analityce',
+	'ACP_GA_SHOW_AGREEMENT_EXPLAIN'		=> 'Pokaż w Polityce prywatności szczegółowe informacje o tym, jak Google Analytics zbiera i przetwarza informacje o użytkownikach.',
 ));
