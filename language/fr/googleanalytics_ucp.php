@@ -42,15 +42,14 @@ if (empty($lang) || !is_array($lang))
 //
 
 $lang = array_merge($lang, [
-	'PHPBB_ANALYTICS_PRIVACY_POLICY' => '
-		<br><br>
-		<h3>Google Analytics</h3>
+	'PHPBB_ANALYTICS_PRIVACY_POLICY_TITLE'	=> 'Google Analytics',
+	'PHPBB_ANALYTICS_PRIVACY_POLICY_TEXT'	=> '
 		“%1$s” peut utiliser Google Analytics, un service d’analyse web fourni par Google LLC ("Google"), pour nous aider à comprendre comment les visiteurs utilisent le site. Google Analytics utilise des cookies et des technologies similaires pour collecter des informations sur vos interactions avec le site, y compris les pages que vous visitez, le temps passé sur chaque page et les habitudes générales d’utilisation.
 		<br><br>
 		Les informations générées par ces cookies concernant votre utilisation de "%1$s" (y compris votre adresse IP) sont transmises à et stockées par Google sur des serveurs aux États-Unis ou dans d’autres endroits. Google utilise ces informations pour évaluer votre utilisation du site, compiler des rapports sur l’activité du site et fournir d’autres services relatifs à l’activité du site et à l’utilisation d’Internet.
 		<br><br>
-		Google peut également transférer ces informations à des tiers lorsque la loi l’exige ou lorsque ces tiers traitent les informations pour le compte de Google. Pour en savoir plus sur la façon dont Google collecte et traite les données, veuillez consulter la politique de confidentialité de Google à : <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a>.
+		Google peut également transférer ces informations à des tiers lorsque la loi l’exige ou lorsque ces tiers traitent les informations pour le compte de Google. Pour en savoir plus sur la façon dont Google collecte et traite les données, veuillez consulter la politique de confidentialité de Google à : %2$s.
 		<br><br>
-		Vous pouvez vous désinscrire de Google Analytics en installant le module complémentaire d’exclusion pour le navigateur Google Analytics, disponible à l’adresse : <a href="https://tools.google.com/dlpage/gaoptout" target="_blank">https://tools.google.com/dlpage/gaoptout</a>.
+		Vous pouvez vous désinscrire de Google Analytics en installant le module complémentaire d’exclusion pour le navigateur Google Analytics, disponible à l’adresse : %3$s.
 	',
 ]);

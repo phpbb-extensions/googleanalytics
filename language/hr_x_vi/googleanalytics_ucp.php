@@ -38,15 +38,14 @@ if (empty($lang) || !is_array($lang))
 //
 
 $lang = array_merge($lang, [
-	'PHPBB_ANALYTICS_PRIVACY_POLICY' => '
-		<br><br>
-		<h3>Analitika</h3>
+	'PHPBB_ANALYTICS_PRIVACY_POLICY_TITLE'	=> 'Analitika',
+	'PHPBB_ANALYTICS_PRIVACY_POLICY_TEXT'	=> '
 		“%1$s” može koristiti Google Analytics, uslugu web analitike koju pruža Google LLC (“Google”), kako bismo lakše razumjeli kako posjetitelji koriste stranicu. Google Analytics koristi kolačiće i slične tehnologije za prikupljanje informacija o vašim interakcijama sa stranicom, uključujući stranice koje posjećujete, vrijeme provedeno na svakoj stranici i opće obrasce korištenja.
 		<br><br>
 		Informacije koje ti kolačići generiraju o vašem korištenju “%1$s” (uključujući vašu IP adresu) prenose se Googleu i pohranjuju na poslužiteljima u Sjedinjenim Američkim Državama ili drugim lokacijama. Google koristi te informacije za procjenu vašeg korištenja stranice, izradu izvješća o aktivnosti stranice za nas i pružanje drugih usluga povezanih s aktivnošću stranice i korištenjem interneta.
 		<br><br>
-		Google također može prenijeti te informacije trećim stranama kada to zahtijeva zakon ili kada takve treće strane obrađuju informacije u ime Googlea. Više o tome kako Google prikuplja i obrađuje podatke možete saznati u Googleovim pravilima o privatnosti na: <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a>.
+		Google također može prenijeti te informacije trećim stranama kada to zahtijeva zakon ili kada takve treće strane obrađuju informacije u ime Googlea. Više o tome kako Google prikuplja i obrađuje podatke možete saznati u Googleovim pravilima o privatnosti na: %2$s.
 		<br><br>
-		Google Analytics možete isključiti instalacijom dodatka preglednika za isključivanje Google Analytics, dostupnog na: <a href="https://tools.google.com/dlpage/gaoptout" target="_blank">https://tools.google.com/dlpage/gaoptout</a>.
+		Google Analytics možete isključiti instalacijom dodatka preglednika za isključivanje Google Analytics, dostupnog na: %3$s.
 	',
 ]);

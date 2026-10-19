@@ -38,15 +38,14 @@ if (empty($lang) || !is_array($lang))
 //
 
 $lang = array_merge($lang, [
-	'PHPBB_ANALYTICS_PRIVACY_POLICY' => '
-		<br><br>
-		<h3>Analytics</h3>
+	'PHPBB_ANALYTICS_PRIVACY_POLICY_TITLE'	=> 'Analytics',
+	'PHPBB_ANALYTICS_PRIVACY_POLICY_TEXT'	=> '
 		„%1$s” benutzt Google Analytics, einen Webanalyse Service von Google LLC („Google”), welcher dem Betreiber hilft zu verstehen wie Besucher unsere Seite benutzen. Google Analytics benutzt cookies und ähnliche Technologien um Informationen über ihre Interaktionen mit „%1$s“, mitunter die aufgerufenen Seiten, verbleibedauer und generelle Benutzungsmuster.
 		<br><br>
 		Die durch diese cookies erzeugten Informationen über die Benutzung von „%1$s“ (inklusive IP-Adressen) wird versand an und gespeicher von Google auf Servern in den Vereinigten Staaten oder anderen Standorten. Google verwendet diese Informationen um die Benutzung dieser Webseite zu evaluieren, Berichte über Aktivitäten auf der Webseite zusammen zu stellen und weitere Dienstleistungen zur verfügung zu stellen.
 		<br><br>
-		Google kann außerdem die Informationen an dritte Parteien weitergeben, wenn dies durch die Gesetzgebung vorgeschrieben ist oder wenn die Verarbeitung der Daten bei diesen im Auftrag von Google stattfindet. Um mehr darüber zu lernen, wie Gogole deine Daten sammelt und verarbeitet, besuchen sie Google Datenschutzerklärung: <a href="https://policies.google.com/privacy?hl=de" target="_blank">https://policies.google.com/privacy?hl=de</a>.
+		Google kann außerdem die Informationen an dritte Parteien weitergeben, wenn dies durch die Gesetzgebung vorgeschrieben ist oder wenn die Verarbeitung der Daten bei diesen im Auftrag von Google stattfindet. Um mehr darüber zu lernen, wie Gogole deine Daten sammelt und verarbeitet, besuchen sie Google Datenschutzerklärung: %2$s.
 		<br><br>
-		Sie können der Nutzung von Google Analytics wiedersprechen, indem sie das Google Analytics opt-out Browser Add-On installierst, dieses ist erhältlich unter: <a href="https://tools.google.com/dlpage/gaoptout" target="_blank">https://tools.google.com/dlpage/gaoptout</a>.
+		Sie können der Nutzung von Google Analytics wiedersprechen, indem sie das Google Analytics opt-out Browser Add-On installierst, dieses ist erhältlich unter: %3$s.
 	',
 ]);

@@ -38,15 +38,14 @@ if (empty($lang) || !is_array($lang))
 //
 
 $lang = array_merge($lang, [
-	'PHPBB_ANALYTICS_PRIVACY_POLICY' => '
-		<br><br>
-		<h3>Analítica</h3>
+	'PHPBB_ANALYTICS_PRIVACY_POLICY_TITLE'	=> 'Analítica',
+	'PHPBB_ANALYTICS_PRIVACY_POLICY_TEXT'	=> '
 		“%1$s” puede utilizar Google Analytics, un servicio de analítica web proporcionado por Google LLC (“Google”), para ayudarnos a comprender cómo utilizan el sitio los visitantes. Google Analytics utiliza cookies y tecnologías similares para recopilar información sobre tus interacciones con el sitio, incluidas las páginas que visitas, el tiempo que pasas en cada página y los patrones generales de uso.
 		<br><br>
 		La información generada por estas cookies sobre tu uso de “%1$s” (incluida tu dirección IP) se transmite a Google y se almacena en servidores de Estados Unidos u otras ubicaciones. Google utiliza esta información para evaluar tu uso del sitio, elaborar informes para nosotros sobre la actividad del sitio y prestar otros servicios relacionados con la actividad del sitio y el uso de internet.
 		<br><br>
-		Google también puede transferir esta información a terceros cuando así lo exija la ley o cuando dichos terceros procesen la información por cuenta de Google. Para obtener más información sobre cómo Google recopila y procesa datos, consulta la Política de privacidad de Google en: <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a>.
+		Google también puede transferir esta información a terceros cuando así lo exija la ley o cuando dichos terceros procesen la información por cuenta de Google. Para obtener más información sobre cómo Google recopila y procesa datos, consulta la Política de privacidad de Google en: %2$s.
 		<br><br>
-		Puedes inhabilitar Google Analytics instalando el complemento de inhabilitación para navegadores de Google Analytics, disponible en: <a href="https://tools.google.com/dlpage/gaoptout" target="_blank">https://tools.google.com/dlpage/gaoptout</a>.
+		Puedes inhabilitar Google Analytics instalando el complemento de inhabilitación para navegadores de Google Analytics, disponible en: %3$s.
 	',
 ]);
