@@ -1,0 +1,7 @@
+<br><br>
+<h3>{{ lang('PHPBB_ANALYTICS_PRIVACY_POLICY_TITLE') }}</h3>
+{% set GOOGLE_PRIVACY_URL = 'https://policies.google.com/privacy' %}
+{% set GOOGLE_OPTOUT_URL = 'https://tools.google.com/dlpage/gaoptout' %}
+{% set GOOGLE_PRIVACY_LINK = '<a href="' ~ GOOGLE_PRIVACY_URL ~ '" target="_blank">' ~ GOOGLE_PRIVACY_URL ~ '</a>' %}
+{% set GOOGLE_OPTOUT_LINK = '<a href="' ~ GOOGLE_OPTOUT_URL ~ '" target="_blank">' ~ GOOGLE_OPTOUT_URL ~ '</a>' %}
+{{ lang('PHPBB_ANALYTICS_PRIVACY_POLICY_TEXT', SITENAME, GOOGLE_PRIVACY_LINK, GOOGLE_OPTOUT_LINK) }}

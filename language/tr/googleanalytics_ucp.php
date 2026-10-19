@@ -38,15 +38,14 @@ if (empty($lang) || !is_array($lang))
 //
 
 $lang = array_merge($lang, [
-	'PHPBB_ANALYTICS_PRIVACY_POLICY' => '
-		<br><br>
-		<h3>Analytics</h3>
+	'PHPBB_ANALYTICS_PRIVACY_POLICY_TITLE'	=> 'Analytics',
+	'PHPBB_ANALYTICS_PRIVACY_POLICY_TEXT'	=> '
 		“%1$s”, ziyaretçilerin siteyi nasıl kullandığını anlamamıza yardımcı olmak için Google LLC (“Google”) tarafından sağlanan bir web analizi hizmeti olan Google Analyticsi kullanabilir. Google Analytics, ziyaret ettiğiniz sayfalar, her sayfada geçirilen süre ve genel kullanım kalıpları dahil olmak üzere siteyle etkileşimleriniz hakkında bilgi toplamak için çerezler ve benzeri teknolojiler kullanır.
 		<br><br>
-		Bu çerezler tarafından "%1$s" kullanımınıza ilişkin oluşturulan bilgiler (IP adresiniz dahil), Google tarafından Amerika Birleşik Devletleri veya diğer konumlardaki sunuculara iletilir ve saklanır. Google, bu bilgileri site kullanımınızı değerlendirmek, web sitesi etkinliği hakkında raporlar hazırlamak ve web sitesi etkinliği ve internet kullanımıyla ilgili diğer hizmetleri sağlamak için kullanır.<br><br>
+		Bu çerezler tarafından "%1$s" kullanımınıza ilişkin oluşturulan bilgiler (IP adresiniz dahil), Google tarafından Amerika Birleşik Devletleri veya diğer konumlardaki sunuculara iletilir ve saklanır. Google, bu bilgileri site kullanımınızı değerlendirmek, web sitesi etkinliği hakkında raporlar hazırlamak ve web sitesi etkinliği ve internet kullanımıyla ilgili diğer hizmetleri sağlamak için kullanır.
 		<br><br>
-		Google, yasaların gerektirdiği veya söz konusu üçüncü tarafların bilgileri Google adına işlediği durumlarda bu bilgileri üçüncü taraflara da aktarabilir. Google’ın verileri nasıl topladığı ve işlediği hakkında daha fazla bilgi edinmek için lütfen Google Gizlilik Politikası’nı şu adreste inceleyin:: <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a>.
+		Google, yasaların gerektirdiği veya söz konusu üçüncü tarafların bilgileri Google adına işlediği durumlarda bu bilgileri üçüncü taraflara da aktarabilir. Google’ın verileri nasıl topladığı ve işlediği hakkında daha fazla bilgi edinmek için lütfen Google Gizlilik Politikası’nı şu adreste inceleyin:: %2$s.
 		<br><br>
-		Google Analyticsten çıkmak için şu adresten edinebileceğiniz Google Analytics devre dışı bırakma tarayıcı eklentisini yükleyebilirsiniz: <a href="https://tools.google.com/dlpage/gaoptout" target="_blank">https://tools.google.com/dlpage/gaoptout</a>.
+		Google Analyticsten çıkmak için şu adresten edinebileceğiniz Google Analytics devre dışı bırakma tarayıcı eklentisini yükleyebilirsiniz: %3$s.
 	',
 ]);

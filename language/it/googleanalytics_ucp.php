@@ -38,15 +38,14 @@ if (empty($lang) || !is_array($lang))
 //
 
 $lang = array_merge($lang, [
-	'PHPBB_ANALYTICS_PRIVACY_POLICY' => '
-		<br><br>
-		<h3>Analisi</h3>
+	'PHPBB_ANALYTICS_PRIVACY_POLICY_TITLE'	=> 'Analisi',
+	'PHPBB_ANALYTICS_PRIVACY_POLICY_TEXT'	=> '
 		“%1$s” può usare Google Analytics, un servizio di analisi web fornito da Google LLC (“Google”), per aiutarci a capire come i visitatori usano il sito. Google Analytics usa cookie e tecnologie simili per raccogliere informazioni sulle tue interazioni con il sito, incluse le pagine che visiti, il tempo trascorso su ciascuna pagina e i modelli generali di utilizzo.
 		<br><br>
 		Le informazioni generate da questi cookie sul tuo utilizzo di “%1$s” (incluso il tuo indirizzo IP) vengono trasmesse a Google e archiviate da Google su server negli Stati Uniti o in altre località. Google usa queste informazioni per valutare il tuo utilizzo del sito, compilare per noi report sull’attività del sito e fornire altri servizi relativi all’attività del sito e all’uso di internet.
 		<br><br>
-		Google può anche trasferire queste informazioni a terze parti quando richiesto dalla legge o quando tali terze parti trattano le informazioni per conto di Google. Per saperne di più su come Google raccoglie e tratta i dati, consulta le Norme sulla privacy di Google all’indirizzo: <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a>.
+		Google può anche trasferire queste informazioni a terze parti quando richiesto dalla legge o quando tali terze parti trattano le informazioni per conto di Google. Per saperne di più su come Google raccoglie e tratta i dati, consulta le Norme sulla privacy di Google all’indirizzo: %2$s.
 		<br><br>
-		Puoi disattivare Google Analytics installando il componente aggiuntivo del browser per la disattivazione di Google Analytics, disponibile all’indirizzo: <a href="https://tools.google.com/dlpage/gaoptout" target="_blank">https://tools.google.com/dlpage/gaoptout</a>.
+		Puoi disattivare Google Analytics installando il componente aggiuntivo del browser per la disattivazione di Google Analytics, disponibile all’indirizzo: %3$s.
 	',
 ]);

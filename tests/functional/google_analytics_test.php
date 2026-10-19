@@ -92,8 +92,29 @@ class google_analytics_test extends \phpbb_functional_test_case
 	public function test_ucp_agreement()
 	{
 		$this->add_lang_ext('phpbb/googleanalytics', 'googleanalytics_ucp');
+		$this->get_db();
+		$this->db->sql_query("UPDATE " . CONFIG_TABLE . "
+			SET config_value = '" . $this->db->sql_escape($this->sample_ga_code) . "'
+			WHERE config_name = 'googleanalytics_id'");
+		$this->db->sql_query("UPDATE " . CONFIG_TABLE . "
+			SET config_value = '1'
+			WHERE config_name = 'googleanalytics_show_agreement'");
+		$this->purge_cache();
 
 		$crawler = self::request('GET', 'ucp.php?mode=privacy');
-		$this->assertStringContainsString($this->lang('PHPBB_ANALYTICS_PRIVACY_POLICY', 'yourdomain.com'), $crawler->filter('.agreement')->html());
+		$agreement = $crawler->filter('.agreement');
+		$privacy_url = 'https://policies.google.com/privacy';
+		$optout_url = 'https://tools.google.com/dlpage/gaoptout';
+		$privacy_link = '<a href="' . $privacy_url . '" target="_blank">' . $privacy_url . '</a>';
+		$optout_link = '<a href="' . $optout_url . '" target="_blank">' . $optout_url . '</a>';
+
+		$this->assertCount(1, $agreement->filter('h3'));
+		$this->assertContainsLang('PHPBB_ANALYTICS_PRIVACY_POLICY_TITLE', $agreement->filter('h3')->text());
+		$this->assertStringContainsString(
+			trim($this->lang('PHPBB_ANALYTICS_PRIVACY_POLICY_TEXT', 'yourdomain.com', $privacy_link, $optout_link)),
+			$agreement->html()
+		);
+		$this->assertSame('_blank', $agreement->filter('a[href="' . $privacy_url . '"]')->attr('target'));
+		$this->assertSame('_blank', $agreement->filter('a[href="' . $optout_url . '"]')->attr('target'));
 	}
 }
