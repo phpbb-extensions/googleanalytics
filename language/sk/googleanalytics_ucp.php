@@ -38,15 +38,14 @@ if (empty($lang) || !is_array($lang))
 //
 
 $lang = array_merge($lang, [
-	'PHPBB_ANALYTICS_PRIVACY_POLICY' => '
-		<br><br>
-		<h3>Analytika</h3>
+	'PHPBB_ANALYTICS_PRIVACY_POLICY_TITLE'	=> 'Analytika',
+	'PHPBB_ANALYTICS_PRIVACY_POLICY_TEXT'	=> '
 		“%1$s” môže používať Google Analytics, službu webovej analytiky poskytovanú spoločnosťou Google LLC (“Google”), aby nám pomohla pochopiť, ako návštevníci používajú stránku. Google Analytics používa súbory cookie a podobné technológie na zhromažďovanie informácií o vašich interakciách so stránkou vrátane navštívených stránok, času stráveného na každej stránke a všeobecných vzorcov používania.
 		<br><br>
 		Informácie vytvorené týmito súbormi cookie o vašom používaní “%1$s” (vrátane vašej IP adresy) sa prenášajú spoločnosti Google a ukladajú na serveroch v Spojených štátoch alebo na iných miestach. Google používa tieto informácie na vyhodnotenie vášho používania stránky, zostavovanie správ o aktivite stránky pre nás a poskytovanie ďalších služieb súvisiacich s aktivitou stránky a používaním internetu.
 		<br><br>
-		Google môže tieto informácie tiež odovzdať tretím stranám, ak to vyžaduje zákon alebo ak tieto tretie strany spracúvajú informácie v mene spoločnosti Google. Viac informácií o tom, ako Google zhromažďuje a spracúva údaje, nájdete v pravidlách ochrany osobných údajov Google na adrese: <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a>.
+		Google môže tieto informácie tiež odovzdať tretím stranám, ak to vyžaduje zákon alebo ak tieto tretie strany spracúvajú informácie v mene spoločnosti Google. Viac informácií o tom, ako Google zhromažďuje a spracúva údaje, nájdete v pravidlách ochrany osobných údajov Google na adrese: %2$s.
 		<br><br>
-		Používanie Google Analytics môžete odmietnuť nainštalovaním doplnku prehliadača na zrušenie účasti v Google Analytics, ktorý je dostupný na adrese: <a href="https://tools.google.com/dlpage/gaoptout" target="_blank">https://tools.google.com/dlpage/gaoptout</a>.
+		Používanie Google Analytics môžete odmietnuť nainštalovaním doplnku prehliadača na zrušenie účasti v Google Analytics, ktorý je dostupný na adrese: %3$s.
 	',
 ]);

@@ -38,15 +38,14 @@ if (empty($lang) || !is_array($lang))
 //
 
 $lang = array_merge($lang, [
-	'PHPBB_ANALYTICS_PRIVACY_POLICY' => '
-		<br><br>
-		<h3>Analytika</h3>
+	'PHPBB_ANALYTICS_PRIVACY_POLICY_TITLE'	=> 'Analytika',
+	'PHPBB_ANALYTICS_PRIVACY_POLICY_TEXT'	=> '
 		“%1$s” může používat Google Analytics, službu webové analytiky poskytovanou společností Google LLC (“Google”), která nám pomáhá pochopit, jak návštěvníci používají web. Google Analytics používá soubory cookie a podobné technologie ke shromažďování informací o vašich interakcích s webem, včetně navštívených stránek, času stráveného na každé stránce a obecných vzorců používání.
 		<br><br>
 		Informace vytvořené těmito soubory cookie o vašem používání “%1$s” (včetně vaší IP adresy) jsou přenášeny společnosti Google a ukládány na serverech ve Spojených státech nebo na jiných místech. Google tyto informace používá k vyhodnocování vašeho používání webu, k sestavování zpráv o aktivitě webu pro nás a k poskytování dalších služeb souvisejících s aktivitou webu a používáním internetu.
 		<br><br>
-		Google může tyto informace také předat třetím stranám, pokud to vyžaduje zákon nebo pokud tyto třetí strany zpracovávají informace jménem společnosti Google. Další informace o tom, jak Google shromažďuje a zpracovává data, najdete v zásadách ochrany soukromí Google na adrese: <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a>.
+		Google může tyto informace také předat třetím stranám, pokud to vyžaduje zákon nebo pokud tyto třetí strany zpracovávají informace jménem společnosti Google. Další informace o tom, jak Google shromažďuje a zpracovává data, najdete v zásadách ochrany soukromí Google na adrese: %2$s.
 		<br><br>
-		Používání Google Analytics můžete odmítnout instalací doplňku prohlížeče pro odhlášení z Google Analytics, který je k dispozici na adrese: <a href="https://tools.google.com/dlpage/gaoptout" target="_blank">https://tools.google.com/dlpage/gaoptout</a>.
+		Používání Google Analytics můžete odmítnout instalací doplňku prohlížeče pro odhlášení z Google Analytics, který je k dispozici na adrese: %3$s.
 	',
 ]);

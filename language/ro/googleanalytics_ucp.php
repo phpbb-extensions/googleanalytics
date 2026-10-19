@@ -38,15 +38,14 @@ if (empty($lang) || !is_array($lang))
 //
 
 $lang = array_merge($lang, [
-	'PHPBB_ANALYTICS_PRIVACY_POLICY' => '
-		<br><br>
-		<h3>Analiză</h3>
+	'PHPBB_ANALYTICS_PRIVACY_POLICY_TITLE'	=> 'Analiză',
+	'PHPBB_ANALYTICS_PRIVACY_POLICY_TEXT'	=> '
 		“%1$s” poate utiliza Google Analytics, un serviciu de analiză web furnizat de Google LLC (“Google”), pentru a ne ajuta să înțelegem cum folosesc vizitatorii site-ul. Google Analytics utilizează cookie-uri și tehnologii similare pentru a colecta informații despre interacțiunile dumneavoastră cu site-ul, inclusiv paginile pe care le vizitați, timpul petrecut pe fiecare pagină și tiparele generale de utilizare.
 		<br><br>
 		Informațiile generate de aceste cookie-uri despre utilizarea “%1$s” de către dumneavoastră (inclusiv adresa IP) sunt transmise către Google și stocate de Google pe servere din Statele Unite sau din alte locații. Google folosește aceste informații pentru a evalua utilizarea site-ului de către dumneavoastră, pentru a compila rapoarte despre activitatea site-ului pentru noi și pentru a furniza alte servicii legate de activitatea site-ului și utilizarea internetului.
 		<br><br>
-		Google poate transfera aceste informații și către terți atunci când legea impune acest lucru sau atunci când astfel de terți procesează informațiile în numele Google. Pentru a afla mai multe despre modul în care Google colectează și procesează date, consultați Politica de confidențialitate Google la: <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a>.
+		Google poate transfera aceste informații și către terți atunci când legea impune acest lucru sau atunci când astfel de terți procesează informațiile în numele Google. Pentru a afla mai multe despre modul în care Google colectează și procesează date, consultați Politica de confidențialitate Google la: %2$s.
 		<br><br>
-		Puteți renunța la Google Analytics instalând suplimentul de browser pentru renunțarea la Google Analytics, disponibil la: <a href="https://tools.google.com/dlpage/gaoptout" target="_blank">https://tools.google.com/dlpage/gaoptout</a>.
+		Puteți renunța la Google Analytics instalând suplimentul de browser pentru renunțarea la Google Analytics, disponibil la: %3$s.
 	',
 ]);

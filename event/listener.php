@@ -164,7 +164,7 @@ class listener implements EventSubscriberInterface
 	}
 
 	/**
-	 * Append additional agreement details to the privacy agreement.
+	 * Append analytics disclosure to privacy agreement.
 	 *
 	 * @return void
 	 */
@@ -181,7 +181,10 @@ class listener implements EventSubscriberInterface
 
 		$this->language->add_lang('googleanalytics_ucp', 'phpbb/googleanalytics');
 
-		$this->template->append_var('AGREEMENT_TEXT', $this->language->lang('PHPBB_ANALYTICS_PRIVACY_POLICY', $this->config['sitename']));
+		$this->template->set_filenames([
+			'googleanalytics_privacy_policy' => '@phpbb_googleanalytics/privacy_policy.html',
+		]);
+		$this->template->append_var('AGREEMENT_TEXT', $this->template->assign_display('googleanalytics_privacy_policy'));
 	}
 
 	/**
